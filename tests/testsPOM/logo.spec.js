@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
-import { LOGO_ALIGNMENT, MY_ACCOUNT_CREATE_END_POINT, NAVBAR_URLs_END_POINTS } from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
-import Logo from '../../page_objects/logo'
+import { LOGO_ALIGNMENT, MY_ACCOUNT_CREATE_END_POINT, NAVBAR_URLs_END_POINTS } from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
+import Logo from '@pages/logo'
 
 test.describe('logo.spec', () => {
   test.beforeEach(async ({ page }) => {

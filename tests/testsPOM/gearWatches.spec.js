@@ -5,10 +5,10 @@ import {
   LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE,
   LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS,
   LIST_OF_SUBMENU_ITEMS_EXPECTED
-} from '../../helpers/testData.js'
-import GearWatchesPage from '../../page_objects/gearWatchesPage.js'
-import HomePage from '../../page_objects/homePage.js'
-import WatchProductPage from '../../page_objects/watchProductPage.js'
+} from '@helpers/testData.js'
+import GearWatchesPage from '@pages/gearWatchesPage.js'
+import HomePage from '@pages/homePage.js'
+import WatchProductPage from '@pages/watchProductPage.js'
 
 test.describe('gearWatchesPage.spec', () => {
   test.beforeEach(async ({ page }) => {

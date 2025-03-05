@@ -1,7 +1,7 @@
+import { BASE_URL, EMPTY_CARD_MESSAGE, SHOPPING_CART_END_POINT, WOMEN_JACKETS_NAME } from '@helpers/testData.js'
 import { expect } from '@playwright/test'
-import { BASE_URL, EMPTY_CARD_MESSAGE, SHOPPING_CART_END_POINT, WOMEN_JACKETS_NAME } from '../../helpers/testData.js'
-import { test } from '../../page_objects/base.js'
-import MyAccountPage from '../../page_objects/myAccountPage.js'
+import { test } from '@pages/base.js'
+import MyAccountPage from '@pages/myAccountPage.js'
 
 test.describe('shopping Cart', () => {
   test('Validate link Move to Wish List located on the Shopping Cart page', async ({ page, createNewAccount }) => {

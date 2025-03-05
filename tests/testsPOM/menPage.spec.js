@@ -1,7 +1,7 @@
+import * as TEST_DATA from '@helpers/testData.js'
+import * as TEST_MEN_DATA from '@helpers/testMenData.js'
+import HomePage from '@pages/homePage.js'
 import { expect, test } from '@playwright/test'
-import * as TEST_DATA from '../../helpers/testData.js'
-import * as TEST_MEN_DATA from '../../helpers/testMenData.js'
-import HomePage from '../../page_objects/homePage.js'
 let homePage
 test.describe('menPage.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -14,25 +14,25 @@ test.describe('menPage.spec', () => {
 
     await expect.soft(page).toHaveURL(TEST_DATA.BASE_URL + TEST_MEN_DATA.MEN_PAGE_END_POINT)
     await expect.soft(menPage.locators.getMenPageHeader()).toContainText(TEST_MEN_DATA.MEN_PAGE_HEADER)
-    await expect.soft(menPage.locators.getCompareProducts()).toBeVisible(TEST_MEN_DATA.COMPARE_PRODUCTS_TEXT)
-    await expect.soft(menPage.locators.getMyWishList()).toBeVisible(TEST_MEN_DATA.MY_WISH_LIST_TEXT)
+    await expect.soft(menPage.locators.getCompareProducts()).toBeVisible()
+    await expect.soft(menPage.locators.getMyWishList()).toBeVisible()
   })
 
-  test('Men page contains Shop by category block which is located on the left side of the page', async ({ page }) => {
+  test('Men page contains Shop by category block which is located on the left side of the page', async () => {
     const menPage = await homePage.clickMenLink()
 
     await expect.soft(menPage.locators.getShopByCategoryBlock()).toBeVisible()
     await expect.soft(menPage.locators.getShopByCategoryBlock()).toHaveCSS('float', TEST_DATA.MEN_PAGE_SHOP_BY_CATEGORY_BLOCK_ALIGNMENT)
   })
 
-  test('Category block contains sub-categories: Tops and Bottoms which are links in blue text', async ({ page }) => {
+  test('Category block contains sub-categories: Tops and Bottoms which are links in blue text', async () => {
     const menPage = await homePage.clickMenLink()
 
     await expect.soft(menPage.locators.getTopsSubCategoryLink()).toHaveCSS('color', TEST_DATA.MEN_PAGE_TOPS_SUB_CATEGORY_LINK_COLOR)
     await expect.soft(menPage.locators.getBottomsSubCategoryLink()).toHaveCSS('color', TEST_DATA.MEN_PAGE_BOTTOMS_SUB_CATEGORY_LINK_COLOR)
   })
 
-  test('Tops and Bottoms sub-categories have a counter for items from the right side of the relevant link', async ({ page }) => {
+  test('Tops and Bottoms sub-categories have a counter for items from the right side of the relevant link', async () => {
     const menPage = await homePage.clickMenLink()
     const subCaregoriesInCategoryBlock = menPage.locators.getSubCaregoriesInCategoryBlock()
 

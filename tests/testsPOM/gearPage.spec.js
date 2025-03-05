@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
-import GearPage from '../../page_objects/gearPage.js'
-import HomePage from '../../page_objects/homePage.js'
+import GearPage from '@pages/gearPage.js'
+import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('gearPage.spec', () => {
   test.beforeEach(async ({ page }) => {

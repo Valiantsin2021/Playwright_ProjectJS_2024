@@ -10,10 +10,10 @@ import {
   SHOPING_CART_COUNTER_NUMBER,
   shoppingItem1,
   shoppingItem2
-} from '../../helpers/testData.js'
-import Header from '../../page_objects/header.js'
-import HomePage from '../../page_objects/homePage.js'
-import ShippingPage from '../../page_objects/shippingPage.js'
+} from '@helpers/testData.js'
+import Header from '@pages/header.js'
+import HomePage from '@pages/homePage.js'
+import ShippingPage from '@pages/shippingPage.js'
 let homePage
 test.describe('header.spec', () => {
   test.beforeEach(async ({ page }) => {

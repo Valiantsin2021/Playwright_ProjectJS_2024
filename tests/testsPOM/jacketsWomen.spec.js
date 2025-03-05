@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
-import { MessageComparisonList } from '../../helpers/testData'
-import HomePage from '../../page_objects/homePage'
-import JacketsWomenPage from '../../page_objects/jacketsWomenPage'
+import { MessageComparisonList } from '@helpers/testData'
+import HomePage from '@pages/homePage'
+import JacketsWomenPage from '@pages/jacketsWomenPage'
 
 test.describe('jacketsWomen.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -11,7 +11,7 @@ test.describe('jacketsWomen.spec', () => {
     await homePage.hoverWomenTopsLink()
     await homePage.clickWomenJacketsLink()
   })
-  test.skip('Verify message add to comparison list', async ({ page }) => {
+  test('Verify message add to comparison list', async ({ page }) => {
     const jacketsWomenPage = new JacketsWomenPage(page)
 
     await jacketsWomenPage.hoverOlivia14ZipLightJacket()

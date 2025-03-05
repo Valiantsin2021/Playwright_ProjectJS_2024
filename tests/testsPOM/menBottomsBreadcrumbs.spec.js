@@ -6,10 +6,10 @@ import {
   MEN_BOTTOMS_BREADCRUMBS_MENU_MEN_TEXT,
   MEN_BOTTOMS_PAGE_END_POINT,
   MEN_PAGE_END_POINT
-} from '../../helpers/testMenData.js'
-import HomePage from '../../page_objects/homePage.js'
-import MenBottomsPage from '../../page_objects/menBottomsPage'
-import MenPage from '../../page_objects/menPage'
+} from '@helpers/testMenData.js'
+import HomePage from '@pages/homePage.js'
+import MenBottomsPage from '@pages/menBottomsPage'
+import MenPage from '@pages/menPage'
 
 test('Men have breadcrumb navigation on the “Men/Bottoms” page and back', async ({ page }) => {
   const homePage = new HomePage(page)

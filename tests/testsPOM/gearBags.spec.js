@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test'
-import { BASE_URL, GEAR_BAGS_HEADER, GEAR_BAGS_PAGE_END_POINT } from '../../helpers/testData.js'
-import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES } from '../../helpers/testGearBagsData'
-import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '../../helpers/testGearBagsData.js'
-import GearBagsPage from '../../page_objects/gearBagsPage.js'
-import HomePage from '../../page_objects/homePage.js'
+import { BASE_URL, GEAR_BAGS_HEADER, GEAR_BAGS_PAGE_END_POINT } from '@helpers/testData.js'
+import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES } from '@helpers/testGearBagsData'
+import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '@helpers/testGearBagsData.js'
+import GearBagsPage from '@pages/gearBagsPage.js'
+import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('gearBags.spec', () => {
   test.beforeEach(async ({ page }) => {

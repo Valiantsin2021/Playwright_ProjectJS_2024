@@ -13,8 +13,8 @@ import {
   TRAINING_PAGE_VIDEODOWNLOAD_URL,
   TRAINING_URL,
   VIDEODOWNLOAD_PAGE_HEADER
-} from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
+} from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
 
 test.describe('trainingPage.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -81,11 +81,8 @@ test.describe('trainingPage.spec', () => {
 
     await homePage.hoverGearMenuItem()
     const gearBagsPage = await homePage.clickGearBagsSubmenuItem()
-    await page.waitForTimeout(3000)
     await gearBagsPage.hoverPushItMessengerItem()
-    await page.waitForTimeout(5000)
     await gearBagsPage.clickgetPushItMessengerItemAddtoCampare()
-    await page.waitForTimeout(5000)
     const trainingPage = await gearBagsPage.clickTrainingLink()
     const compareProductsPage = await trainingPage.clickTrainingCompareButton()
 
@@ -107,9 +104,7 @@ test.describe('trainingPage.spec', () => {
 
     await homePage.hoverGearMenuItem()
     const gearBagsPage = await homePage.clickGearBagsSubmenuItem()
-    await page.waitForTimeout(3000)
     const pushItMessengerBagPage = await gearBagsPage.clickPushItMessengerItem()
-    await page.waitForTimeout(3000)
     const wishListPage = await pushItMessengerBagPage.clickPushItMessengerItemAddtoWishList()
 
     const trainingPage = await wishListPage.clickTrainingLink()

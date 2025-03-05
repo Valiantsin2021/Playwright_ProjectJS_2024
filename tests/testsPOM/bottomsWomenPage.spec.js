@@ -6,9 +6,9 @@ import {
   EXPECTED_NUMBER_PRODUCTS_STYLEs_BOTTOMS_WOMEN,
   PRODUCT_LIST,
   WOMEN_BOTTOMS_CATEGORIES_STYLEs_END_POINT
-} from '../../helpers/testData.js'
-import { WOMEN_BOTTOMS_CATEGORIES, WOMEN_BOTTOMS_SIZE } from '../../helpers/testWomenData.js'
-import HomePage from '../../page_objects/homePage.js'
+} from '@helpers/testData.js'
+import { WOMEN_BOTTOMS_CATEGORIES, WOMEN_BOTTOMS_SIZE } from '@helpers/testWomenData.js'
+import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('bottomsWomenPage.spec', () => {
   test.beforeEach(async ({ page }) => {

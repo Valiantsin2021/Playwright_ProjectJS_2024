@@ -1,8 +1,8 @@
+import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '@helpers/testData.js'
 import { expect } from '@playwright/test'
-import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '../../helpers/testData.js'
-import { test } from '../../page_objects/base.js'
-import CheckoutOnepageSuccessPage from '../../page_objects/checkoutOnepageSuccessPage.js'
-import MyAccountPage from '../../page_objects/myAccountPage.js'
+import { test } from '@pages/base.js'
+import CheckoutOnepageSuccessPage from '@pages/checkoutOnepageSuccessPage.js'
+import MyAccountPage from '@pages/myAccountPage.js'
 
 test.describe('myOrders', () => {
   test('checkMyOrdersLink', async ({ page, createNewAccount }) => {

@@ -1,7 +1,7 @@
+import { BASE_URL, WOMEN_TOPS_PAGE_END_POINT, WOMEN_TOPS_STYLE_CATEGORIES } from '@helpers/testWomenData.js'
+import HomePage from '@pages/homePage.js'
+import WomenTopsPage from '@pages/womenTopsPage.js'
 import { expect, test } from '@playwright/test'
-import { BASE_URL, WOMEN_TOPS_PAGE_END_POINT, WOMEN_TOPS_STYLE_CATEGORIES } from '../../helpers/testWomenData.js'
-import HomePage from '../../page_objects/homePage.js'
-import WomenTopsPage from '../../page_objects/womenTopsPage.js'
 
 test.describe('womenTopsPage.spec', () => {
   test.beforeEach(async ({ page }) => {

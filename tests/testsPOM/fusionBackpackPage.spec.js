@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
-import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '../../helpers/testFusionbackpackData.js'
-import FusionBackpackPage from '../../page_objects/fusionbackpackPage.js'
-import HomePage from '../../page_objects/homePage.js'
+import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '@helpers/testFusionbackpackData.js'
+import FusionBackpackPage from '@pages/fusionbackpackPage.js'
+import HomePage from '@pages/homePage.js'
 
 test.describe('fusionBackpackPage.spec', () => {
   test.beforeEach(async ({ page }) => {
