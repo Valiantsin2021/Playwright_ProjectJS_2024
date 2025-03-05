@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { BASE_URL, GEAR_FITNESS_NUMBER_ITEMS_IN_GRID_MODE, GEAR_FITNESS_NUMBER_ITEMS_IN_LIST_MODE, GEAR_FITNESS_PAGE_END_POINT, SORTED_LIST_FITNESS_PAGE_ENDPOINT } from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
+import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('gearFitnessPage.spec', () => {
   test.beforeEach(async ({ page }) => {

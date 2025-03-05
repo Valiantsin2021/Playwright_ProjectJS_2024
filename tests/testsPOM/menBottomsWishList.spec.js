@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test'
-// import HomePage from "../../page_objects/signOut";
-import HomePage from '../../page_objects/homePage'
-import SignInPage from '../../page_objects/signInPage'
+import HomePage from '@pages/homePage'
+import SignInPage from '@pages/signInPage'
 let homePage
 test.describe('menBottomWishList.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -12,14 +11,12 @@ test.describe('menBottomWishList.spec', () => {
     await signInPage.fillFieldEmail()
     await signInPage.fillFieldPassword()
     await signInPage.clickButtonSignIn()
-    await page.waitForTimeout(3000)
   })
 
   test('should be a wish list block with product details displayed on the page', async ({ page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
-    await page.waitForTimeout(3000)
     const wishListPage = await pierceGymShortPage.addWishList()
     await expect.soft(wishListPage.locators.getTitleMyWishList()).toBeVisible()
     expect.soft(wishListPage.locators.getItemQuantity()).toBeTruthy()
@@ -29,18 +26,16 @@ test.describe('menBottomWishList.spec', () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
-    await page.waitForTimeout(3000)
     const wishListPage = await pierceGymShortPage.addWishList()
 
     await expect.soft(wishListPage.locators.getgotoWishListlink()).toBeTruthy()
     await expect.soft(wishListPage.locators.getTitleMyWishList()).toHaveCSS('text-align', 'start')
   })
 
-  test.skip('should be a delete item button, a cross', async ({ page }) => {
+  test.skip('should be a delete item button, a cross', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
-    await page.waitForTimeout(3000)
     const wishListPage = await pierceGymShortPage.addWishList()
 
     await expect.soft(wishListPage.locators.getButtonClose()).toBeVisible()
@@ -48,11 +43,10 @@ test.describe('menBottomWishList.spec', () => {
     await expect.soft(wishListPage.locators.getTitleNoItems()).toBeVisible()
   })
 
-  test.skip(' should be an "Add to Cart" button', async ({ page }) => {
+  test.skip(' should be an "Add to Cart" button', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
-    await page.waitForTimeout(3000)
     const wishListPage = await pierceGymShortPage.addWishList()
 
     await expect.soft(wishListPage.locators.getAddToCard()).toBeVisible()

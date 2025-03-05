@@ -1,8 +1,8 @@
+import { BASE_URL, CUSTOMER_LOGIN_PAGE_END_POINT_SHORT, MY_ACCOUNT_HEADER, MY_ACCOUNT_PAGE_END_POINT, NEW_USER_DATA, USER_DATA } from '@helpers/testData'
 import { expect } from '@playwright/test'
-import { BASE_URL, CUSTOMER_LOGIN_PAGE_END_POINT_SHORT, MY_ACCOUNT_HEADER, MY_ACCOUNT_PAGE_END_POINT, NEW_USER_DATA, USER_DATA } from '../../helpers/testData'
-import HomePage from '../../page_objects/homePage'
-import MyAccountPage from '../../page_objects/myAccountPage.js'
-import { test } from '../../page_objects/base.js'
+import { test } from '@pages/base.js'
+import HomePage from '@pages/homePage'
+import MyAccountPage from '@pages/myAccountPage.js'
 
 test.describe('My Account', () => {
   test.beforeEach('Create account', async ({ page, createNewAccount }) => {

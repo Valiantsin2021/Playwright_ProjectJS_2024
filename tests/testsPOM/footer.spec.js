@@ -10,10 +10,10 @@ import {
   SEARCH_ADVANCED_PAGE_HEADER,
   SEARCH_TERMS_POPULAR_PAGE_END_POINT,
   SEARCH_TERMS_POPULAR_PAGE_HEADER
-} from '../../helpers/testData.js'
-import Footer from '../../page_objects/footer.js'
-import HomePage from '../../page_objects/homePage.js'
-import SearchTermPopularPage from '../../page_objects/searchTermPopularPage.js'
+} from '@helpers/testData.js'
+import Footer from '@pages/footer.js'
+import HomePage from '@pages/homePage.js'
+import SearchTermPopularPage from '@pages/searchTermPopularPage.js'
 let homePage
 test.describe('footer.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -76,8 +76,6 @@ test.describe('footer.spec', () => {
       await signInPage.fillFieldEmail()
       await signInPage.fillFieldPassword()
       await signInPage.clickButtonSignIn()
-
-      const footerLinkPage = await homePage.getFooter().clickFooterLinks(linkName)
       await expect.soft(page).toHaveURL(BASE_URL + FOOTER_LINKs_URLs_END_POINTS[idx])
     })
   })

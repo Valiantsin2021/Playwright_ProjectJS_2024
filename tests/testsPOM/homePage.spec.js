@@ -25,10 +25,10 @@ import {
   WHATS_NEW_PAGE_HEADER,
   WOMEN_BOTTOMS_HEADER,
   WOMEN_CATEGORIES
-} from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
-import SearchNoResultsPage from '../../page_objects/searchNoResultsPage.js'
-import SearchResultsJacketPage from '../../page_objects/searchResultsJacketPage.js'
+} from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
+import SearchNoResultsPage from '@pages/searchNoResultsPage.js'
+import SearchResultsJacketPage from '@pages/searchResultsJacketPage.js'
 let homePage
 test.describe('homePage.spec', () => {
   test.beforeEach(async ({ page }) => {

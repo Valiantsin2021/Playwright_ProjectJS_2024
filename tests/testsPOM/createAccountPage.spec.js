@@ -19,11 +19,11 @@ import {
   PASSWORD_CONFIRM,
   SIGN_IN_END_POINT,
   THANKS_MESSAGE
-} from '../../helpers/testData.js'
-import CreateAccountPage from '../../page_objects/createAccountPage.js'
-import HomePage from '../../page_objects/homePage.js'
-import MyAccountPage from '../../page_objects/myAccountPage.js'
-import SignInPage from '../../page_objects/signInPage.js'
+} from '@helpers/testData.js'
+import CreateAccountPage from '@pages/createAccountPage.js'
+import HomePage from '@pages/homePage.js'
+import MyAccountPage from '@pages/myAccountPage.js'
+import SignInPage from '@pages/signInPage.js'
 let homePage
 test.describe('createAccuntPage.spec', () => {
   test.beforeEach(async ({ page }) => {

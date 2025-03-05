@@ -1,8 +1,8 @@
+import { NAV_MENU_ITEM_NAMES, NUMBER_NAV_MENU_ITEMS } from '@helpers/testPrivacyPolicyData'
 import { expect, test } from '@playwright/test'
-import { NAV_MENU_ITEM_NAMES, NUMBER_NAV_MENU_ITEMS } from '../../helpers/testPrivacyPolicyData'
-import Footer from '../../page_objects/footer'
-import HomePage from '../../page_objects/homePage'
-import PrivacyPolicyPage from '../../page_objects/privacyPolicyPage'
+import Footer from '@pages/footer'
+import HomePage from '@pages/homePage'
+import PrivacyPolicyPage from '@pages/privacyPolicyPage'
 
 test.describe('privacyPolicyPage.spec', () => {
   test.beforeEach(async ({ page }) => {

@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
-import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
+import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('menBottomsPage.spec', () => {
   test.beforeEach(async ({ page }) => {

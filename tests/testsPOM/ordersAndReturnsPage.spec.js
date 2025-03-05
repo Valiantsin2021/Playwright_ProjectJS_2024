@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
-import { ORDERS_AND_RETURNS_HEADER } from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
+import { ORDERS_AND_RETURNS_HEADER } from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
 
 test.describe('ordersAndReturnsPage.spec', () => {
   test.beforeEach(async ({ page }) => {

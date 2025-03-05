@@ -2,19 +2,17 @@ import { test } from '@pages/base.js'
 import HomePage from '@pages/homePage.js'
 import { expect } from '@playwright/test'
 
-import { BASE_URL, CUSTOMER_USER_DATA, CUSTOMER_WISH_LIST_END_POINT, JACKET_ITEMS, MY_WISH_LIST_EMPTY_MESSAGE, SIGN_IN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT } from '../../helpers/testData.js'
-import { getRandomNumber, urlToRegexPattern } from '../../helpers/testUtils.js'
-import { MODE_GRID_ACTIVE_ATTR_CLASS, MODE_LIST_ACTIVE_ATTR_CLASS } from '../../helpers/testWomenData.js'
-
+import { BASE_URL, CUSTOMER_USER_DATA, CUSTOMER_WISH_LIST_END_POINT, JACKET_ITEMS, MY_WISH_LIST_EMPTY_MESSAGE, SIGN_IN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT } from '@helpers/testData.js'
+import { getRandomNumber, urlToRegexPattern } from '@helpers/testUtils.js'
+import { MODE_GRID_ACTIVE_ATTR_CLASS, MODE_LIST_ACTIVE_ATTR_CLASS } from '@helpers/testWomenData.js'
+let homePage
 test.describe('topWomenPage.spec', () => {
   test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
+    homePage = new HomePage(page)
     await homePage.open()
   })
 
   test('verify message displayed in Wish List Section for Empty Wish List', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -24,8 +22,6 @@ test.describe('topWomenPage.spec', () => {
   })
 
   test('after applying the filter Jackets, only jackets are displayed on the page', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -40,8 +36,6 @@ test.describe('topWomenPage.spec', () => {
   })
 
   test('number of items in Jackets Category equals number of items on the page after filtering', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -60,8 +54,6 @@ test.describe('topWomenPage.spec', () => {
 
   test('clicking AddToWishList button redirects guest users to Login page', async ({ page }) => {
     const expectedEndPoint = new RegExp(urlToRegexPattern(BASE_URL + SIGN_IN_PAGE_END_POINT))
-    const homePage = new HomePage(page)
-
     const womenPage = await homePage.clickWomenLink()
     const topsWomenPage = await womenPage.clickWomenTopsLink()
 
@@ -75,8 +67,6 @@ test.describe('topWomenPage.spec', () => {
   })
 
   test('verify the result of choosing Category, Size, and Color shopping options', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     await homePage.hoverOverWomenMenuItem()
     const topsWomenPage = await homePage.clickOnWomenTopsLink()
 
@@ -91,8 +81,7 @@ test.describe('topWomenPage.spec', () => {
 
     expect.soft(shoppingByList).toEqual(['Tees', 'S', 'Purple'])
   })
-  test('women tops display mode can be changed, visible', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test('women tops display mode can be changed, visible', async () => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -109,9 +98,6 @@ test.describe('topWomenPage.spec', () => {
 
   test('item is added to wishlist in left-side section after user logs in', async ({ page }) => {
     const expectedWishListUrl = new RegExp(urlToRegexPattern(BASE_URL + CUSTOMER_WISH_LIST_END_POINT))
-
-    const homePage = new HomePage(page)
-
     const womenPage = await homePage.clickWomenLink()
     const topsWomenPage = await womenPage.clickWomenTopsLink()
 
@@ -143,8 +129,6 @@ test.describe('topWomenPage.spec', () => {
   })
   test.skip('remove item from wishlist by click X button in left-side section', async ({ page, signIn }) => {
     const expectedWishListUrl = new RegExp(urlToRegexPattern(BASE_URL + CUSTOMER_WISH_LIST_END_POINT))
-
-    const homePage = new HomePage(page)
     await signIn(CUSTOMER_USER_DATA.email, CUSTOMER_USER_DATA.password)
 
     await page.waitForLoadState()

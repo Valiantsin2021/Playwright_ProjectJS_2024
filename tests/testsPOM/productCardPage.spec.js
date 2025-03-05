@@ -1,17 +1,16 @@
 import { expect, test } from '@playwright/test'
-import HomePage from '../../page_objects/homePage.js'
-import MenTopsPage from '../../page_objects/menTopsPage.js'
-import ProductCardPage from '../../page_objects/productCardPage.js'
-
+import HomePage from '@pages/homePage.js'
+import MenTopsPage from '@pages/menTopsPage.js'
+import ProductCardPage from '@pages/productCardPage.js'
+let homePage
 test.describe('productCardPage.spec', () => {
   test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
+    homePage = new HomePage(page)
     await homePage.open()
   })
 
   test('Verify that the Product Card has the Related Products section on the Men/Tops page', async ({ page }) => {
     test.slow()
-    const homePage = new HomePage(page)
     const menTopsPage = new MenTopsPage(page)
     const productCardPage = new ProductCardPage(page)
     await homePage.hoverMenLink()
@@ -29,8 +28,6 @@ test.describe('productCardPage.spec', () => {
 
   test('Verify Product Card in the Related Products section opens correct page', async ({ page }) => {
     test.slow()
-    const homePage = new HomePage(page)
-
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
 
@@ -45,7 +42,6 @@ test.describe('productCardPage.spec', () => {
         await expect.soft(productCardPage.locators.getProductCardTitile()).toHaveText(LIST_OF_RELATED_PRODUCTS[j])
         await productCardPage.goBackToMenTopsPage()
       }
-
       await productCardPage.goBackToProductCardPage()
     }
   })

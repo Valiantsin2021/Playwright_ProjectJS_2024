@@ -7,19 +7,17 @@ import {
   LIST_STYLE_MEN_TOPS,
   MEN_TOPS_CATEGORY_PAGES_END_POINT,
   MEN_TOPS_PAGE_END_POINT
-} from '../../helpers/testData.js'
-import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '../../helpers/testMenData.js'
-import HomePage from '../../page_objects/homePage.js'
-
+} from '@helpers/testData.js'
+import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '@helpers/testMenData.js'
+import HomePage from '@pages/homePage.js'
+let homePage
 test.describe('menTops', () => {
   test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
+    homePage = new HomePage(page)
     await homePage.open()
   })
 
   test("Check the name of 14 shopping styles in the Men's/Tops section.", async ({ page }) => {
-    const homePage = new HomePage(page)
-
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.clickMenTopsStyle()
@@ -30,8 +28,6 @@ test.describe('menTops', () => {
   })
 
   test('check quantity of items is displayed', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await page.waitForTimeout(6000)
@@ -43,8 +39,6 @@ test.describe('menTops', () => {
   })
 
   test('displays the number of available products in the Insulated(5) category', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.clickMenTopsStyle()
@@ -53,7 +47,6 @@ test.describe('menTops', () => {
   })
 
   test('check Men/Tops price filter drop-down has 8 options', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -62,7 +55,6 @@ test.describe('menTops', () => {
   })
 
   test('check Men/Tops price drop-down has quantity of available items in each price category', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -74,7 +66,6 @@ test.describe('menTops', () => {
 
   MEN_TOPS_PRICE_LIST.forEach((priceRange, index) => {
     test(`After applying a ${priceRange} price filter, apropriate products are displayed on the page`, async ({ page }) => {
-      const homePage = new HomePage(page)
       await homePage.hoverMenLink()
       const menTopsPage = await homePage.clickMenTopsLink()
       await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -87,7 +78,6 @@ test.describe('menTops', () => {
   })
 
   test('Verify that Men/Tops price filter is eliminated after clicking on the Clear All button', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -101,8 +91,6 @@ test.describe('menTops', () => {
   })
 
   test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async ({ page }) => {
-    const homePage = new HomePage(page)
-
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
 
@@ -120,7 +108,6 @@ test.describe('menTops', () => {
   })
 
   test.skip('Verify the count for each subCategory on Tops page is the same as count of items on each specific page', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
 
@@ -147,12 +134,9 @@ test.describe('menTops', () => {
     }
   })
   test('verify the ability to sort products in ascending order by price', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
-    await page.waitForTimeout(3000)
     await menTopsPage.locators.getSortByLocator().selectOption('price')
-    await page.waitForTimeout(3000)
 
     await expect.soft(menTopsPage.locators.getAscOrderLocator().first()).toBeVisible()
     await expect.soft(menTopsPage.locators.getProductsPriceLocator().first()).toBeVisible()
@@ -164,15 +148,11 @@ test.describe('menTops', () => {
   })
 
   test('verify the ability to sort products in descending order by price', async ({ page }) => {
-    const homePage = new HomePage(page)
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
-    await page.waitForTimeout(2000)
     await menTopsPage.locators.getSortByLocator().selectOption('price')
-    await page.waitForTimeout(2000)
     await menTopsPage.hoverGetDescOrderLink()
     await menTopsPage.clickGetDescOrderLink()
-    await page.waitForTimeout(3000)
 
     await expect.soft(menTopsPage.locators.getDescOrderLocator().first()).toBeVisible()
     await expect.soft(menTopsPage.locators.getProductsPriceLocator().first()).toBeVisible()

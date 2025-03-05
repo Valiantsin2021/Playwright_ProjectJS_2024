@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
-import { BASE_URL, WHATS_NEW_PAGE_END_POINT, WHATS_NEW_PAGE_HEADER } from '../../helpers/testData.js'
-import HomePage from '../../page_objects/homePage.js'
-import WhatsNewPage from '../../page_objects/whatsNewPage.js'
+import { BASE_URL, WHATS_NEW_PAGE_END_POINT, WHATS_NEW_PAGE_HEADER } from '@helpers/testData.js'
+import HomePage from '@pages/homePage.js'
+import WhatsNewPage from '@pages/whatsNewPage.js'
 
 test.describe('whatIsNewPage.spec', () => {
   test.beforeEach(async ({ page }) => {
