@@ -1,0 +1,104 @@
+name: Playwright Tests
+on:
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: "package.json"
+          cache: 'npm'
+
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: |
+          VERSION=$(cat ./package.json | grep '@playwright/test' | awk -F: '{ print $2 }' | sed 's/[",]//g' |tr  -d ^ | xargs)
+          echo "Playwright version is: $VERSION"
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 17
+
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache Playwright Binaries
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        id: install-dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Install Playwright Browser Chrome
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test
+
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.11
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_results: ./report/allure-results
+          allure_history: allure-history
+          allure_report: allure-report
+
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure report
+          path: allure-report
+          if-no-files-found: ignore
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+      - name: Post the link to the report
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+            authToken: ${{secrets.GITHUB_TOKEN}}
+            context: 'Test report'
+            state: 'success'
+            sha: ${{ github.event.pull_request.head.sha }}
+            target_url: valiantsin2021.github.io/github-allure-history/${{ github.run_number }}

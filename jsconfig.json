@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonJS",
+    "target": "esnext",
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["./page_objects/*"],
+      "@helpers/*": ["./helpers/*"]
+    }
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
