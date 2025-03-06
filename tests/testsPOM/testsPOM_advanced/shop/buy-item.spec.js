@@ -1,10 +1,9 @@
-import { fakeCredentials } from '@/constants/auth-const'
-import { confirmation, numberOfItems, shippingType } from '@/constants/shop-const'
-import { existingCustomerData, markData } from '@/data/account-test-data'
-import { items } from '@/data/shop-test-data'
-import { test } from '@/page-objects/basePO'
-import { generateRandomString } from '@/utils/utils'
-import { expect } from '@playwright/test'
+import { fakeCredentials } from '@helpers/constants/auth-const'
+import { confirmation, numberOfItems, shippingType } from '@helpers/constants/shop-const'
+import { existingCustomerData, markData } from '@helpers/data/account-test-data'
+import { items } from '@helpers/data/shop-test-data'
+import { generateRandomString } from '@helpers/utils'
+import { expect, test } from '@pages/basePO'
 
 test.describe('Shopping flow validation', async () => {
   let randomEmail
@@ -13,9 +12,9 @@ test.describe('Shopping flow validation', async () => {
     randomEmail = `${generateRandomString()}${fakeCredentials.EMAIL_SUFFIX}`
   })
 
-  test.beforeEach(async ({ page, navigationPage }) => {
+  test.beforeEach(async ({ navigationPage }) => {
     // Navigate to sales tab
-    await page.goto(`${process.env.FRONT_END_URL}`)
+    await navigationPage.open()
     await navigationPage.saleMenuLink.click()
   })
 

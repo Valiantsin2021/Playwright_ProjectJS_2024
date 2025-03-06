@@ -113,7 +113,7 @@ test.describe('bottomsWomenPage.spec', () => {
     expect.soft(actualShortsText).toEqual(WOMEN_BOTTOMS_CATEGORIES[1])
   })
 
-  test('Women/Bottoms/Shopping options/Price filter is displayed', async ({ page }) => {
+  test('Women/Bottoms/Shopping options/Price filter is displayed', async () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
     await bottomsWomenPage.clickOptionPrice()

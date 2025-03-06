@@ -1,5 +1,5 @@
 export const items = Object.freeze({
-  productName: 'Push It Messenger Bag',
+  productName: 'Overnight Duffle',
   numberOfItems: '1'
 })
 

@@ -5,7 +5,7 @@ const globals = require('globals')
 module.exports = [
   {
     plugins: { prettier, playwright },
-    files: ['**/*.js'],
+    files: ['page_objects/**/*.js', 'tests/**/*.js', 'helpers/**/*.js'],
     ignores: ['allure-report/'],
     languageOptions: {
       ecmaVersion: 'latest',

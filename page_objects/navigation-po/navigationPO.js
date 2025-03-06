@@ -1,4 +1,5 @@
-export default class NavigationPage {
+import BasePage from '../base-po/basePO'
+export default class NavigationPage extends BasePage {
   /**
    * Class constructor for BasePage.
    * @constructor
@@ -6,7 +7,7 @@ export default class NavigationPage {
    */
 
   constructor(page) {
-    this.page = page
+    super(page)
     this.saleMenuLink = page.getByRole('menuitem', { name: 'Sale' })
     this.bagsLink = page.getByRole('link', { name: 'Bags' })
     this.jacketsLink = page.getByRole('link', { name: 'Jackets' })

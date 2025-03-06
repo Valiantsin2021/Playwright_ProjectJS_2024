@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test'
 import AccountPage from '../account-po/accountPO'
-
-export default class ShopPage {
+import BasePage from '../base-po/basePO'
+export default class ShopPage extends BasePage {
   /**
    * Class constructor for BasePage.
    * @constructor
@@ -9,7 +9,7 @@ export default class ShopPage {
    */
 
   constructor(page) {
-    this.page = page
+    super(page)
     this.accountPage = new AccountPage(page)
     this.productCards = page.locator('.product-item-info')
     this.productImage = page.locator('.product-image-container')

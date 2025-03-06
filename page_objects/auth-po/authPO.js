@@ -1,6 +1,7 @@
-import { debounceDom } from '@/utils/utils'
-
-export default class AuthPage {
+import { debounceDom } from '@helpers/utils'
+import { expect } from '@playwright/test'
+import BasePage from '../base-po/basePO'
+export default class AuthPage extends BasePage {
   /**
    * Class constructor for BasePage.
    * @constructor
@@ -8,7 +9,7 @@ export default class AuthPage {
    */
 
   constructor(page) {
-    this.page = page
+    super(page)
     this.createAccountButton = page.getByRole('link', {
       name: 'Create an Account'
     })
