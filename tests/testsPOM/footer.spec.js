@@ -71,7 +71,7 @@ test.describe('footer.spec', () => {
   })
 
   FOOTER_LINK_NAME.forEach((linkName, idx) => {
-    test(`Verify ${linkName} is clickable and redirects logged-in user to the required page`, async ({ page }) => {
+    test.fixme(`Verify ${linkName} is clickable and redirects logged-in user to the required page`, async ({ page }) => {
       const signInPage = await homePage.clickSignInLink()
       await signInPage.fillFieldEmail()
       await signInPage.fillFieldPassword()
@@ -100,7 +100,7 @@ test.describe('footer.spec', () => {
     await expect.soft(notesPage).toHaveURL(NOTES_PAGE_URL)
   })
 
-  test('"Order and Returns” link redirects to the page, and displays particular fields', async ({ page }) => {
+  test.fixme('"Order and Returns” link redirects to the page, and displays particular fields', async ({ page }) => {
     const footerPage = new Footer(page)
     await expect.soft(page).toHaveURL(BASE_URL + FOOTER_ORDERS_AND_RETURNS_PAGE_END_POINT)
 

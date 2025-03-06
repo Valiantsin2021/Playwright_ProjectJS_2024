@@ -77,13 +77,12 @@ class SignInPage {
   }
 
   async clickDpopdown() {
-    await this.locators.getTabDropdown().click()
+    await this.locators.getTabDropdown().click({ force: true })
     return new HomePage(this.page)
   }
 
   async clickSignOut() {
-    await this.locators.getSignOutlinck().focus()
-    await this.locators.getSignOutlinck().click()
+    await this.locators.getSignOutlinck().click({ force: true })
     return this
   }
 

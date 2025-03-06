@@ -1,4 +1,4 @@
 //URL
 
 //test data
-export const saleDealsCategories = ["WOMEN'S DEALS", "MENS'S DEALS", 'GEAR DEALS']
+export const saleDealsCategories = ["Women's Deals", "Mens's Deals", 'Gear Deals']

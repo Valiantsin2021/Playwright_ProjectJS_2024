@@ -79,7 +79,7 @@ export const TRAINING_PAGE_BREADCRUMBS_MENU_HOME_TEXT = 'Home'
 export const VIDEODOWNLOAD_PAGE_HEADER = 'Video Download'
 export const COMPARE_PRODUCT_PAGE_HEADER = 'Compare Products'
 export const COMPARE_PRODUCT_PAGE_ITEM_TEXT = 'Push It Messenger Bag'
-export const MY_WISHLIST_PAGE_ITEM_TEXT = 'Push It Messenger Bag'
+export const MY_WISHLIST_PAGE_ITEM_TEXT = 'Overnight Duffle'
 export const MY_WISHLIST_PAGE_HEADER = 'My Wish List'
 export const WOMEN_TOPS_HEADER = 'Tops'
 export const WOMEN_BOTTOMS_HEADER = 'Bottoms'
@@ -146,7 +146,7 @@ export const LIST_STYLE_MEN_TOPS = [
   'Tank',
   'Tee'
 ]
-export const SALE_SIDE_MENU_SECTIONS = ["WOMEN'S DEALS", "MENS'S DEALS", 'GEAR DEALS']
+export const SALE_SIDE_MENU_SECTIONS = ["Women's Deals", "Mens's Deals", 'Gear Deals']
 
 export const LIST_CATEGORY_MEN_TOPS = ['Jackets 11 item', 'Hoodies & Sweatshirts 13 item', 'Tees 12 item', 'Tanks 12 item']
 

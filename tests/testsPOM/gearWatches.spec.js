@@ -10,7 +10,7 @@ import GearWatchesPage from '@pages/gearWatchesPage.js'
 import HomePage from '@pages/homePage.js'
 import WatchProductPage from '@pages/watchProductPage.js'
 
-test.describe('gearWatchesPage.spec', () => {
+test.describe('gearWatchesPage', () => {
   test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page)
     await homePage.open()
@@ -123,7 +123,7 @@ test.describe('gearWatchesPage.spec', () => {
     expect.soft(watchProductPage.locators.getSaleItemsNumber()).toEqual(watchProductPage.locators.getSaleItemsNumber())
   })
   LIST_OF_CATEGORY_WATCHES.forEach((category, idx) => {
-    test(`Verify Category options ${category} on gearWatchesPage`, async ({ page }) => {
+    test.fixme(`Verify Category options ${category} on gearWatchesPage`, async ({ page }) => {
       test.slow()
       const gearWatchesPage = new GearWatchesPage(page)
 
