@@ -1,0 +1,137 @@
+name: Playwright Tests
+on:
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1,2,3,4,5,6,7,8]
+        shardTotal: [8]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: |
+          VERSION=$(cat ./package.json | grep '@playwright/test' | awk -F: '{ print $2 }' | sed 's/[",]//g' |tr  -d ^ | xargs)
+          echo "Playwright version is: $VERSION"
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 17
+
+      - name: Cache dependencies
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Playwright Binaries
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install dependencies
+        id: install-dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Install Playwright Browser Chrome
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
+
+      - name: Run Static analysis
+        run: npm run check
+
+      - name: Run Playwright tests
+        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --project UI_tests
+
+      - name: Upload Allure Results
+        id: upload-allure-results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.shardIndex }}
+          path: allure-results
+          if-no-files-found: ignore
+          retention-days: 1
+
+  generate-report:
+    runs-on: ubuntu-latest
+    needs: test
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          path: allure-results
+          pattern: allure-results-*
+
+      - name: Merge Allure Results
+        if: success()
+        run: |
+          # Combine all downloaded result folders into a single allure-results directory
+          mkdir -p final-allure-results
+          cp -r allure-results/allure-results-*/* final-allure-results/
+
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.11
+        with:
+          gh_pages: gh-pages
+          allure_results: final-allure-results
+          allure_history: allure-history
+          allure_report: allure-report
+
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure report
+          path: allure-report
+          if-no-files-found: ignore
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history

@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   BOTTOMS_WOMEN_PAGE_END_POINT,
@@ -9,8 +8,9 @@ import {
 } from '@helpers/testData.js'
 import { WOMEN_BOTTOMS_CATEGORIES, WOMEN_BOTTOMS_SIZE } from '@helpers/testWomenData.js'
 import HomePage from '@pages/homePage.js'
+import { expect, test } from '@playwright/test'
 let homePage
-test.describe('bottomsWomenPage.spec', () => {
+test.describe('bottomsWomenPage >', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page)
     await homePage.open()
@@ -80,7 +80,7 @@ test.describe('bottomsWomenPage.spec', () => {
   })
 
   EXPECTED_ITEM_STYLE_WOMEN_BOTTOMS.forEach(async (nameCategory, index) => {
-    test(`Verify that the number of products displayed matches the count for the "${nameCategory}" category `, async ({ page }) => {
+    test(`Verify that the number of products displayed matches the count for the "${nameCategory}" category `, async () => {
       await homePage.hoverWomenMenuitem()
       const bottomsWomenPage = await homePage.clickBottomsWomenLink()
       await bottomsWomenPage.clickWomenBottomsOptionStyle()
@@ -93,7 +93,7 @@ test.describe('bottomsWomenPage.spec', () => {
     })
   })
 
-  test('User can able to select a category from the suggested list of 2 (two) options: Pants.', async ({ page }) => {
+  test('User can able to select a category from the suggested list of 2 (two) options: Pants.', async () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
     await bottomsWomenPage.clickWomenBottomsCategory()
@@ -103,7 +103,7 @@ test.describe('bottomsWomenPage.spec', () => {
     expect.soft(actualPantsText).toEqual(WOMEN_BOTTOMS_CATEGORIES[0])
   })
 
-  test('User can able to select a category from the suggested list of 2 (two) options: Shorts', async ({ page }) => {
+  test('User can able to select a category from the suggested list of 2 (two) options: Shorts', async () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
     await bottomsWomenPage.clickWomenBottomsCategory()
@@ -121,7 +121,7 @@ test.describe('bottomsWomenPage.spec', () => {
     await expect.soft(bottomsWomenPage.locators.getOptionPriceFilter()).toBeVisible()
   })
 
-  test.skip('Verify a User can deselect all options at once', async ({ page }) => {
+  test('Verify a User can deselect all options at once', async ({ page }) => {
     const womenPage = await homePage.clickWomenLink()
     const bottomsWomenPage = await womenPage.clickWomenBottomsLinkFromShopByCategory()
 
@@ -136,7 +136,7 @@ test.describe('bottomsWomenPage.spec', () => {
     await expect.soft(listOfSelectedItems).not.toBeVisible()
   })
 
-  test('On the page Bottoms - Womens page there are 5 options for sizes 28, 29, 30, 31, 32.', async ({ page }) => {
+  test('On the page Bottoms - Womens page there are 5 options for sizes 28, 29, 30, 31, 32.', async () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
     await bottomsWomenPage.clickWomenBottomsOptionSize()
@@ -146,10 +146,9 @@ test.describe('bottomsWomenPage.spec', () => {
     expect.soft(await bottomsWomenPage.locators.getWomenBottomsLocatorsSize().count()).toBe(5)
   })
 
-  test('Product display mode change in the catalog to the List mode', async ({ page }) => {
+  test('Product display mode change in the catalog to the List mode', async () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
-    await page.waitForTimeout(2000)
     await bottomsWomenPage.clickListViewLink()
 
     await expect.soft(bottomsWomenPage.locators.getProductsListWrapper()).toHaveClass(new RegExp(PRODUCT_LIST))
