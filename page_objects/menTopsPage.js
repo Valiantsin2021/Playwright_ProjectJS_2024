@@ -3,6 +3,11 @@ import { MEN_TOPS_PRICE_LIST_LOCATORS } from '../helpers/testMenData.js'
 import ProductCardPage from '../page_objects/productCardPage.js'
 
 class MenTopsPage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }

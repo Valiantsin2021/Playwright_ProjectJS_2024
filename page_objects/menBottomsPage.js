@@ -4,6 +4,11 @@ import { LIST_CATEGORY_MEN_BOTTOMS, LIST_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE_LOC
 import PierceGymShortPage from './pierceGymShortPage'
 
 class MenBottomsPage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }

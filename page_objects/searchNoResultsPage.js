@@ -1,6 +1,11 @@
 import { ITEMS, WARNING_MESSAGE_NO_RESULTS } from '../helpers/testData'
 
 class SearchNoResultsPage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }

@@ -29,6 +29,11 @@ import WomenPage from './womenPage.js'
 import WomenTopsPage from './womenTopsPage.js'
 
 class HomePage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }

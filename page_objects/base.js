@@ -1,9 +1,16 @@
-import { test as base } from '@playwright/test'
+import * as base from '@playwright/test'
 import { ADRESS_DATA, USER_DATA } from '../helpers/testData'
 import HomePage from './homePage'
 import MyAccountPage from './myAccountPage'
+/**
+ * @typedef {object} PagesTestArgs - HomePage test args
+ * @property {HomePage} homePage     - HomePage
+ * @property {MyAccountPage} myAccountPage     - myAccountPage
+ *
+ */
+/** @type {base.Fixtures<PagesTestArgs, {}, base.PlaywrightTestArgs, base.PlaywrightWorkerArgs>} */
 
-export const test = base.extend({
+const extension = {
   createNewAccount: [
     async ({ page }, use) => {
       const homePage = new HomePage(page)
@@ -79,4 +86,6 @@ export const test = base.extend({
     },
     { scope: 'test' }
   ]
-})
+}
+
+export const test = base.test.extend(extension)
