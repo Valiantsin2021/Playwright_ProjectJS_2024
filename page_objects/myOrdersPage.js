@@ -15,7 +15,7 @@ class MyOrdersPage {
   }
 
   async waitgetTitle() {
-    await this.locators.getTitle().waitFor()
+    await this.locators.getTitle().waitFor({ state: 'visible' })
     return this
   }
 }

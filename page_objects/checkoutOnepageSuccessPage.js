@@ -23,7 +23,7 @@ class CheckoutOnepageSuccessPage {
   }
 
   async waitContinueShoppingButton() {
-    await this.locators.getContinueShoppingButton().waitFor()
+    await this.locators.getContinueShoppingButton().waitFor({ state: 'visible' })
     return this
   }
   async waitMyAccountLink() {

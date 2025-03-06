@@ -13,7 +13,7 @@ class BottomsWomenPage {
     getWomenBottomsOptionStyle: () => this.page.getByRole('tab', { name: 'Style' }),
     getAriaSelectedWomenBottoms: () => this.page.locator('[aria-selected]'),
     getCategoryInStyle: () => this.page.locator('[aria-hidden="false"] .items>.item'),
-    getBottomsCategory: () => this.page.getByText('Category'),
+    getBottomsCategory: () => this.page.getByRole('tab', { name: 'Category' }),
     getBottomsCategoryPants: () => this.page.locator(".filter-options li a[href$='bottoms-women.html?cat=27']"), //getByRole('link', {name: 'Pants'})
     getPantsCategoryLocator: () => this.page.locator('li .filter-value'),
     getBottomsCategoryShorts: () => this.page.locator(".filter-options li a[href$='bottoms-women.html?cat=28']"),
