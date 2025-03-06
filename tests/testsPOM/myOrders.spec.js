@@ -1,11 +1,11 @@
 import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '@helpers/testData.js'
-import { expect } from '@playwright/test'
 import { test } from '@pages/base.js'
 import CheckoutOnepageSuccessPage from '@pages/checkoutOnepageSuccessPage.js'
 import MyAccountPage from '@pages/myAccountPage.js'
+import { expect } from '@playwright/test'
 
 test.describe('myOrders', () => {
-  test('checkMyOrdersLink', async ({ page, createNewAccount }) => {
+  test('checkMyOrdersLink', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     const myOrdersPage = await myAccountPage.clickMyOrdersLink()
 
@@ -13,7 +13,7 @@ test.describe('myOrders', () => {
     await expect.soft(myOrdersPage.locators.getTitle()).toContainText(MY_ORDERS_HEADER)
   })
 
-  test('OrderHistory', async ({ page, createNewAccount, createNewOrder }) => {
+  test('OrderHistory', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     const checkoutOnepageSuccessPage = new CheckoutOnepageSuccessPage(page)
     await checkoutOnepageSuccessPage.waitContinueShoppingButton()

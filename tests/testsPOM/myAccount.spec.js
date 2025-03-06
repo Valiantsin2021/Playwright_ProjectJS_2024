@@ -1,11 +1,11 @@
 import { BASE_URL, CUSTOMER_LOGIN_PAGE_END_POINT_SHORT, MY_ACCOUNT_HEADER, MY_ACCOUNT_PAGE_END_POINT, NEW_USER_DATA, USER_DATA } from '@helpers/testData'
-import { expect } from '@playwright/test'
 import { test } from '@pages/base.js'
 import HomePage from '@pages/homePage'
 import MyAccountPage from '@pages/myAccountPage.js'
+import { expect } from '@playwright/test'
 
 test.describe('My Account', () => {
-  test.beforeEach('Create account', async ({ page, createNewAccount }) => {
+  test.beforeEach('Create account', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     await myAccountPage.clickLogoLink()
   })

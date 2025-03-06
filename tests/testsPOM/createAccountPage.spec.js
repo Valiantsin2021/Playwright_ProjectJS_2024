@@ -79,7 +79,7 @@ test.describe('createAccuntPage.spec', () => {
     await expect.soft(myAccountPage.locators.getThanksMessage()).toHaveText(THANKS_MESSAGE)
   })
 
-  test('Check that all required fields are presented and empty in "Create New Customer Account" form', async ({ page }) => {
+  test('Check that all required fields are presented and empty in "Create New Customer Account" form', async () => {
     const createAccountPage = await homePage.clickCreateAccountLink()
 
     expect.soft(await createAccountPage.getArrayOfFormLabels()).toEqual(CREATE_ACCOUNT_FORM_LABELS)

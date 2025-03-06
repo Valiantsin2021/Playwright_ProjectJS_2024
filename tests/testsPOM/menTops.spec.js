@@ -27,10 +27,9 @@ test.describe('menTops', () => {
     await expect.soft(page).toHaveURL(BASE_URL + MEN_TOPS_PAGE_END_POINT)
   })
 
-  test('check quantity of items is displayed', async ({ page }) => {
+  test('check quantity of items is displayed', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
-    await page.waitForTimeout(6000)
     await menTopsPage.clickMenTopsCategory()
     LIST_CATEGORY_MEN_TOPS.forEach(item => {
       expect.soft(/\d+/.test(item)).toBe(true)
@@ -38,7 +37,7 @@ test.describe('menTops', () => {
     await expect.soft(menTopsPage.locators.getMenTopsListCategory()).toBeVisible()
   })
 
-  test('displays the number of available products in the Insulated(5) category', async ({ page }) => {
+  test('displays the number of available products in the Insulated(5) category', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.clickMenTopsStyle()
@@ -46,7 +45,7 @@ test.describe('menTops', () => {
     await expect.soft(menTopsPage.locators.getMenTopsStyleInsulated()).toBeVisible()
   })
 
-  test('check Men/Tops price filter drop-down has 8 options', async ({ page }) => {
+  test('check Men/Tops price filter drop-down has 8 options', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -54,7 +53,7 @@ test.describe('menTops', () => {
     expect.soft(await menTopsPage.getMenTopsPriceList()).toEqual(MEN_TOPS_PRICE_LIST)
   })
 
-  test('check Men/Tops price drop-down has quantity of available items in each price category', async ({ page }) => {
+  test('check Men/Tops price drop-down has quantity of available items in each price category', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -65,7 +64,7 @@ test.describe('menTops', () => {
   })
 
   MEN_TOPS_PRICE_LIST.forEach((priceRange, index) => {
-    test(`After applying a ${priceRange} price filter, apropriate products are displayed on the page`, async ({ page }) => {
+    test(`After applying a ${priceRange} price filter, apropriate products are displayed on the page`, async () => {
       await homePage.hoverMenLink()
       const menTopsPage = await homePage.clickMenTopsLink()
       await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -77,7 +76,7 @@ test.describe('menTops', () => {
     })
   })
 
-  test('Verify that Men/Tops price filter is eliminated after clicking on the Clear All button', async ({ page }) => {
+  test('Verify that Men/Tops price filter is eliminated after clicking on the Clear All button', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
     await menTopsPage.expandMenTopsPriceFilterDropDown()
@@ -90,7 +89,7 @@ test.describe('menTops', () => {
     expect.soft((await menTopsPage.getToolBarAmount()).trim()).toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
   })
 
-  test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async ({ page }) => {
+  test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
 
@@ -107,7 +106,7 @@ test.describe('menTops', () => {
     }
   })
 
-  test.skip('Verify the count for each subCategory on Tops page is the same as count of items on each specific page', async ({ page }) => {
+  test.skip('Verify the count for each subCategory on Tops page is the same as count of items on each specific page', async () => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
 

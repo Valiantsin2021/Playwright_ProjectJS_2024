@@ -8,7 +8,7 @@ test.describe('gearFitnessPage.spec', () => {
     await homePage.open()
   })
 
-  test('verify navigation path to the fitness equipment page', async ({ page }) => {
+  test('verify navigation path to the fitness equipment page', async () => {
     await homePage.hoverGearMenuItem()
     const gearFitnessPage = await homePage.clickGearFitnessEquipmentSubmenuItem()
 

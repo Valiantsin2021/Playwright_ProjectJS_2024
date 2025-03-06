@@ -26,7 +26,7 @@ class ShippingPage {
     getNextButton: () => this.page.getByRole('button', { name: 'Next' })
   }
 
-  async fillStreetNameField(street) {
+  async fillStreetNameField() {
     await this.locators.getStreetNameField().fill('street')
 
     return this

@@ -1,6 +1,6 @@
-import { expect, test } from '@playwright/test'
 import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '@helpers/testData.js'
 import HomePage from '@pages/homePage.js'
+import { expect, test } from '@playwright/test'
 let homePage
 test.describe('menBottomsPage.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -17,7 +17,7 @@ test.describe('menBottomsPage.spec', () => {
     await expect.soft(menBottomsPage.locators.getBottomsHeading()).toBeVisible()
   })
 
-  test('verify the sidebar is on the left', async ({ page }) => {
+  test('verify the sidebar is on the left', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -35,7 +35,6 @@ test.describe('menBottomsPage.spec', () => {
 
       await expect.soft(page).toHaveURL(BASE_URL + MEN_BOTTOMS_PAGE_END_POINT)
 
-      await menBottomsPage.waitForTimeout(3000)
       await menBottomsPage.hoverMenBottomsCategory()
       await menBottomsPage.clickMenBottomsCategory()
       await page.waitForLoadState('load')
@@ -49,7 +48,7 @@ test.describe('menBottomsPage.spec', () => {
     })
   })
 
-  test('Checking that the grid is selected and has 12 positions by defaultBottoms', async ({ page }) => {
+  test('Checking that the grid is selected and has 12 positions by defaultBottoms', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -57,10 +56,9 @@ test.describe('menBottomsPage.spec', () => {
     await expect.soft(menBottomsPage.locators.getMenBottomsDefault12ItemCard()).toHaveCount(12)
     await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterGridText()).toHaveText('Items 1-12 of 24')
   })
-  test('Checking that the list is selected and has 10 positions by defaultBottoms', async ({ page }) => {
+  test('Checking that the list is selected and has 10 positions by defaultBottoms', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
-    await menBottomsPage.waitForTimeout(2000)
     await menBottomsPage.clickMenBottomsFilterList()
 
     await expect.soft(menBottomsPage.locators.getMenBottomsDefault10ItemCardList()).toHaveCount(10)
@@ -77,7 +75,6 @@ test.describe('menBottomsPage.spec', () => {
 
     await menBottomsPage.hoverMenBottomsCategory()
     await menBottomsPage.clickMenBottomsCategory()
-    await menBottomsPage.waitForTimeout(5000)
 
     await expect.soft(menBottomsPage.locators.getMenBottomsCategoryListOfItemsLocator().first()).toBeVisible()
 

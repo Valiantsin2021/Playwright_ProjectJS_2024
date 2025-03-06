@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   ARGUS_ALL_WEATHER_TANK_PAGE_END_POINT,
   BASE_URL,
@@ -29,6 +28,7 @@ import {
 import HomePage from '@pages/homePage.js'
 import SearchNoResultsPage from '@pages/searchNoResultsPage.js'
 import SearchResultsJacketPage from '@pages/searchResultsJacketPage.js'
+import { expect, test } from '@playwright/test'
 let homePage
 test.describe('homePage.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -45,18 +45,18 @@ test.describe('homePage.spec', () => {
     await expect.soft(page).toHaveURL(BASE_URL)
   })
 
-  test('Verify  the automatic search results match the query in the search bar', async ({ page }) => {
+  test('Verify  the automatic search results match the query in the search bar', async () => {
     await homePage.fillSearchInputField(SEARCH_QUERY)
     expect.soft(await homePage.executeSearchAutocompleteList()).toContain(SEARCH_QUERY)
   })
 
-  test('Verify the search button (magnifier) becomes active after entering one or more letters', async ({ page }) => {
+  test('Verify the search button (magnifier) becomes active after entering one or more letters', async () => {
     await expect.soft(await homePage.locators.getSearchButton()).toHaveAttribute('disabled')
     await homePage.fillSearchInputField(SEARCH_QUERY)
     await expect.soft(homePage.locators.getSearchButton()).not.toHaveAttribute('disabled')
   })
 
-  test.skip('Verify the search field is not case-sensitive', async ({ page }) => {
+  test.skip('Verify the search field is not case-sensitive', async () => {
     await homePage.fillSearchInputField(SEARCH_QUERY)
 
     const autocompleteListLowerCaseActual = await homePage.executeSearchAutocompleteList()
@@ -94,7 +94,7 @@ test.describe('homePage.spec', () => {
     await expect.soft(searchNoResultsPage.locators.getNoResultsInfo()).toBeHidden()
   })
 
-  test('Verify the search button (magnifier) is inactive after the search field is cleared', async ({ page }) => {
+  test('Verify the search button (magnifier) is inactive after the search field is cleared', async () => {
     await homePage.fillSearchInputField(SEARCH_QUERY)
     await expect.soft(homePage.locators.getSearchButton()).not.toHaveAttribute('disabled')
 
@@ -102,7 +102,7 @@ test.describe('homePage.spec', () => {
     await expect.soft(homePage.locators.getSearchButton()).toHaveAttribute('disabled')
   })
 
-  test('Verify user can hover over the title “Women” and see dropdown list with 2 subcategories', async ({ page }) => {
+  test('Verify user can hover over the title “Women” and see dropdown list with 2 subcategories', async () => {
     await homePage.hoverWomenLink()
     await expect.soft(homePage.locators.getWomenCategories()).toHaveText(WOMEN_CATEGORIES)
   })
@@ -188,7 +188,7 @@ test.describe('homePage.spec', () => {
     await expect.soft(fusionbackpack.locators.getFusionBackpackHeader()).toBeVisible()
   })
 
-  test('5th card: clicking card reviews redirects to "reviews" tab on respective product card', async ({ page }) => {
+  test('5th card: clicking card reviews redirects to "reviews" tab on respective product card', async () => {
     const fusionbackpack = await homePage.clickFifthCardReviews()
     await expect.soft(fusionbackpack.locators.getFusionBackpackHeader()).toBeVisible()
     await expect.soft(fusionbackpack.locators.getFusionBackpackReviewsTab()).toBeVisible()
@@ -206,13 +206,13 @@ test.describe('homePage.spec', () => {
     await expect.soft(pushItMessengerBagPage.locators.getPushItMessengerBagPageHeader()).toBeVisible()
   })
 
-  test('6th card: clicking card reviews redirects to "reviews" tab on respective product card', async ({ page }) => {
+  test('6th card: clicking card reviews redirects to "reviews" tab on respective product card', async () => {
     const pushItMessengerBagPage = await homePage.clickSixthCardReviews()
     await expect.soft(pushItMessengerBagPage.locators.getPushItMessengerBagPageReviewsTab()).toBeVisible()
     await expect.soft(pushItMessengerBagPage.locators.getPushItMessengerBagPageHeader()).toBeVisible()
   })
 
-  test("Verification clickables elements in product's card", async ({ page }) => {
+  test("Verification clickables elements in product's card", async () => {
     const radiantTeePage = await homePage.clickHotSellersCardLink(0)
     await expect.soft(radiantTeePage.locators.getRadiantTeeHeader()).toBeVisible()
 
@@ -235,7 +235,7 @@ test.describe('homePage.spec', () => {
     }
   })
 
-  test(`Verify changing quantity of product in card section 'Hot seller'`, async ({ page }) => {
+  test(`Verify changing quantity of product in card section 'Hot seller'`, async () => {
     const qty = '100'
     await homePage.scrollToHotSellerSection()
     const productCardPage = await homePage.clickRandomCard()

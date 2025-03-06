@@ -13,7 +13,7 @@ test.describe('menBottomWishList.spec', () => {
     await signInPage.clickButtonSignIn()
   })
 
-  test('should be a wish list block with product details displayed on the page', async ({ page }) => {
+  test('should be a wish list block with product details displayed on the page', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
@@ -22,7 +22,7 @@ test.describe('menBottomWishList.spec', () => {
     expect.soft(wishListPage.locators.getItemQuantity()).toBeTruthy()
   })
 
-  test('should be a link to "Go to the wish list"', async ({ page }) => {
+  test('should be a link to "Go to the wish list"', async () => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()

@@ -6,7 +6,7 @@ import { expect, test } from '@pages/basePO'
 test.describe('Sign in flow validation', async () => {
   let randomEmail
 
-  test.beforeEach(async ({ page, authPage }) => {
+  test.beforeEach(async ({ authPage }) => {
     randomEmail = `${generateRandomString()}${fakeCredentials.EMAIL_SUFFIX}`
     // Navigate to the form
     await authPage.open()

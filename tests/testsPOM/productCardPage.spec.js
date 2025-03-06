@@ -1,7 +1,7 @@
-import { expect, test } from '@playwright/test'
 import HomePage from '@pages/homePage.js'
 import MenTopsPage from '@pages/menTopsPage.js'
 import ProductCardPage from '@pages/productCardPage.js'
+import { expect, test } from '@playwright/test'
 let homePage
 test.describe('productCardPage.spec', () => {
   test.beforeEach(async ({ page }) => {
@@ -26,7 +26,7 @@ test.describe('productCardPage.spec', () => {
     }
   })
 
-  test('Verify Product Card in the Related Products section opens correct page', async ({ page }) => {
+  test('Verify Product Card in the Related Products section opens correct page', async () => {
     test.slow()
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()

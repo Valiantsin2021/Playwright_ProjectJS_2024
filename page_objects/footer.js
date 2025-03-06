@@ -34,7 +34,7 @@ class Footer {
     return new PrivacyPolicyPage(this.page)
   }
 
-  async clickSearchTerms(page) {
+  async clickSearchTerms() {
     await this.locators.getSearchTerms().click()
     return new SearchTermPopularPage(this.page)
   }

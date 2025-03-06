@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test'
 
 test.describe('page checkout/cart', () => {
-  const whatNewUrl = 'https://magento.softwaretestingboard.com/what-is-new.html'
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
   })
