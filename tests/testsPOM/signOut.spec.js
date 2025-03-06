@@ -1,15 +1,14 @@
-import { expect, test } from '@playwright/test'
+import HomePage from '@pages/homePage'
 import SignInPage from '@pages/signInPage'
-import HomePage from '@pages/signOut'
+import { expect, test } from '@playwright/test'
 let homePage
-test.describe('signOut.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
+test.beforeEach(async ({ page }) => {
+  homePage = new HomePage(page)
+  await homePage.open()
+})
+test.describe('signOut > ', () => {
   test('should be a greeting with the users name ', async ({ page }) => {
     await homePage.clickSignInLink()
-
     const signInPage = new SignInPage(page)
     await signInPage.fillFieldEmail()
     await signInPage.fillFieldPassword()
@@ -20,7 +19,6 @@ test.describe('signOut.spec', () => {
 
   test('drop-down menu should open', async ({ page }) => {
     await homePage.clickSignInLink()
-
     const signInPage = new SignInPage(page)
     await signInPage.fillFieldEmail()
     await signInPage.fillFieldPassword()

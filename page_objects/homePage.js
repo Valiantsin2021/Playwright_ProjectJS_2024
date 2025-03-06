@@ -39,7 +39,7 @@ class HomePage {
   }
 
   locators = {
-    getWhatsNewLink: () => this.page.getByRole('listitem').filter({ hasText: "What's New" }),
+    getWhatsNewLink: () => this.page.getByRole('menuitem', { name: "What's New" }),
     getWomenLink: () => this.page.locator(".nav-sections .navigation li a[href$='/women.html']"),
     getWomenItemLink: () => this.page.getByRole('menuitem', { name: 'Women' }),
     getMenLink: () => this.page.getByRole('menuitem', { name: 'Men' }).last(),

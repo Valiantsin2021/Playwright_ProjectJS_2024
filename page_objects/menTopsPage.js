@@ -57,7 +57,7 @@ class MenTopsPage {
   }
 
   async applyFirstMenTopsPriceFilter() {
-    await this.locators.getMenTopsListPrice().first().click({ timeout: 1000 })
+    await this.locators.getMenTopsListPrice().first().click({ force: true })
 
     return this
   }

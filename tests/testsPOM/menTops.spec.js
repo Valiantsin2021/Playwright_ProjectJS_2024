@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   LIST_CATEGORY_MEN_TOPS,
@@ -10,6 +9,7 @@ import {
 } from '@helpers/testData.js'
 import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '@helpers/testMenData.js'
 import HomePage from '@pages/homePage.js'
+import { expect, test } from '@playwright/test'
 let homePage
 test.describe('menTops', () => {
   test.beforeEach(async ({ page }) => {
@@ -87,7 +87,7 @@ test.describe('menTops', () => {
 
     await menTopsPage.clickClearAllButton()
 
-    expect.soft(await menTopsPage.getToolBarAmount()).toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
+    expect.soft((await menTopsPage.getToolBarAmount()).trim()).toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
   })
 
   test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async ({ page }) => {
@@ -136,21 +136,21 @@ test.describe('menTops', () => {
   test('verify the ability to sort products in ascending order by price', async ({ page }) => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
-    await menTopsPage.locators.getSortByLocator().selectOption('price')
-
+    await menTopsPage.locators.getSortByLocator().selectOption('Position')
+    await menTopsPage.locators.getSortByLocator().selectOption('Price')
     await expect.soft(menTopsPage.locators.getAscOrderLocator().first()).toBeVisible()
     await expect.soft(menTopsPage.locators.getProductsPriceLocator().first()).toBeVisible()
 
     const prices = await page.$$eval('.product-items .price', elements => elements.map(element => parseInt(element.textContent.trim().replace(/[^\d.]/g, ''), 10)))
     const sortedPrices = prices.slice().sort((a, b) => a - b)
-
-    await expect.soft(prices).toEqual(sortedPrices)
+    expect.soft(prices).toEqual(sortedPrices)
   })
 
   test('verify the ability to sort products in descending order by price', async ({ page }) => {
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()
-    await menTopsPage.locators.getSortByLocator().selectOption('price')
+    await menTopsPage.locators.getSortByLocator().selectOption('Position')
+    await menTopsPage.locators.getSortByLocator().selectOption('Price')
     await menTopsPage.hoverGetDescOrderLink()
     await menTopsPage.clickGetDescOrderLink()
 
@@ -160,6 +160,6 @@ test.describe('menTops', () => {
     const prices = await page.$$eval('.product-items .price', elements => elements.map(element => parseInt(element.textContent.trim().replace(/[^\d.]/g, ''), 10)))
     const sortedPrices = prices.slice().sort((a, b) => b - a)
 
-    await expect.soft(prices).toEqual(sortedPrices)
+    expect.soft(prices).toEqual(sortedPrices)
   })
 })

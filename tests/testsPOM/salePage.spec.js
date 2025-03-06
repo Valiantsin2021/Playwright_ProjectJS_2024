@@ -41,7 +41,7 @@ test.describe('salePage.spec', () => {
   test('Check navigation and deal section to the Sale page', async ({ page }) => {
     const salePage = await homePage.clickSaleLink()
     await expect.soft(page).toHaveURL(BASE_URL + SALE_PAGE_END_POINT)
-    const dealsTextArray = await salePage.locators.getDealsLocator().allInnerTexts()
+    const dealsTextArray = await salePage.locators.getDealsLocator().allTextContents()
     expect.soft(dealsTextArray).toEqual(saleDealsCategories)
   })
 
