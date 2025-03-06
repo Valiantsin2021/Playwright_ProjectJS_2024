@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6375","Verify the availability of a list of 9 category in the ""Style"" option drop-down list","chromium","Thu Mar 06 06:31:54 GMT 2025","passed","Thu Mar 06 06:32:01 GMT 2025","bottomsWomenPage.spec","bottomsWomenPage.spec.js","",""
