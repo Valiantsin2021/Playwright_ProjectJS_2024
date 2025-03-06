@@ -1,19 +1,20 @@
+/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '@helpers/testData.js'
-import { test } from '@pages/base.js'
+import { expect, test } from '@pages/base.js'
 import CheckoutOnepageSuccessPage from '@pages/checkoutOnepageSuccessPage.js'
 import MyAccountPage from '@pages/myAccountPage.js'
-import { expect } from '@playwright/test'
 
 test.describe('myOrders', () => {
-  test('checkMyOrdersLink', async ({ page }) => {
-    const myAccountPage = new MyAccountPage(page)
+  test('checkMyOrdersLink', async ({ homePage, createNewAccount }) => {
+    const myAccountPage = new MyAccountPage(homePage.page)
     const myOrdersPage = await myAccountPage.clickMyOrdersLink()
 
-    await expect.soft(page).toHaveURL(BASE_URL + MY_ORDERS_PAGE_END_POINT)
+    await expect.soft(homePage.page).toHaveURL(BASE_URL + MY_ORDERS_PAGE_END_POINT)
     await expect.soft(myOrdersPage.locators.getTitle()).toContainText(MY_ORDERS_HEADER)
   })
 
-  test('OrderHistory', async ({ page }) => {
+  test('OrderHistory', async ({ page, createNewAccount, createNewOrder }) => {
     const myAccountPage = new MyAccountPage(page)
     const checkoutOnepageSuccessPage = new CheckoutOnepageSuccessPage(page)
     await checkoutOnepageSuccessPage.waitContinueShoppingButton()

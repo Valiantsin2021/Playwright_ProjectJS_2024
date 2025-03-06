@@ -113,11 +113,11 @@ test.describe('gearWatchesPage', () => {
       await gearWatchesPage.clickShoppingOption(LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE[2])
     }
   })
-  test('Verify only watches on sale displayed on page', async ({ page }) => {
-    const gearWatchesPage = new GearWatchesPage(page)
+  test('Verify only watches on sale displayed on page', async ({ homePage }) => {
+    const gearWatchesPage = new GearWatchesPage(homePage.page)
     await gearWatchesPage.clickSaleOption()
     const watchProductPage = await gearWatchesPage.clickYesOption()
-    expect.soft(watchProductPage.locators.getSaleItemsNumber()).toEqual(watchProductPage.locators.getSaleItemsNumber())
+    expect.soft(await watchProductPage.locators.getSaleItemsNumber()).toHaveLength(1)
   })
   LIST_OF_CATEGORY_WATCHES.forEach((category, idx) => {
     test.fixme(`Verify Category options ${category} on gearWatchesPage`, async ({ page }) => {
