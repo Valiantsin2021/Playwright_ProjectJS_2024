@@ -73,6 +73,7 @@ const extension = {
       await shippingPage.checkByTypeRadioButton()
       const paymentMethodPage = await shippingPage.clickNextButton()
       await paymentMethodPage.waitPlaceOrderButton()
+      await paymentMethodPage.clickPlaceOrderButton()
 
       await use('')
     },

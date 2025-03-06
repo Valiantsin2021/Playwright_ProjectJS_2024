@@ -15,7 +15,7 @@ class PaymentMethodPage {
   }
 
   async waitPlaceOrderButton() {
-    await this.locators.getPlaceOrderButton().waitFor()
+    await this.locators.getPlaceOrderButton().waitFor({ state: 'visible' })
 
     return this
   }

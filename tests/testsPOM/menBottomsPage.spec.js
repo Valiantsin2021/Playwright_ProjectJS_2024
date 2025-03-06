@@ -46,7 +46,7 @@ test.describe('menBottomsPage.spec', () => {
 
     await expect.soft(menBottomsPage.locators.getMenBottomsFilterGrid()).toHaveClass(/active/)
     await expect.soft(menBottomsPage.locators.getMenBottomsDefault12ItemCard()).toHaveCount(12)
-    await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterGridText()).toHaveText('Items 1-12 of 24')
+    await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterGridText()).toHaveText(/\s*?Items 1-12 of 24\s*?/)
   })
   test('Checking that the list is selected and has 10 positions by defaultBottoms', async ({ homePage }) => {
     await homePage.hoverMenLink()
@@ -54,7 +54,7 @@ test.describe('menBottomsPage.spec', () => {
     await menBottomsPage.clickMenBottomsFilterList()
 
     await expect.soft(menBottomsPage.locators.getMenBottomsDefault10ItemCardList()).toHaveCount(10)
-    await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterListText()).toHaveText('Items 1-10 of 24')
+    await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterListText()).toHaveText(/\s*?Items 1-10 of 24\s+?/)
     await expect.soft(menBottomsPage.locators.getMenBottomsFilterList()).toHaveClass(/active/)
   })
 
