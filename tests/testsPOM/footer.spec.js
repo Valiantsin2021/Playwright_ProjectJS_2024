@@ -14,11 +14,9 @@ import { expect, test } from '@pages/base.js'
 import Footer from '@pages/footer.js'
 import SearchTermPopularPage from '@pages/searchTermPopularPage.js'
 test.describe('footer.spec', () => {
-  test('Verify visibility of footer', async ({ page }) => {
-    const footer = new Footer(page)
-
-    footer.locators.getFooter().waitFor()
-    expect.soft(footer.locators.getFooter()).toBeVisible()
+  test('Verify visibility of footer', async ({ homePage }) => {
+    const footer = new Footer(homePage.page)
+    await expect.soft(footer.locators.getFooter()).toBeVisible()
   })
 
   test('link "Search Terms" is clickabel', async ({ homePage }) => {
@@ -73,11 +71,11 @@ test.describe('footer.spec', () => {
     })
   })
 
-  test('Link "Advanced Search" is clickable and redirectable', async ({ page }) => {
-    const footer = new Footer(page)
+  test('Link "Advanced Search" is clickable and redirectable', async ({ homePage }) => {
+    const footer = new Footer(homePage.page)
     const searchAdvancedPage = await footer.clickAdvancedSearchLink()
 
-    await expect.soft(page).toHaveURL(BASE_URL + SEARCH_ADVANCED_PAGE_END_POINT)
+    await expect.soft(footer.page).toHaveURL(BASE_URL + SEARCH_ADVANCED_PAGE_END_POINT)
     await expect.soft(searchAdvancedPage.locators.getPageHeader()).toHaveText(SEARCH_ADVANCED_PAGE_HEADER)
   })
 

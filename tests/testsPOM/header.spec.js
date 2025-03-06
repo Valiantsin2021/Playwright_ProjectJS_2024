@@ -118,19 +118,19 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getEmptyCardMessage()).not.toBeVisible()
   })
 
-  test('Gear drop-down menu contains: Bags, Fitness equipment, Watches items', async ({ page }) => {
-    const header = new Header(page)
+  test('Gear drop-down menu contains: Bags, Fitness equipment, Watches items', async ({ homePage }) => {
+    const header = new Header(homePage.page)
     await header.hoverGearMenu()
 
     await expect.soft(header.locators.getGearSubMenu()).toBeVisible()
     expect.soft(MENU_GEAR_EXPECTED_ITEMS).toEqual(await header.getGearSubMenuActualItems())
   })
 
-  test('User could navigate from the Gear menu to the Gear page', async ({ page }) => {
-    const header = new Header(page)
+  test('User could navigate from the Gear menu to the Gear page', async ({ homePage }) => {
+    const header = new Header(homePage.page)
     await header.clickGearMenu()
 
-    await expect.soft(page).toHaveURL(BASE_URL + GEAR_PAGE_END_POINT)
-    await expect.soft(page).toHaveTitle(GEAR_PAGE_HEADER)
+    await expect.soft(header.page).toHaveURL(BASE_URL + GEAR_PAGE_END_POINT)
+    await expect.soft(header.page).toHaveTitle(GEAR_PAGE_HEADER)
   })
 })
