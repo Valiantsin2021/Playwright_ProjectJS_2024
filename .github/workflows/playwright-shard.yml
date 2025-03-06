@@ -94,7 +94,7 @@ jobs:
       - name: Download all Allure Results
         uses: actions/download-artifact@v4
         with:
-          path: allure-results
+          path: ./report/allure-results
           pattern: allure-results-*
 
       - name: Merge Allure Results
