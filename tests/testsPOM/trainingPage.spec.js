@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   COMPARE_PRODUCT_PAGE_HEADER,
@@ -14,17 +13,10 @@ import {
   TRAINING_URL,
   VIDEODOWNLOAD_PAGE_HEADER
 } from '@helpers/testData.js'
-import HomePage from '@pages/homePage.js'
+import { expect, test } from '@pages/base'
 
 test.describe('trainingPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Verify that the "Training" link redirects to the training\'s products page', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the "Training" link redirects to the training\'s products page', async ({ homePage, page }) => {
     const trainingPage = await homePage.clickTrainingLink()
 
     await expect.soft(page).toHaveURL(TRAINING_URL)
@@ -32,9 +24,7 @@ test.describe('trainingPage.spec', () => {
     await expect.soft(trainingPage.locators.getTrainingHeader()).toContainText(TRAINING_PAGE_HEADER)
   })
 
-  test('Verify that the correct breadcrumb navigation is displayed on the "Training" page and leading up to this section (Home > Training)', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the correct breadcrumb navigation is displayed on the "Training" page and leading up to this section (Home > Training)', async ({ homePage, page }) => {
     const trainingPage = await homePage.clickTrainingLink()
 
     await expect.soft(trainingPage.locators.getBreadcrumbMenuAll()).toBeVisible()
@@ -47,27 +37,21 @@ test.describe('trainingPage.spec', () => {
     await expect.soft(page).toHaveURL(BASE_URL)
   })
 
-  test('Verify that the promo block is displayed on the “Training” page', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the promo block is displayed on the “Training” page', async ({ homePage }) => {
     const trainingPage = await homePage.clickTrainingLink()
 
     expect.soft(trainingPage.locators.getTrainingPromoBlock()).toBeTruthy()
     await expect.soft(trainingPage.locators.getTrainingPromoBlock()).toBeVisible()
   })
 
-  test('Verify that the "Shop By Category" section is displayed on the “Training” page', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the "Shop By Category" section is displayed on the “Training” page', async ({ homePage }) => {
     const trainingPage = await homePage.clickTrainingLink()
 
     expect.soft(trainingPage.locators.getTrainingShopByCategorySection()).toBeTruthy()
     await expect.soft(trainingPage.locators.getTrainingShopByCategorySection()).toBeVisible()
   })
 
-  test('Verify that clicking on the "Video Download" link redirects to the correct "Video Download" page', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that clicking on the "Video Download" link redirects to the correct "Video Download" page', async ({ homePage, page }) => {
     const trainingPage = await homePage.clickTrainingLink()
     const videoDownloadPage = await trainingPage.clickVideoDownloadLink()
 
@@ -76,9 +60,7 @@ test.describe('trainingPage.spec', () => {
     await expect.soft(videoDownloadPage.locators.getVideoDownloadHeader()).toContainText(VIDEODOWNLOAD_PAGE_HEADER)
   })
 
-  test('Verify that the User can use the “Compare Products” feature to compare different training products and identify their features and benefits', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the User can use the “Compare Products” feature to compare different training products and identify their features and benefits', async ({ homePage, page }) => {
     await homePage.hoverGearMenuItem()
     const gearBagsPage = await homePage.clickGearBagsSubmenuItem()
     await gearBagsPage.hoverPushItMessengerItem()
@@ -94,9 +76,7 @@ test.describe('trainingPage.spec', () => {
     await expect.soft(compareProductsPage.locators.getCompareProductsItem()).toContainText(COMPARE_PRODUCT_PAGE_ITEM_TEXT)
   })
 
-  test('Verify that the User can add training products to the wish list for tracking and accessing additional information about them in the training materials', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test('Verify that the User can add training products to the wish list for tracking and accessing additional information about them in the training materials', async ({ homePage, page }) => {
     const signInPage = await homePage.clickSignInLink()
     await signInPage.fillEmailField()
     await signInPage.fillPasswordField()

@@ -1,15 +1,8 @@
-import HomePage from '@pages/homePage.js'
+import { expect, test } from '@pages/base.js'
 import MenTopsPage from '@pages/menTopsPage.js'
 import ProductCardPage from '@pages/productCardPage.js'
-import { expect, test } from '@playwright/test'
-let homePage
 test.describe('productCardPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Verify that the Product Card has the Related Products section on the Men/Tops page', async ({ page }) => {
+  test('Verify that the Product Card has the Related Products section on the Men/Tops page', async ({ homePage, page }) => {
     test.slow()
     const menTopsPage = new MenTopsPage(page)
     const productCardPage = new ProductCardPage(page)
@@ -26,7 +19,7 @@ test.describe('productCardPage.spec', () => {
     }
   })
 
-  test('Verify Product Card in the Related Products section opens correct page', async () => {
+  test('Verify Product Card in the Related Products section opens correct page', async ({ homePage }) => {
     test.slow()
     await homePage.hoverMenLink()
     const menTopsPage = await homePage.clickMenTopsLink()

@@ -1,11 +1,8 @@
-import { expect, test } from '@playwright/test'
-import HomePage from '@pages/homePage'
+import { expect, test } from '@pages/base'
 import SignInPage from '@pages/signInPage'
 let homePage
 test.describe('menBottomWishList.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
+  test.beforeEach(async ({ homePage, page }) => {
     await homePage.clickSignInLink()
     const signInPage = new SignInPage(page)
     await signInPage.fillFieldEmail()
@@ -13,7 +10,7 @@ test.describe('menBottomWishList.spec', () => {
     await signInPage.clickButtonSignIn()
   })
 
-  test('should be a wish list block with product details displayed on the page', async () => {
+  test('should be a wish list block with product details displayed on the page', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
@@ -22,7 +19,7 @@ test.describe('menBottomWishList.spec', () => {
     expect.soft(wishListPage.locators.getItemQuantity()).toBeTruthy()
   })
 
-  test('should be a link to "Go to the wish list"', async () => {
+  test('should be a link to "Go to the wish list"', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
@@ -32,7 +29,7 @@ test.describe('menBottomWishList.spec', () => {
     await expect.soft(wishListPage.locators.getTitleMyWishList()).toHaveCSS('text-align', 'start')
   })
 
-  test.skip('should be a delete item button, a cross', async () => {
+  test.skip('should be a delete item button, a cross', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()
@@ -43,7 +40,7 @@ test.describe('menBottomWishList.spec', () => {
     await expect.soft(wishListPage.locators.getTitleNoItems()).toBeVisible()
   })
 
-  test.skip(' should be an "Add to Cart" button', async () => {
+  test.skip(' should be an "Add to Cart" button', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     const pierceGymShortPage = await menBottomsPage.ckickPierceGymc()

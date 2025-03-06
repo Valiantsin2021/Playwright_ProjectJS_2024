@@ -1,15 +1,8 @@
 import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '@helpers/testData.js'
-import HomePage from '@pages/homePage.js'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 let homePage
 test.describe('menBottomsPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-
-    await homePage.open()
-  })
-
-  test("Verify men's bottom tab", async ({ page }) => {
+  test("Verify men's bottom tab", async ({ homePage, page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -17,7 +10,7 @@ test.describe('menBottomsPage.spec', () => {
     await expect.soft(menBottomsPage.locators.getBottomsHeading()).toBeVisible()
   })
 
-  test('verify the sidebar is on the left', async () => {
+  test('verify the sidebar is on the left', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -29,7 +22,7 @@ test.describe('menBottomsPage.spec', () => {
   })
 
   LIST_CATEGORY_MEN_BOTTOMS.forEach((name, i) => {
-    test(`verify the user can select ${name} subcategory from the dropdown`, async ({ page }) => {
+    test(`verify the user can select ${name} subcategory from the dropdown`, async ({ homePage, page }) => {
       await homePage.hoverMenLink()
       const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -48,7 +41,7 @@ test.describe('menBottomsPage.spec', () => {
     })
   })
 
-  test('Checking that the grid is selected and has 12 positions by defaultBottoms', async () => {
+  test('Checking that the grid is selected and has 12 positions by defaultBottoms', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -66,7 +59,7 @@ test.describe('menBottomsPage.spec', () => {
     await expect.soft(menBottomsPage.locators.getMenBottomsFilterList()).toHaveClass(/active/)
   })
 
-  test('verify that the quantity of available items is visible', async ({ page }) => {
+  test('verify that the quantity of available items is visible', async ({ homePage, page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
@@ -83,7 +76,7 @@ test.describe('menBottomsPage.spec', () => {
     expect.soft(LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY).toEqual(receivedElements)
   })
 
-  test('Verify that button Clear All can deselecte options', async ({ page }) => {
+  test('Verify that button Clear All can deselecte options', async ({ homePage, page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 

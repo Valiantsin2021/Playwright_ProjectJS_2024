@@ -11,6 +11,14 @@ import MyAccountPage from './myAccountPage'
 /** @type {base.Fixtures<PagesTestArgs, {}, base.PlaywrightTestArgs, base.PlaywrightWorkerArgs>} */
 
 const extension = {
+  homePage: async ({ page }, use) => {
+    const homePage = new HomePage(page)
+    await homePage.open()
+    await use(homePage)
+  },
+  myAccountPage: async ({ page }, use) => {
+    await use(new MyAccountPage(page))
+  },
   createNewAccount: [
     async ({ page }, use) => {
       const homePage = new HomePage(page)
@@ -87,3 +95,4 @@ const extension = {
 }
 
 export const test = base.test.extend(extension)
+export const expect = base.expect

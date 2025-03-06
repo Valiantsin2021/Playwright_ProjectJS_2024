@@ -1,16 +1,9 @@
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 import { BASE_URL, WHATS_NEW_PAGE_END_POINT, WHATS_NEW_PAGE_HEADER } from '@helpers/testData.js'
-import HomePage from '@pages/homePage.js'
 import WhatsNewPage from '@pages/whatsNewPage.js'
 
 test.describe('whatIsNewPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Redirect to "Whats New" page', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test('Redirect to "Whats New" page', async ({ homePage, page }) => {
     const whatsNewPage = new WhatsNewPage(page)
 
     await homePage.clickWhatsNewLink()
@@ -19,8 +12,7 @@ test.describe('whatIsNewPage.spec', () => {
     await expect.soft(whatsNewPage.locators.getPageHeader()).toHaveText(WHATS_NEW_PAGE_HEADER)
   })
 
-  test("TC 04.1.3_01 Verify the “NEW IN MEN'S section is displayed on the What's New page", async ({ page }) => {
-    const homePage = new HomePage(page)
+  test("TC 04.1.3_01 Verify the “NEW IN MEN'S section is displayed on the What's New page", async ({ homePage, page }) => {
     const whatsNewPage = new WhatsNewPage(page)
 
     await homePage.clickWhatsNewLink()
@@ -28,8 +20,7 @@ test.describe('whatIsNewPage.spec', () => {
     await expect.soft(whatsNewPage.locators.getMenuNewInMens()).toBeVisible()
   })
 
-  test('TC 04.1.3_02 Verify links are displayed in New In Mens', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test('TC 04.1.3_02 Verify links are displayed in New In Mens', async ({ homePage, page }) => {
     const whatsNewPage = new WhatsNewPage(page)
 
     await homePage.clickWhatsNewLink()
