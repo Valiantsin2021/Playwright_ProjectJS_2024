@@ -17,7 +17,7 @@ test.describe('bottomsWomenPage >', () => {
 
     await bottomsWomenPage.clickWomenBottomsOptionStyle()
 
-    expect.soft(await bottomsWomenPage.locators.getAriaSelectedWomenBottoms()).toBeTruthy()
+    await expect.soft(bottomsWomenPage.locators.getAriaSelectedWomenBottoms()).toHaveCount(16)
 
     const expectedItems = EXPECTED_ITEM_STYLE_WOMEN_BOTTOMS
     const receivedResult = await bottomsWomenPage.locators.getCategoryInStyle().allInnerTexts()
