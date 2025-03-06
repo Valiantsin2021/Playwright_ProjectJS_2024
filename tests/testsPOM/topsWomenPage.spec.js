@@ -21,7 +21,7 @@ test.describe('topWomenPage.spec', () => {
     await expect.soft(topsWomenPage.locators.getWomenMyWishListEmptyMessage()).toHaveText(MY_WISH_LIST_EMPTY_MESSAGE)
   })
 
-  test('after applying the filter Jackets, only jackets are displayed on the page', async ({ page }) => {
+  test('after applying the filter Jackets, only jackets are displayed on the page', async () => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -35,7 +35,7 @@ test.describe('topWomenPage.spec', () => {
     expect.soft(allItemsContainJacketText).toBeTruthy()
   })
 
-  test('number of items in Jackets Category equals number of items on the page after filtering', async ({ page }) => {
+  test('number of items in Jackets Category equals number of items on the page after filtering', async () => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -66,7 +66,7 @@ test.describe('topWomenPage.spec', () => {
     await expect.soft(page.url(), 'FAIL: SignInPage is NOT opened on click on AddToWishList button for unsigned users.').toMatch(expectedEndPoint)
   })
 
-  test('verify the result of choosing Category, Size, and Color shopping options', async ({ page }) => {
+  test('verify the result of choosing Category, Size, and Color shopping options', async () => {
     await homePage.hoverOverWomenMenuItem()
     const topsWomenPage = await homePage.clickOnWomenTopsLink()
 

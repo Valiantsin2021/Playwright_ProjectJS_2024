@@ -28,7 +28,7 @@ test.describe('gearBags', () => {
     await expect.soft(page.locator('.filter-value:has-text("Polyester")')).toBeVisible()
   })
 
-  materialOptionNames.forEach((name, idx) => {
+  materialOptionNames.forEach(name => {
     test(`Verify that ${name} from material options list is visible and has right name`, async ({ page }) => {
       await page.getByRole('tab', { name: 'Material' }).click()
       const materialItemLocator = page.getByRole('link', { name: `${name}` })

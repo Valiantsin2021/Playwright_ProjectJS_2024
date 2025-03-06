@@ -38,7 +38,6 @@ const extension = {
       await inezFullZipJacketPage.clickInezJacketColorOptionLable()
       await inezFullZipJacketPage.clickInezJacketAddToCartButton()
       await inezFullZipJacketPage.waitForShoppingCartLink()
-      const shoppingCartPage = await inezFullZipJacketPage.clickShoppingCartLink()
 
       await use('')
     },
@@ -58,7 +57,7 @@ const extension = {
       const shoppingCartPage = await inezFullZipJacketPage.clickShoppingCartLink()
       await shoppingCartPage.waitForOrderTotalText()
       const shippingPage = await shoppingCartPage.clickProceedToCheckoutButton()
-      await shippingPage.fillStreetNameField(ADRESS_DATA.street)
+      await shippingPage.fillStreetNameField()
       await shippingPage.fillCityField(ADRESS_DATA.city)
       await shippingPage.clickSelectRegionDropdown()
       await shippingPage.fillPostCodeField(ADRESS_DATA.postal_code)
@@ -66,7 +65,6 @@ const extension = {
       await shippingPage.checkByTypeRadioButton()
       const paymentMethodPage = await shippingPage.clickNextButton()
       await paymentMethodPage.waitPlaceOrderButton()
-      const checkoutOnepageSuccessPage = await paymentMethodPage.clickPlaceOrderButton()
 
       await use('')
     },

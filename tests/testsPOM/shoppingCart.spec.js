@@ -4,7 +4,7 @@ import { test } from '@pages/base.js'
 import MyAccountPage from '@pages/myAccountPage.js'
 
 test.describe('shopping Cart', () => {
-  test('Validate link Move to Wish List located on the Shopping Cart page', async ({ page, createNewAccount }) => {
+  test('Validate link Move to Wish List located on the Shopping Cart page', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     await myAccountPage.waitForMyAccountHeader()
     const womenPage = await myAccountPage.clickWomenLink()
@@ -19,7 +19,7 @@ test.describe('shopping Cart', () => {
     await expect.soft(shoppingCartPage.locators.getMoveToWishListLink()).toBeVisible()
   })
 
-  test('Validate the message - the product has been moved to your wish list', async ({ page, createNewAccount }) => {
+  test('Validate the message - the product has been moved to your wish list', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     const womenPage = await myAccountPage.clickWomenLink()
     const jacketsWomenPage = await womenPage.clickWomenJacketsLink()
@@ -34,7 +34,7 @@ test.describe('shopping Cart', () => {
     await expect.soft(shoppingCartPage.locators.getAlerMessageAddToWishList()).toHaveText(`${WOMEN_JACKETS_NAME} has been moved to your wish list.`)
   })
 
-  test('Redirected to the updated Shopping cart page after add item to Wish List', async ({ page, createNewAccount }) => {
+  test('Redirected to the updated Shopping cart page after add item to Wish List', async ({ page }) => {
     const myAccountPage = new MyAccountPage(page)
     const womenPage = await myAccountPage.clickWomenLink()
     const jacketsWomenPage = await womenPage.clickWomenJacketsLink()

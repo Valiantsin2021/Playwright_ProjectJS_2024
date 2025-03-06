@@ -2,7 +2,6 @@ import { expect, test } from '@playwright/test'
 
 test.describe('Product Card/Add to Wish List', () => {
   const itemName = 'Inez Full Zip Jacket'
-  const BASE_URL = 'https://magento.softwaretestingboard.com'
   test.beforeEach(async ({ page }) => {
     await page.goto('/customer/account/login/')
     const userEmailValue = 'olga.perepel@gmail.com'

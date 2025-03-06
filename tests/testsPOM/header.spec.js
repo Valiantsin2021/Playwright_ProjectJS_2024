@@ -40,7 +40,7 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getTotalCost()).toHaveText('$' + totalCost)
   })
 
-  test('Verify the Create an Account link is displayed on the main page in the header', async ({ page }) => {
+  test('Verify the Create an Account link is displayed on the main page in the header', async () => {
     await expect.soft(homePage.locators.getCreateAccountLink()).toBeVisible()
   })
 
