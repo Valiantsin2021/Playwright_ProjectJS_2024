@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 jobs:
   test:
     timeout-minutes: 60
@@ -30,13 +32,15 @@ jobs:
           distribution: zulu
           java-version: 17
 
-      - name: Cache Node Modules
+      - name: Cache dependencies
         id: cache-node-modules
         uses: actions/cache@v4
         with:
           path: |
             node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Cache Playwright Binaries
         id: cache-playwright
@@ -44,9 +48,9 @@ jobs:
         with:
           path: |
             ~/.cache/ms-playwright
-          key: playwright-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            playwright-${{ hashFiles('package-lock.json') }}
+            ${{ runner.os }}-playwright-
 
       - name: Install dependencies
         id: install-dependencies
