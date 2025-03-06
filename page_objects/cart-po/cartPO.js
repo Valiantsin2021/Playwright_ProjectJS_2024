@@ -1,6 +1,6 @@
-import { debounceDom } from '@/utils/utils'
-
-export default class CartPage {
+import { debounceDom } from '@helpers/utils'
+import BasePage from '../base-po/basePO'
+export default class CartPage extends BasePage {
   /**
    * Class constructor for BasePage.
    * @constructor
@@ -8,7 +8,7 @@ export default class CartPage {
    */
 
   constructor(page) {
-    this.page = page
+    super(page)
     this.cartCounter = page.locator('.counter-number')
     this.miniCartLink = page.locator('.minicart-wrapper')
     this.proceedToCheckoutButton = page.locator('#top-cart-btn-checkout')
@@ -47,7 +47,7 @@ export default class CartPage {
     await this.phone.fill(customerData.phone)
     if (rate === 'Table Rate') await this.tableRate.click()
     if (rate === 'Fixed') await this.fixedRate.click()
-    await this.nextButton.click()
+    await this.nextButton.click({ force: true })
     await this.placeOrderButton.click()
   }
 }

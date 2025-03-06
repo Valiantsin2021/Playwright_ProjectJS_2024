@@ -1,4 +1,5 @@
-export default class AccountPage {
+import BasePage from '../base-po/basePO'
+export default class AccountPage extends BasePage {
   /**
    * Class constructor for BasePage.
    * @constructor
@@ -6,7 +7,7 @@ export default class AccountPage {
    */
 
   constructor(page) {
-    this.page = page
+    super(page)
     this.alertMessage = page.locator('.message-success')
     this.userInformation = page.locator('.box.box-information')
   }

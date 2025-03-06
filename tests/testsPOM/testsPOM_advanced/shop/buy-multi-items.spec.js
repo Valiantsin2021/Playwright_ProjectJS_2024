@@ -1,13 +1,12 @@
-import { confirmation, numberOfItems, shippingType } from '@/constants/shop-const'
-import { stevenData } from '@/data/account-test-data'
-import { womanJackets } from '@/data/shop-test-data'
-import { test } from '@/page-objects/basePO'
-import { expect } from '@playwright/test'
+import { confirmation, numberOfItems, shippingType } from '@helpers/constants/shop-const'
+import { stevenData } from '@helpers/data/account-test-data'
+import { womanJackets } from '@helpers/data/shop-test-data'
+import { expect, test } from '@pages/basePO'
 
 test.describe('Batch shopping flow validation', async () => {
-  test.beforeEach(async ({ page, navigationPage }) => {
+  test.beforeEach(async ({ navigationPage }) => {
     // Navigate to sales tab
-    await page.goto(`${process.env.FRONT_END_URL}`)
+    await navigationPage.open()
     await navigationPage.saleMenuLink.click()
   })
 

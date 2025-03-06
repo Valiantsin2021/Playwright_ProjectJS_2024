@@ -1,8 +1,7 @@
-import { account } from '@/constants/account-const'
-import { errors, fakeCredentials } from '@/constants/auth-const'
-import { generateRandomString } from '@/utils/utils'
-import { expect } from '@playwright/test'
-import { test } from 'src/page-objects/basePO'
+import { account } from '@helpers/constants/account-const'
+import { errors, fakeCredentials } from '@helpers/constants/auth-const'
+import { generateRandomString } from '@helpers/utils'
+import { expect, test } from '@pages/basePO'
 
 test.describe('Sigh up flow validation', async () => {
   let randomEmail
@@ -11,9 +10,9 @@ test.describe('Sigh up flow validation', async () => {
     randomEmail = `${generateRandomString()}${fakeCredentials.EMAIL_SUFFIX}`
   })
 
-  test.beforeEach(async ({ page, authPage }) => {
+  test.beforeEach(async ({ authPage }) => {
     // Navigate to the form
-    await page.goto(`${process.env.FRONT_END_URL}`)
+    await authPage.open()
     await authPage.createAccountButton.click()
   })
 
