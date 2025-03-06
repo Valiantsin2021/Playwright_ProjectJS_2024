@@ -16,8 +16,7 @@ test.describe('bottomsWomenPage.spec', () => {
     await homePage.open()
   })
 
-  // eslint-disable-next-line playwright/no-focused-test
-  test.only('Verify the availability of a list of 9 category in the "Style" option drop-down list', async ({ page }) => {
+  test('Verify the availability of a list of 9 category in the "Style" option drop-down list', async ({ page }) => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
 
