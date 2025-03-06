@@ -27,7 +27,7 @@ class MenBottomsPage {
     getMenBottomsShopingOptionsSidebarTitle: () => this.page.getByRole('heading', { name: 'Shopping Options' }),
     getMenBottomsShopingOptionsSidebarPosition: () => this.page.locator('.sidebar.sidebar-main'),
 
-    getMenBottomsCategory: () => this.page.getByText('Category'),
+    getMenBottomsCategory: () => this.page.getByRole('tab', { name: 'Category' }),
     getMenBottomsSubCategory: i => this.page.locator(LIST_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE_LOCATORS[i]),
     getMenBottomsCategoryValue: i => this.page.locator('.filter-value').getByText(LIST_CATEGORY_MEN_BOTTOMS[i]),
 
@@ -64,56 +64,38 @@ class MenBottomsPage {
 
   async hoverMenBottomsCategory() {
     await this.locators.getMenBottomsCategory().hover()
-
-    return this.page
   }
 
   async clickMenBottomsCategory() {
     await this.locators.getMenBottomsCategory().click()
-
-    return this.page
   }
 
   async hoverMenBottomsSubCategory(i) {
     await this.locators.getMenBottomsSubCategory([i]).hover()
-
-    return this.page
   }
 
   async clickMenBottomsSubCategory(i) {
     await this.locators.getMenBottomsSubCategory([i]).click()
-
-    return this.page
   }
 
   async clickMenBottomsFilterList() {
     await this.locators.getMenBottomsFilterListIcon().click()
-
-    return this.page
   }
 
   async waitForTimeout(timeout) {
     await this.page.waitForTimeout(timeout)
-
-    return this.page
   }
 
   async clickMenBottomsClearCategoryFilter() {
     await this.locators.getMenBottomsClearCategoryFilterLocator().click()
-
-    return this.page
   }
 
   async clickMenBottomsCategoryPants() {
-    await this.locators.getMenBottomsCategoryPants().click()
-
-    return this.page
+    await this.locators.getMenBottomsCategoryPants().click({ force: true })
   }
 
   async clickMenBottomsClearAllButton() {
     await this.locators.getMenBottomsClearAllButton().click()
-
-    return this.page
   }
 }
 
