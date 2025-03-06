@@ -1,12 +1,9 @@
-import { expect, test } from '@playwright/test'
 import { MessageComparisonList } from '@helpers/testData'
-import HomePage from '@pages/homePage'
+import { expect, test } from '@pages/base'
 import JacketsWomenPage from '@pages/jacketsWomenPage'
 
 test.describe('jacketsWomen.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
+  test.beforeEach(async ({ homePage }) => {
     await homePage.hoverWomenLink()
     await homePage.hoverWomenTopsLink()
     await homePage.clickWomenJacketsLink()

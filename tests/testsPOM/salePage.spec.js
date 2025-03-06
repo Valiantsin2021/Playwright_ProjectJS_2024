@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   LIST_OF_ITEMS_IN_MENS_DEALS_ON_SALE_PAGE,
@@ -9,23 +8,17 @@ import {
   WOMEN_SHORTS_PAGE_END_POINT
 } from '@helpers/testData.js'
 import { saleDealsCategories } from '@helpers/testSaleData.js'
-import HomePage from '@pages/homePage.js'
+import { expect, test } from '@pages/base.js'
 import SalePage from '@pages/salePage.js'
-let homePage
 test.describe('salePage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Verify visibility of sections with discounted items on Sale page', async ({ page }) => {
+  test('Verify visibility of sections with discounted items on Sale page', async ({ homePage, page }) => {
     const salePage = new SalePage(page)
     await homePage.clickSaleLink()
     expect.soft(await salePage.obtainSideMenuSectionsText()).toEqual(SALE_SIDE_MENU_SECTIONS)
   })
 
   LIST_OF_ITEMS_IN_MENS_DEALS_ON_SALE_PAGE.forEach((option, ind) => {
-    test(`Check that ${option} link opens the corresponding page`, async ({ page }) => {
+    test(`Check that ${option} link opens the corresponding page`, async ({ homePage, page }) => {
       const salePage = new SalePage(page)
       await homePage.clickSaleLink()
       await salePage.clickOnItemsFromMensDealsSection(LIST_OF_ITEMS_IN_MENS_DEALS_ON_SALE_PAGE[ind])
@@ -38,14 +31,14 @@ test.describe('salePage.spec', () => {
     })
   })
 
-  test('Check navigation and deal section to the Sale page', async ({ page }) => {
+  test('Check navigation and deal section to the Sale page', async ({ homePage, page }) => {
     const salePage = await homePage.clickSaleLink()
     await expect.soft(page).toHaveURL(BASE_URL + SALE_PAGE_END_POINT)
     const dealsTextArray = await salePage.locators.getDealsLocator().allTextContents()
     expect.soft(dealsTextArray).toEqual(saleDealsCategories)
   })
 
-  test('redirect to Women Bottoms Shorts', async ({ page }) => {
+  test('redirect to Women Bottoms Shorts', async ({ homePage, page }) => {
     const salePage = await homePage.clickSaleLink()
     await salePage.clickWomensShortsLink()
     await expect.soft(page).toHaveURL(BASE_URL + WOMEN_SHORTS_PAGE_END_POINT)

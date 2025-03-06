@@ -1,13 +1,8 @@
-import HomePage from '@pages/homePage'
+import { expect, test } from '@pages/base'
 import SignInPage from '@pages/signInPage'
-import { expect, test } from '@playwright/test'
-let homePage
-test.beforeEach(async ({ page }) => {
-  homePage = new HomePage(page)
-  await homePage.open()
-})
+
 test.describe('signOut > ', () => {
-  test('should be a greeting with the users name ', async ({ page }) => {
+  test('should be a greeting with the users name ', async ({ homePage, page }) => {
     await homePage.clickSignInLink()
     const signInPage = new SignInPage(page)
     await signInPage.fillFieldEmail()
@@ -17,7 +12,7 @@ test.describe('signOut > ', () => {
     expect.soft(isGreetingVisible).toBeTruthy()
   })
 
-  test('drop-down menu should open', async ({ page }) => {
+  test('drop-down menu should open', async ({ homePage, page }) => {
     await homePage.clickSignInLink()
     const signInPage = new SignInPage(page)
     await signInPage.fillFieldEmail()
@@ -27,7 +22,7 @@ test.describe('signOut > ', () => {
     await expect.soft(signInPage.locators.getDropdownWishList()).toBeVisible()
   })
 
-  test.skip('should be the "Log out" link, the user logs out of his account by clicking on it', async ({ page }) => {
+  test.skip('should be the "Log out" link, the user logs out of his account by clicking on it', async ({ homePage, page }) => {
     await homePage.clickSignInLink()
 
     const signInPage = new SignInPage(page)

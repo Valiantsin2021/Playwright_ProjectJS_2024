@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   EMPTY_CARD_MESSAGE,
@@ -11,17 +10,11 @@ import {
   shoppingItem1,
   shoppingItem2
 } from '@helpers/testData.js'
+import { expect, test } from '@pages/base.js'
 import Header from '@pages/header.js'
-import HomePage from '@pages/homePage.js'
 import ShippingPage from '@pages/shippingPage.js'
-let homePage
 test.describe('header.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Verify quantity and total cost in the shopping cart', async ({ page }) => {
+  test('Verify quantity and total cost in the shopping cart', async ({ homePage, page }) => {
     const header = new Header(page)
 
     const radiantTeePage = await homePage.clickRadiantTee()
@@ -40,11 +33,11 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getTotalCost()).toHaveText('$' + totalCost)
   })
 
-  test('Verify the Create an Account link is displayed on the main page in the header', async () => {
+  test('Verify the Create an Account link is displayed on the main page in the header', async ({ homePage }) => {
     await expect.soft(homePage.locators.getCreateAccountLink()).toBeVisible()
   })
 
-  test('"Proceed to Checkout" button in the Shopping Cart Modal Window is visible, clickable, and redirects to the Shipping Page', async ({ page }) => {
+  test('"Proceed to Checkout" button in the Shopping Cart Modal Window is visible, clickable, and redirects to the Shipping Page', async ({ homePage, page }) => {
     const header = new Header(page)
     const shippingPage = new ShippingPage(page)
 
@@ -58,20 +51,19 @@ test.describe('header.spec', () => {
 
     await expect.soft(header.locators.getProceedToCheckoutBtn()).toBeVisible()
     await header.clickProceedToCheckoutBtn()
-    await shippingPage.locators.getShippingAddressHeader().waitFor(5000)
-
+    await shippingPage.locators.getShippingAddressHeader()
     await expect.soft(page).toHaveURL(BASE_URL + SHIPPING_PAGE_END_POINT)
     await expect.soft(shippingPage.locators.getShippingProgressBar()).toHaveText(SHIPPING_PROGRESS_BAR_TEXT)
   })
 
-  test('verify display the shopping cart icon', async ({ page }) => {
+  test('verify display the shopping cart icon', async ({ homePage, page }) => {
     const header = new Header(page)
 
     await homePage.open()
     await expect.soft(header.locators.getShoppingCart()).toBeVisible()
   })
 
-  test('verify the modal windows opens on click on shopping cart icon', async ({ page }) => {
+  test('verify the modal windows opens on click on shopping cart icon', async ({ homePage, page }) => {
     const header = new Header(page)
 
     await homePage.open()
@@ -81,7 +73,7 @@ test.describe('header.spec', () => {
     await expect.soft(page).toHaveURL(BASE_URL)
   })
 
-  test('verify display empty shopping cart message', async ({ page }) => {
+  test('verify display empty shopping cart message', async ({ homePage, page }) => {
     const header = new Header(page)
 
     await homePage.open()
@@ -90,7 +82,7 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getEmptyCardMessage()).toHaveText(EMPTY_CARD_MESSAGE)
   })
 
-  test('<Header/Shopping Cart Icon> Verify a counter with the number of items in the cart is displayed after adding new product', async ({ page }) => {
+  test('<Header/Shopping Cart Icon> Verify a counter with the number of items in the cart is displayed after adding new product', async ({ homePage, page }) => {
     const header = new Header(page)
 
     await homePage.clickHotSellersXSSizeButton(0)
@@ -116,7 +108,7 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getCounterNumber()).not.toBeVisible()
   })
 
-  test('Verify the modal windows can close', async ({ page }) => {
+  test('Verify the modal windows can close', async ({ homePage, page }) => {
     const header = new Header(page)
 
     await homePage.open()

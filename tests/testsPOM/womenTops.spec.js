@@ -1,15 +1,9 @@
 import { BASE_URL, WOMEN_TOPS_PAGE_END_POINT, WOMEN_TOPS_STYLE_CATEGORIES } from '@helpers/testWomenData.js'
-import HomePage from '@pages/homePage.js'
+import { expect, test } from '@pages/base.js'
 import WomenTopsPage from '@pages/womenTopsPage.js'
-import { expect, test } from '@playwright/test'
 
 test.describe('womenTopsPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
-  })
-  test('Verify visability of Shopping Option in the menu on the left side', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test('Verify visability of Shopping Option in the menu on the left side', async ({ homePage, page }) => {
     const womenTopsPage = new WomenTopsPage(page)
 
     await homePage.open()
@@ -19,8 +13,7 @@ test.describe('womenTopsPage.spec', () => {
 
     await expect.soft(womenTopsPage.locators.getShoppingOptionsHeading()).toBeVisible()
   })
-  test('Verify dropdown menu has 19 Options', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test('Verify dropdown menu has 19 Options', async ({ homePage, page }) => {
     const womenTopsPage = new WomenTopsPage(page)
 
     await homePage.open()

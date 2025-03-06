@@ -1,14 +1,11 @@
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 import { BASE_URL, GEAR_BAGS_HEADER, GEAR_BAGS_PAGE_END_POINT } from '@helpers/testData.js'
 import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES } from '@helpers/testGearBagsData'
 import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '@helpers/testGearBagsData.js'
 import GearBagsPage from '@pages/gearBagsPage.js'
-import HomePage from '@pages/homePage.js'
 let homePage
 test.describe('gearBags.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
+  test.beforeEach(async ({ homePage }) => {
     await homePage.hoverGearMenuItem()
     await homePage.clickGearBags()
   })
@@ -34,7 +31,7 @@ test.describe('gearBags.spec', () => {
     })
   })
 
-  test('BTN "Page" redirects to the corresponding page', async ({ page }) => {
+  test('BTN "Page" redirects to the corresponding page', async ({ homePage }) => {
     await homePage.hoverGearMenuItem()
     const gearBagsPage = await homePage.clickGearBags()
     await gearBagsPage.clickInactiveSecondPagePaginationLink()
@@ -42,7 +39,7 @@ test.describe('gearBags.spec', () => {
     await expect.soft(gearBagsPage.locators.getPaginationSecondPageAttr()).toHaveText(ACTIVE_PAGE_TEXT + '2')
     await expect.soft(gearBagsPage.locators.getPaginationSecondPageAttr()).toHaveClass(ACTIVE_PAGE_CLASS_PAGINATION)
     await expect.soft(gearBagsPage.locators.getPaginationFirstPageAttr()).not.toHaveText(ACTIVE_PAGE_TEXT)
-    await expect.soft(page).toHaveURL(BASE_URL + GEAR_BAGES_SECOND_PAGE_END_POINT)
+    await expect.soft(homePage.page).toHaveURL(BASE_URL + GEAR_BAGES_SECOND_PAGE_END_POINT)
   })
 
   test('Apply filter "Leather" and verify that each bag has selected material in the description', async ({ page }) => {

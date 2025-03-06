@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   BASE_URL,
   FOOTER_LINK_NAME,
@@ -11,16 +10,10 @@ import {
   SEARCH_TERMS_POPULAR_PAGE_END_POINT,
   SEARCH_TERMS_POPULAR_PAGE_HEADER
 } from '@helpers/testData.js'
+import { expect, test } from '@pages/base.js'
 import Footer from '@pages/footer.js'
-import HomePage from '@pages/homePage.js'
 import SearchTermPopularPage from '@pages/searchTermPopularPage.js'
-let homePage
 test.describe('footer.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
   test('Verify visibility of footer', async ({ page }) => {
     const footer = new Footer(page)
 
@@ -28,17 +21,17 @@ test.describe('footer.spec', () => {
     expect.soft(footer.locators.getFooter()).toBeVisible()
   })
 
-  test('link "Search Terms" is clickabel', async ({ page }) => {
-    const searchTermPopularPage = new SearchTermPopularPage(page)
+  test('link "Search Terms" is clickabel', async ({ homePage }) => {
+    const searchTermPopularPage = new SearchTermPopularPage(homePage.page)
 
     await homePage.open()
     await homePage.clickSearchTermPopularLink()
 
-    await expect.soft(page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
+    await expect.soft(homePage.page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
     await expect.soft(searchTermPopularPage.locators.getSearchTermPopularHeader()).toContainText(SEARCH_TERMS_POPULAR_PAGE_HEADER)
   })
 
-  test('Verify that "Search terms" link redirects to the "Popular Search Terms" page', async ({ page }) => {
+  test('Verify that "Search terms" link redirects to the "Popular Search Terms" page', async ({ homePage, page }) => {
     const searchTermPopularPage = await homePage.getFooter().clickSearchTerms()
     await expect.soft(page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
     await expect.soft(page).toHaveTitle(SEARCH_TERMS_POPULAR_PAGE_HEADER)
@@ -55,7 +48,7 @@ test.describe('footer.spec', () => {
     }
   })
 
-  test('Verify links visibility in the footer for logged-in user', async ({ page }) => {
+  test('Verify links visibility in the footer for logged-in user', async ({ homePage, page }) => {
     await homePage.open()
 
     const signInPage = await homePage.clickSignInLink()
@@ -71,7 +64,7 @@ test.describe('footer.spec', () => {
   })
 
   FOOTER_LINK_NAME.forEach((linkName, idx) => {
-    test.fixme(`Verify ${linkName} is clickable and redirects logged-in user to the required page`, async ({ page }) => {
+    test.fixme(`Verify ${linkName} is clickable and redirects logged-in user to the required page`, async ({ homePage, page }) => {
       const signInPage = await homePage.clickSignInLink()
       await signInPage.fillFieldEmail()
       await signInPage.fillFieldPassword()
@@ -88,7 +81,7 @@ test.describe('footer.spec', () => {
     await expect.soft(searchAdvancedPage.locators.getPageHeader()).toHaveText(SEARCH_ADVANCED_PAGE_HEADER)
   })
 
-  test('Verify Notes link is clickable and redirects logged-in user to the required page', async ({ page }) => {
+  test('Verify Notes link is clickable and redirects logged-in user to the required page', async ({ homePage, page }) => {
     const signInPage = await homePage.clickSignInLink()
     await signInPage.fillFieldEmail()
     await signInPage.fillFieldPassword()
@@ -100,7 +93,7 @@ test.describe('footer.spec', () => {
     await expect.soft(notesPage).toHaveURL(NOTES_PAGE_URL)
   })
 
-  test.fixme('"Order and Returns” link redirects to the page, and displays particular fields', async ({ page }) => {
+  test.fixme('"Order and Returns” link redirects to the page, and displays particular fields', async ({ homePage, page }) => {
     const footerPage = new Footer(page)
     await expect.soft(page).toHaveURL(BASE_URL + FOOTER_ORDERS_AND_RETURNS_PAGE_END_POINT)
 

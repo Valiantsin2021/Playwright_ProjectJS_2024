@@ -1,12 +1,9 @@
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '@helpers/testFusionbackpackData.js'
 import FusionBackpackPage from '@pages/fusionbackpackPage.js'
-import HomePage from '@pages/homePage.js'
 
 test.describe('fusionBackpackPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
+  test.beforeEach(async ({ homePage }) => {
     await homePage.clickFifthCardImage()
   })
 

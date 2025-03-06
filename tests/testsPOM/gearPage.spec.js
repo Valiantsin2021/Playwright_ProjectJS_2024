@@ -1,14 +1,8 @@
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 import GearPage from '@pages/gearPage.js'
-import HomePage from '@pages/homePage.js'
-let homePage
-test.describe('gearPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
 
-  test('Verify that each sub-category link in filter “Shop By Category” to be blue.', async ({ page }) => {
+test.describe('gearPage.spec', () => {
+  test('Verify that each sub-category link in filter “Shop By Category” to be blue.', async ({ homePage, page }) => {
     const gearPage = new GearPage(page)
 
     await homePage.clickGearMenuItem()
@@ -21,7 +15,7 @@ test.describe('gearPage.spec', () => {
     await expect.soft(SubCategoryWatchesColour).toHaveCSS('border-color', 'rgb(0, 107, 180)')
   })
 
-  test('Verify that “Bags”, “Fitness equipment” and “Watches” to be placed under filter “Shop By Category” are clickable.', async ({ page }) => {
+  test('Verify that “Bags”, “Fitness equipment” and “Watches” to be placed under filter “Shop By Category” are clickable.', async ({ homePage, page }) => {
     const gearPage = new GearPage(page)
 
     await homePage.clickGearMenuItem()

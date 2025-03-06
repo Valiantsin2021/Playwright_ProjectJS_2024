@@ -1,5 +1,3 @@
-import { expect, test } from '@playwright/test'
-import { BASE_URL } from '../../helpers/testData.js'
 import {
   MEN_BOTTOMS_BREADCRUMBS_MENU_BOTTOMS_TEXT,
   MEN_BOTTOMS_BREADCRUMBS_MENU_HOME_TEXT,
@@ -7,12 +5,12 @@ import {
   MEN_BOTTOMS_PAGE_END_POINT,
   MEN_PAGE_END_POINT
 } from '@helpers/testMenData.js'
-import HomePage from '@pages/homePage.js'
+import { expect, test } from '@pages/base.js'
 import MenBottomsPage from '@pages/menBottomsPage'
 import MenPage from '@pages/menPage'
+import { BASE_URL } from '../../helpers/testData.js'
 
-test('Men have breadcrumb navigation on the “Men/Bottoms” page and back', async ({ page }) => {
-  const homePage = new HomePage(page)
+test('Men have breadcrumb navigation on the “Men/Bottoms” page and back', async ({ homePage, page }) => {
   const menBottomsPage = new MenBottomsPage(page)
   const menPage = new MenPage(page)
 

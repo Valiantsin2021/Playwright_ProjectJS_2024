@@ -1,18 +1,10 @@
-import { test } from '@pages/base.js'
-import HomePage from '@pages/homePage.js'
-import { expect } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 
 import { BASE_URL, CUSTOMER_USER_DATA, CUSTOMER_WISH_LIST_END_POINT, JACKET_ITEMS, MY_WISH_LIST_EMPTY_MESSAGE, SIGN_IN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT } from '@helpers/testData.js'
 import { getRandomNumber, urlToRegexPattern } from '@helpers/testUtils.js'
 import { MODE_GRID_ACTIVE_ATTR_CLASS, MODE_LIST_ACTIVE_ATTR_CLASS } from '@helpers/testWomenData.js'
-let homePage
 test.describe('topWomenPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('verify message displayed in Wish List Section for Empty Wish List', async ({ page }) => {
+  test('verify message displayed in Wish List Section for Empty Wish List', async ({ homePage, page }) => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -21,7 +13,7 @@ test.describe('topWomenPage.spec', () => {
     await expect.soft(topsWomenPage.locators.getWomenMyWishListEmptyMessage()).toHaveText(MY_WISH_LIST_EMPTY_MESSAGE)
   })
 
-  test('after applying the filter Jackets, only jackets are displayed on the page', async () => {
+  test('after applying the filter Jackets, only jackets are displayed on the page', async ({ homePage }) => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -35,7 +27,7 @@ test.describe('topWomenPage.spec', () => {
     expect.soft(allItemsContainJacketText).toBeTruthy()
   })
 
-  test('number of items in Jackets Category equals number of items on the page after filtering', async () => {
+  test('number of items in Jackets Category equals number of items on the page after filtering', async ({ homePage }) => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -52,7 +44,7 @@ test.describe('topWomenPage.spec', () => {
     expect.soft(expectedNumberJacketItems).toEqual(actualNumberJacketItems)
   })
 
-  test('clicking AddToWishList button redirects guest users to Login page', async ({ page }) => {
+  test('clicking AddToWishList button redirects guest users to Login page', async ({ homePage, page }) => {
     const expectedEndPoint = new RegExp(urlToRegexPattern(BASE_URL + SIGN_IN_PAGE_END_POINT))
     const womenPage = await homePage.clickWomenLink()
     const topsWomenPage = await womenPage.clickWomenTopsLink()
@@ -66,7 +58,7 @@ test.describe('topWomenPage.spec', () => {
     await expect.soft(page.url(), 'FAIL: SignInPage is NOT opened on click on AddToWishList button for unsigned users.').toMatch(expectedEndPoint)
   })
 
-  test('verify the result of choosing Category, Size, and Color shopping options', async () => {
+  test('verify the result of choosing Category, Size, and Color shopping options', async ({ homePage }) => {
     await homePage.hoverOverWomenMenuItem()
     const topsWomenPage = await homePage.clickOnWomenTopsLink()
 
@@ -81,7 +73,7 @@ test.describe('topWomenPage.spec', () => {
 
     expect.soft(shoppingByList).toEqual(['Tees', 'S', 'Purple'])
   })
-  test('women tops display mode can be changed, visible', async () => {
+  test('women tops display mode can be changed, visible', async ({ homePage }) => {
     const womenPage = await homePage.hoverWomenMenuitem()
     const topsWomenPage = await womenPage.clickTopsWomenLink()
 
@@ -96,7 +88,7 @@ test.describe('topWomenPage.spec', () => {
     await expect.soft(topsWomenPage.locators.getDisplayModeList()).toHaveClass(MODE_LIST_ACTIVE_ATTR_CLASS)
   })
 
-  test('item is added to wishlist in left-side section after user logs in', async ({ page }) => {
+  test('item is added to wishlist in left-side section after user logs in', async ({ homePage, page }) => {
     const expectedWishListUrl = new RegExp(urlToRegexPattern(BASE_URL + CUSTOMER_WISH_LIST_END_POINT))
     const womenPage = await homePage.clickWomenLink()
     const topsWomenPage = await womenPage.clickWomenTopsLink()
@@ -127,7 +119,7 @@ test.describe('topWomenPage.spec', () => {
 
     await wishListPage.cleanMyWishListFromSideBar()
   })
-  test.skip('remove item from wishlist by click X button in left-side section', async ({ page, signIn }) => {
+  test.skip('remove item from wishlist by click X button in left-side section', async ({ page, homePage, signIn }) => {
     const expectedWishListUrl = new RegExp(urlToRegexPattern(BASE_URL + CUSTOMER_WISH_LIST_END_POINT))
     await signIn(CUSTOMER_USER_DATA.email, CUSTOMER_USER_DATA.password)
 

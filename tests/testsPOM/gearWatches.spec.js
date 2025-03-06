@@ -1,4 +1,3 @@
-import { expect, test } from '@playwright/test'
 import {
   LIST_OF_CATEGORY_WATCHES,
   LIST_OF_MATERIALS_SUBITEMS_EXPECTED,
@@ -6,14 +5,12 @@ import {
   LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS,
   LIST_OF_SUBMENU_ITEMS_EXPECTED
 } from '@helpers/testData.js'
+import { expect, test } from '@pages/base.js'
 import GearWatchesPage from '@pages/gearWatchesPage.js'
-import HomePage from '@pages/homePage.js'
 import WatchProductPage from '@pages/watchProductPage.js'
 
 test.describe('gearWatchesPage', () => {
-  test.beforeEach(async ({ page }) => {
-    const homePage = new HomePage(page)
-    await homePage.open()
+  test.beforeEach(async ({ homePage }) => {
     await homePage.hoverGearMenuItem()
     await homePage.clickGearWatchesSubmenuItem()
   })

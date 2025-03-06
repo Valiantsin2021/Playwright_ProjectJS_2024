@@ -1,15 +1,9 @@
 import * as TEST_DATA from '@helpers/testData.js'
 import * as TEST_MEN_DATA from '@helpers/testMenData.js'
-import HomePage from '@pages/homePage.js'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@pages/base.js'
 let homePage
 test.describe('menPage.spec', () => {
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page)
-    await homePage.open()
-  })
-
-  test('Menu/Men available to click, see clothes only for men', async ({ page }) => {
+  test('Menu/Men available to click, see clothes only for men', async ({ homePage, page }) => {
     const menPage = await homePage.clickMenLink()
 
     await expect.soft(page).toHaveURL(TEST_DATA.BASE_URL + TEST_MEN_DATA.MEN_PAGE_END_POINT)
@@ -18,21 +12,21 @@ test.describe('menPage.spec', () => {
     await expect.soft(menPage.locators.getMyWishList()).toBeVisible()
   })
 
-  test('Men page contains Shop by category block which is located on the left side of the page', async () => {
+  test('Men page contains Shop by category block which is located on the left side of the page', async ({ homePage }) => {
     const menPage = await homePage.clickMenLink()
 
     await expect.soft(menPage.locators.getShopByCategoryBlock()).toBeVisible()
     await expect.soft(menPage.locators.getShopByCategoryBlock()).toHaveCSS('float', TEST_DATA.MEN_PAGE_SHOP_BY_CATEGORY_BLOCK_ALIGNMENT)
   })
 
-  test('Category block contains sub-categories: Tops and Bottoms which are links in blue text', async () => {
+  test('Category block contains sub-categories: Tops and Bottoms which are links in blue text', async ({ homePage }) => {
     const menPage = await homePage.clickMenLink()
 
     await expect.soft(menPage.locators.getTopsSubCategoryLink()).toHaveCSS('color', TEST_DATA.MEN_PAGE_TOPS_SUB_CATEGORY_LINK_COLOR)
     await expect.soft(menPage.locators.getBottomsSubCategoryLink()).toHaveCSS('color', TEST_DATA.MEN_PAGE_BOTTOMS_SUB_CATEGORY_LINK_COLOR)
   })
 
-  test('Tops and Bottoms sub-categories have a counter for items from the right side of the relevant link', async () => {
+  test('Tops and Bottoms sub-categories have a counter for items from the right side of the relevant link', async ({ homePage }) => {
     const menPage = await homePage.clickMenLink()
     const subCaregoriesInCategoryBlock = menPage.locators.getSubCaregoriesInCategoryBlock()
 
@@ -48,7 +42,7 @@ test.describe('menPage.spec', () => {
   })
 
   TEST_MEN_DATA.HOT_SELLERS_NAME.forEach((productsName, idx) => {
-    test(`Menu/Men/Hot Sellers Verify user can click on product's name and be redirected to the ${productsName} page`, async ({ page }) => {
+    test(`Menu/Men/Hot Sellers Verify user can click on product's name and be redirected to the ${productsName} page`, async ({ homePage, page }) => {
       const menPage = await homePage.clickMenLink()
       const menHotSellersPage = await menPage.clickMenHotSellersName(productsName)
 
@@ -57,7 +51,7 @@ test.describe('menPage.spec', () => {
     })
   })
 
-  test('Verify redirection to Men-Bottoms page from Men page', async ({ page }) => {
+  test('Verify redirection to Men-Bottoms page from Men page', async ({ homePage, page }) => {
     const menPage = await homePage.clickMenLink()
 
     await homePage.clickMenLink()
@@ -68,7 +62,7 @@ test.describe('menPage.spec', () => {
   })
 
   for (const subCategory in TEST_DATA.MEN_PAGE_SUB_CATEGORY_ENDPOINT_URL) {
-    test(`${subCategory} sub-category link led to the ${subCategory}-Men page`, async ({ page }) => {
+    test(`${subCategory} sub-category link led to the ${subCategory}-Men page`, async ({ homePage, page }) => {
       const subCategoryPageEndpointUrl = TEST_DATA.MEN_PAGE_SUB_CATEGORY_ENDPOINT_URL[subCategory]
 
       const menPage = await homePage.clickMenLink()
