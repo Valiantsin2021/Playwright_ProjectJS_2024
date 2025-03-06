@@ -102,7 +102,7 @@ jobs:
         run: |
           # Combine all downloaded result folders into a single allure-results directory
           mkdir -p final-allure-results
-          cp -r -f allure-results/allure-results-*/* final-allure-results/
+          rsync -av --ignore-existing allure-results/allure-results-*/ final-allure-results/
 
       - name: Load test report history
         uses: actions/checkout@v4
