@@ -24,12 +24,12 @@ class ShoppingCartPage {
   }
 
   async waitForMoveToWishListLink() {
-    await this.locators.getMoveToWishListLink().waitFor()
+    await this.locators.getMoveToWishListLink().waitFor({ state: 'visible' })
 
     return this
   }
   async waitForOrderTotalText() {
-    await this.locators.getOrderTotalText().waitFor()
+    await this.locators.getOrderTotalText().waitFor({ state: 'visible' })
 
     return this
   }

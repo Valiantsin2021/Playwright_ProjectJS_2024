@@ -93,13 +93,13 @@ test.describe('header.spec', () => {
     await expect.soft(header.locators.getCounterNumber()).toHaveText(SHOPING_CART_COUNTER_NUMBER)
   })
 
-  test('<Header/Header logo> Validate website has store logo', async ({ page }) => {
-    const header = new Header(page)
+  test('<Header/Header logo> Validate website has store logo', async ({ homePage }) => {
+    const header = new Header(homePage.page)
 
     await expect.soft(header.locators.getLogoLink()).toBeVisible()
   })
-  test('Verify only shopping cart icon is displayed if no items in the shopping cart', async ({ page }) => {
-    const header = new Header(page)
+  test('Verify only shopping cart icon is displayed if no items in the shopping cart', async ({ homePage }) => {
+    const header = new Header(homePage.page)
 
     await header.locators.getShoppingCart()
     await header.locators.getCounterNumber()

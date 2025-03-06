@@ -1,17 +1,16 @@
+/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import { BASE_URL, CUSTOMER_LOGIN_PAGE_END_POINT_SHORT, MY_ACCOUNT_HEADER, MY_ACCOUNT_PAGE_END_POINT, NEW_USER_DATA, USER_DATA } from '@helpers/testData'
-import { test } from '@pages/base.js'
-import HomePage from '@pages/homePage'
+import { expect, test } from '@pages/base.js'
 import MyAccountPage from '@pages/myAccountPage.js'
-import { expect } from '@playwright/test'
 
 test.describe('My Account', () => {
-  test.beforeEach('Create account', async ({ page }) => {
-    const myAccountPage = new MyAccountPage(page)
+  test.beforeEach('Create account', async ({ homePage, createNewAccount }) => {
+    const myAccountPage = new MyAccountPage(homePage.page)
     await myAccountPage.clickLogoLink()
   })
 
-  test.skip('Veryfy that user name is changed', async ({ page }) => {
-    const homePage = new HomePage(page)
+  test.skip('Veryfy that user name is changed', async ({ homePage }) => {
     const name = USER_DATA.firstName + ' ' + USER_DATA.lastName
     const newName = NEW_USER_DATA.firstName + ' ' + NEW_USER_DATA.lastName
 
@@ -32,9 +31,7 @@ test.describe('My Account', () => {
     await expect.soft(myAccountPage.locators.getGreetting()).toContainText(newName)
   })
 
-  test.skip('Change email and password and verify the User can sign in', async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test.skip('Change email and password and verify the User can sign in', async ({ homePage, page }) => {
     await homePage.clickWelcomeDropdown()
     const myAccountPage = await homePage.clickMyAccountLink()
     const editMyAccountPage = await myAccountPage.clickAccountInformationSidebarLink()
@@ -57,12 +54,9 @@ test.describe('My Account', () => {
     expect.soft(await myAccountPage.getEmailFromContactInformation()).toEqual(NEW_USER_DATA.newEmail)
   })
 
-  test("Verify that clicking on the 'My Account' section name in the menu redirects to the 'My Account' page", async ({ page }) => {
-    const homePage = new HomePage(page)
-
+  test("Verify that clicking on the 'My Account' section name in the menu redirects to the 'My Account' page", async ({ homePage, page }) => {
     await homePage.clickWelcomeDropdown()
     const myAccountPage = await homePage.clickMyAccountLink()
-
     await expect.soft(page).toHaveURL(BASE_URL + MY_ACCOUNT_PAGE_END_POINT)
     await expect.soft(myAccountPage.locators.getMyAccountHeader()).toBeVisible()
     await expect.soft(myAccountPage.locators.getMyAccountHeader()).toHaveText(MY_ACCOUNT_HEADER)

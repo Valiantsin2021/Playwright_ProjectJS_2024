@@ -1,6 +1,5 @@
 import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '@helpers/testData.js'
 import { expect, test } from '@pages/base.js'
-let homePage
 test.describe('menBottomsPage.spec', () => {
   test("Verify men's bottom tab", async ({ homePage, page }) => {
     await homePage.hoverMenLink()
@@ -49,7 +48,7 @@ test.describe('menBottomsPage.spec', () => {
     await expect.soft(menBottomsPage.locators.getMenBottomsDefault12ItemCard()).toHaveCount(12)
     await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterGridText()).toHaveText('Items 1-12 of 24')
   })
-  test('Checking that the list is selected and has 10 positions by defaultBottoms', async () => {
+  test('Checking that the list is selected and has 10 positions by defaultBottoms', async ({ homePage }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
     await menBottomsPage.clickMenBottomsFilterList()
@@ -76,7 +75,7 @@ test.describe('menBottomsPage.spec', () => {
     expect.soft(LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY).toEqual(receivedElements)
   })
 
-  test('Verify that button Clear All can deselecte options', async ({ homePage, page }) => {
+  test('Verify that button Clear All can deselect options', async ({ homePage, page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
 
