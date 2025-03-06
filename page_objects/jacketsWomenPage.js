@@ -2,6 +2,11 @@ import { WOMEN_JACKETS_NAME } from '../helpers/testData'
 import InezFullZipJacketPage from './inezFullZipJacketPage'
 
 class JacketsWomenPage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }

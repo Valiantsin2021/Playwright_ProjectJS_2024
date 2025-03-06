@@ -2,6 +2,11 @@ import { LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS } from '../helpers/te
 import WatchProductPage from '../page_objects/watchProductPage.js'
 
 class GearWatchesPage {
+  /**
+   * Class constructor for BasePage.
+   * @constructor
+   * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   */
   constructor(page) {
     this.page = page
   }
