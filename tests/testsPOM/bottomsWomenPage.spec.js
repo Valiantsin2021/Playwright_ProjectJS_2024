@@ -110,8 +110,8 @@ test.describe('bottomsWomenPage >', () => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
     await bottomsWomenPage.clickOptionPrice()
-
-    await expect.soft(bottomsWomenPage.locators.getOptionPriceFilter()).toBeVisible()
+    const prices = bottomsWomenPage.locators.getOptionPrice()
+    await expect.soft(prices).toBeVisible()
   })
 
   test('Verify a User can deselect all options at once', async ({ homePage }) => {

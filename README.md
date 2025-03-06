@@ -1,4 +1,6 @@
-# Playwright_ProjectJS_2024
+# Playwright_ProjectJS_2024 [![CI](https://github.com/Valiantsin2021/Playwright_ProjectJS_2024/actions/workflows/playwright-shard.yml/badge.svg)](https://github.com/Valiantsin2021/Playwright_ProjectJS_2024/actions/workflows/playwright-shard.yml) ![playwright version](https://img.shields.io/badge/playwright-1.50.1-brightgreen)
+
+[Last run report](https://valiantsin2021.github.io/Playwright_ProjectJS_2024)
 
 This project is a Playwright-based testing framework for the Magento software testing board.
 
@@ -29,6 +31,30 @@ This project is a Playwright-based testing framework for the Magento software te
    ```sh
    npx playwright install
    ```
+
+## Project Structure
+
+The project is structured as follows:
+
+- **`package.json`**: Contains project metadata and dependencies.
+- **`playwright.config.js`**: Playwright configuration file.
+- **`jsconfig.json`**: JavaScript configuration file.
+- **`tsconfig.json`**: TypeScript configuration file.
+- **`eslint.config.js`**: ESLint configuration file.
+- **`prettier.json`**: Prettier configuration file.
+- **`Dockerfile`**: Docker image definition file.
+
+- **`tests`**: Directory containing test scripts.
+- **`test-results`**: Directory for storing test results.
+- **`report`**: Directory for storing test reports.
+- **`page_objects`**: POM (Page Object Model) directory.
+- **`helpers`**: Utility functions and constants directory.
+- **`.hooks`**: Pre-commit hooks directory.
+- **`.github`**: GitHub configuration directory.
+
+## Project scripts
+
+The project comes with a set of scripts that can be used to run tests, generate reports, and clean reports and downloads folders. 
 
 ## Running Tests
 
@@ -68,6 +94,82 @@ This project is a Playwright-based testing framework for the Magento software te
   ```sh
   npm run lint
   ```
+### Static Code Analysis, Formatting, and Pre-commit Hooks Setup
+
+This project uses ESLint and Prettier for static code analysis and formatting, along with pre-commit hooks to ensure code quality.
+
+**ESLint**
+
+ESLint is configured to use the following plugins:
+- `eslint-config-prettier`: Disables ESLint rules that might conflict with Prettier.
+- `eslint-plugin-playwright`: Lints tests.
+
+You can run ESLint with the following command:
+```sh
+npm run lint
+```
+
+ESLint rules can be configured in `eslint.config.mjs` file
+
+**Prettier**
+
+Prettier is used for code formatting. It is configured to run on various file types including JavaScript, TypeScript, and JSON files.
+
+You can format your code with the following command:
+```sh
+npm run format
+```
+
+Prettier rules can be configured in `.prettierrc.json` file
+
+**Pre-commit Hooks**
+
+Pre-commit hooks are set up using lint-staged to run ESLint and Prettier on staged files before committing. This ensures that only properly linted and formatted code is committed.
+
+** To add hooks - copy the contents of the .hooks directory to .git/hooks
+
+On commit the staged code will be automatically formatted and linted. Commit will not be finished if there are linting errors found.
+
+The configuration in package.json is as follows:
+
+```json
+"lint-staged": {
+  "**/*.+(cjs|js|ts|tsx)": [
+    "eslint --fix"
+  ],
+  "**/*.+(cjs|js|ts|json)": [
+    "prettier --cache --write"
+  ]
+}
+```
+
+**Commitlint**
+
+Commitlint (https://commitlint.js.org/) is used to enforce conventional commit messages. It is configured to use the @commitlint/config-conventional preset. 
+
+Rules: https://commitlint.js.org/reference/rules 
+
+Common types according to commitlint-config-conventional can be:
+
+- build
+- chore
+- ci
+- docs
+- feat
+- fix
+- perf
+- refactor
+- revert
+- style
+- test
+- 
+These can be modified by your own configuration.
+
+**Usage**
+
+- Linting: ```npm run lint```
+- Formatting: ```npm run format```
+- Pre-commit hooks: Automatically run on git commit
 
 ## Important Notes
 

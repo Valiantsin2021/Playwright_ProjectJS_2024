@@ -14,9 +14,9 @@ test.describe('myOrders', () => {
     await expect.soft(myOrdersPage.locators.getTitle()).toContainText(MY_ORDERS_HEADER)
   })
 
-  test('OrderHistory', async ({ page, createNewAccount, createNewOrder }) => {
-    const myAccountPage = new MyAccountPage(page)
-    const checkoutOnepageSuccessPage = new CheckoutOnepageSuccessPage(page)
+  test('OrderHistory', async ({ homePage, createNewAccount, createNewOrder }) => {
+    const myAccountPage = new MyAccountPage(homePage.page)
+    const checkoutOnepageSuccessPage = new CheckoutOnepageSuccessPage(homePage.page)
     await checkoutOnepageSuccessPage.waitContinueShoppingButton()
     await checkoutOnepageSuccessPage.clickActionSwitchButton()
     await checkoutOnepageSuccessPage.waitMyAccountLink()

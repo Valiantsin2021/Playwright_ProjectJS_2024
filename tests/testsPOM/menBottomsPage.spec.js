@@ -78,13 +78,10 @@ test.describe('menBottomsPage.spec', () => {
   test('Verify that button Clear All can deselect options', async ({ homePage, page }) => {
     await homePage.hoverMenLink()
     const menBottomsPage = await homePage.clickMenBottomsLink()
-
     await menBottomsPage.clickMenBottomsCategory()
     await menBottomsPage.clickMenBottomsCategoryPants()
-
     const listOfSelectedItems = page.locator('.filter-current')
     await menBottomsPage.clickMenBottomsClearAllButton()
-
-    await expect.soft(listOfSelectedItems).not.toBeVisible()
+    await expect.soft(listOfSelectedItems).toBeHidden()
   })
 })
