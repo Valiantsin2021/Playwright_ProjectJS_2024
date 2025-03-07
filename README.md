@@ -1,6 +1,20 @@
-# Playwright_ProjectJS_2024 [![CI](https://github.com/Valiantsin2021/Playwright_ProjectJS_2024/actions/workflows/playwright-shard.yml/badge.svg)](https://github.com/Valiantsin2021/Playwright_ProjectJS_2024/actions/workflows/playwright-shard.yml) ![playwright version](https://img.shields.io/badge/playwright-1.50.1-brightgreen)
+<h1 align="center">Playwright Project for Testing the Magento Software</h1>
 
-[Last run report](https://valiantsin2021.github.io/Playwright_ProjectJS_2024)
+<p align="center">
+  <img src="https://img.shields.io/github/commit-activity/m/Valiantsin2021/Playwright_ProjectJS_2024">
+  <img src="https://img.shields.io/github/last-commit/Valiantsin2021/Playwright_ProjectJS_2024">
+  <img src="https://img.shields.io/github/contributors/Valiantsin2021/Playwright_ProjectJS_2024">
+  <img src="https://github.com/Valiantsin2021/Playwright_ProjectJS_2024/actions/workflows/playwright-shard.yml/badge.svg">
+  <img src="https://img.shields.io/github/issues/Valiantsin2021/Playwright_ProjectJS_2024">
+  <img src="https://img.shields.io/github/issues-pr/Valiantsin2021/Playwright_ProjectJS_2024">
+  <img src="https://img.shields.io/badge/playwright-1.50.1-brightgreen">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields"/>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg"/>
+</p>
+
+<p align="center">
+<a href="https://valiantsin2021.github.io/Playwright_ProjectJS_2024"> Last run Allure report</a>
+</p>
 
 This project is a Playwright-based testing framework for the Magento software testing board.
 
@@ -31,6 +45,27 @@ This project is a Playwright-based testing framework for the Magento software te
    ```sh
    npx playwright install
    ```
+**Reporters**
+
+Allure reporter with previous runs history is used to generate test reports.
+
+Accessibility reports are generated using val-a11y plugin.
+
+Lighthouse reports are generated using @cypress-audit/lighthouse plugin.
+
+CI pipeline is executed on GitHub Actions and test results are uploaded to Allure report and hosted on GitHub pages. - [Project report](https://valiantsin2021.github.io/Playwright_ProjectJS_2024)
+
+____
+<a id="allureReport"></a>
+## <img width="30" style="vertical-align:middle" title="Allure Report" src="media/allure.svg"> Allure Report Example
+
+<p align="center">
+<a href="https://valiantsin2021.github.io/Playwright_ProjectJS_2024"> Last run Allure report</a>
+</p>
+
+<p align="center">
+  <img title="Allure Report" src="media/allure-report.png">
+</p>
 
 ## Project Structure
 
