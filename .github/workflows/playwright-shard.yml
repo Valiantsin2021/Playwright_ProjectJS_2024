@@ -13,12 +13,23 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
     strategy:
       fail-fast: false
       matrix:
         shardIndex: [1, 2, 3, 4, 5, 6]
         shardTotal: [6]
     steps:
+      - uses: act10ns/slack@v2
+        with:
+          status: starting
+          message: "Starting Playwright tests...${{ matrix.shardIndex }}"
+          matrix: ${{ toJson(matrix) }}
+        if: always()
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -135,3 +146,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+
+      - name: Notify Slack
+        if: always()
+        run: |
+          node ./helpers/reporter.js
