@@ -1,4 +1,4 @@
-import { BASE_URL, WOMEN_TOPS_PAGE_END_POINT, WOMEN_TOPS_STYLE_CATEGORIES } from '@helpers/testWomenData.js'
+import { BASE_URL, WOMEN_TOPS_PAGE_END_POINT, WOMEN_TOPS_STYLE_CATEGORIES } from '@helpers/data/testWomenData.js'
 import { expect, test } from '@pages/base.js'
 import WomenTopsPage from '@pages/womenTopsPage.js'
 

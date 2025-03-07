@@ -1,4 +1,4 @@
-import { ORDERS_AND_RETURNS_HEADER } from '@helpers/testData.js'
+import { ORDERS_AND_RETURNS_HEADER } from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 
 test.describe('ordersAndReturnsPage.spec', () => {

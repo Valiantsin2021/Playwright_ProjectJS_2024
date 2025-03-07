@@ -6,8 +6,8 @@ import {
   SALE_PAGE_END_POINT,
   SALE_SIDE_MENU_SECTIONS,
   WOMEN_SHORTS_PAGE_END_POINT
-} from '@helpers/testData.js'
-import { saleDealsCategories } from '@helpers/testSaleData.js'
+} from '@helpers/data/testData.js'
+import { saleDealsCategories } from '@helpers/data/testSaleData.js'
 import { expect, test } from '@pages/base.js'
 import SalePage from '@pages/salePage.js'
 test.describe('salePage.spec', () => {

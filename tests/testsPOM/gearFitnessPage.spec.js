@@ -1,5 +1,11 @@
 import { expect, test } from '@pages/base.js'
-import { BASE_URL, GEAR_FITNESS_NUMBER_ITEMS_IN_GRID_MODE, GEAR_FITNESS_NUMBER_ITEMS_IN_LIST_MODE, GEAR_FITNESS_PAGE_END_POINT, SORTED_LIST_FITNESS_PAGE_ENDPOINT } from '../../helpers/testData.js'
+import {
+  BASE_URL,
+  GEAR_FITNESS_NUMBER_ITEMS_IN_GRID_MODE,
+  GEAR_FITNESS_NUMBER_ITEMS_IN_LIST_MODE,
+  GEAR_FITNESS_PAGE_END_POINT,
+  SORTED_LIST_FITNESS_PAGE_ENDPOINT
+} from '../../helpers/data/testData.js'
 
 test.describe('gearFitnessPage.spec', () => {
   test('verify navigation path to the fitness equipment page', async ({ homePage }) => {

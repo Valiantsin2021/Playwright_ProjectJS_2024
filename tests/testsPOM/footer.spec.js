@@ -9,7 +9,7 @@ import {
   SEARCH_ADVANCED_PAGE_HEADER,
   SEARCH_TERMS_POPULAR_PAGE_END_POINT,
   SEARCH_TERMS_POPULAR_PAGE_HEADER
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import Footer from '@pages/footer.js'
 import SearchTermPopularPage from '@pages/searchTermPopularPage.js'

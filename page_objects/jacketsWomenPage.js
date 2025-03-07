@@ -1,4 +1,4 @@
-import { WOMEN_JACKETS_NAME } from '../helpers/testData'
+import { WOMEN_JACKETS_NAME } from '../helpers/data/testData'
 import InezFullZipJacketPage from './inezFullZipJacketPage'
 
 class JacketsWomenPage {

@@ -1,4 +1,4 @@
-import { LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS } from '../helpers/testData.js'
+import { LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS } from '../helpers/data/testData.js'
 import WatchProductPage from '../page_objects/watchProductPage.js'
 
 class GearWatchesPage {

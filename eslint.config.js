@@ -12,8 +12,7 @@ module.exports = [
       sourceType: 'module',
       globals: {
         ...globals.node,
-        ...globals.browser,
-        __ENV: 'readonly'
+        ...globals.browser
       }
     },
     rules: {

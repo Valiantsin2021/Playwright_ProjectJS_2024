@@ -1,4 +1,4 @@
-import { ITEMS, WARNING_MESSAGE_NO_RESULTS } from '../helpers/testData'
+import { ITEMS, WARNING_MESSAGE_NO_RESULTS } from '../helpers/data/testData'
 
 class SearchNoResultsPage {
   /**

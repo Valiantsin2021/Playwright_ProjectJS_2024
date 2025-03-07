@@ -1,4 +1,4 @@
-import { email, EMAIL_WISHLIST, password, PASSWORD_WISHLIST } from '../helpers/testData'
+import { email, EMAIL_WISHLIST, password, PASSWORD_WISHLIST } from '../helpers/data/testData'
 import CreateAccountPage from './createAccountPage'
 import HomePage from './homePage'
 import WishListPage from './wishListPage'

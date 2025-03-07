@@ -1,5 +1,5 @@
+import { BASE_URL, WHATS_NEW_PAGE_END_POINT, WHATS_NEW_PAGE_HEADER } from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
-import { BASE_URL, WHATS_NEW_PAGE_END_POINT, WHATS_NEW_PAGE_HEADER } from '@helpers/testData.js'
 import WhatsNewPage from '@pages/whatsNewPage.js'
 
 test.describe('whatIsNewPage.spec', () => {

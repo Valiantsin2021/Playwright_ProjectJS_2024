@@ -1,4 +1,4 @@
-import { LOGO_ALIGNMENT, MY_ACCOUNT_CREATE_END_POINT, NAVBAR_URLs_END_POINTS } from '@helpers/testData.js'
+import { LOGO_ALIGNMENT, MY_ACCOUNT_CREATE_END_POINT, NAVBAR_URLs_END_POINTS } from '@helpers/data/testData.js'
 import HomePage from '@pages/homePage.js'
 import Logo from '@pages/logo'
 import { expect, test } from '@playwright/test'

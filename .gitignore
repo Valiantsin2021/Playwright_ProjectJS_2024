@@ -5,3 +5,4 @@
 /playwright/.cache/
 node_modules/
 /report
+.env

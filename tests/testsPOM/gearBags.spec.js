@@ -1,7 +1,7 @@
+import { BASE_URL, GEAR_BAGS_HEADER, GEAR_BAGS_PAGE_END_POINT } from '@helpers/data/testData.js'
+import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES } from '@helpers/data/testGearBagsData'
+import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '@helpers/data/testGearBagsData.js'
 import { expect, test } from '@pages/base.js'
-import { BASE_URL, GEAR_BAGS_HEADER, GEAR_BAGS_PAGE_END_POINT } from '@helpers/testData.js'
-import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES } from '@helpers/testGearBagsData'
-import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '@helpers/testGearBagsData.js'
 import GearBagsPage from '@pages/gearBagsPage.js'
 let homePage
 test.describe('gearBags.spec', () => {

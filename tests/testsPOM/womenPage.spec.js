@@ -1,4 +1,4 @@
-import { BASE_URL, BOTTOMS_WOMEN_PAGE_END_POINT, TEES_WOMEN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT, WOMEN_BOTTOMS_HEADER, WOMEN_TOPS_HEADER } from '@helpers/testData.js'
+import { BASE_URL, BOTTOMS_WOMEN_PAGE_END_POINT, TEES_WOMEN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT, WOMEN_BOTTOMS_HEADER, WOMEN_TOPS_HEADER } from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import BottomsWomenPage from '@pages/bottomsWomenPage.js'
 import TopsWomenPage from '@pages/topsWomenPage.js'

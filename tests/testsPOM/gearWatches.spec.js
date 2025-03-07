@@ -4,7 +4,7 @@ import {
   LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE,
   LIST_OF_SHOPPING_OPTIONS_ON_WATCHES_PAGE_LOCATORS,
   LIST_OF_SUBMENU_ITEMS_EXPECTED
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import GearWatchesPage from '@pages/gearWatchesPage.js'
 import WatchProductPage from '@pages/watchProductPage.js'
