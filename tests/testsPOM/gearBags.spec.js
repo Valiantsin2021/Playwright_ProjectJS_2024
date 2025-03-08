@@ -3,7 +3,6 @@ import { ACTIVE_PAGE_CLASS_PAGINATION, ACTIVE_PAGE_TEXT, MATERIAL_OPTION_NAMES }
 import { GEAR_BAGES_SECOND_PAGE_END_POINT } from '@helpers/data/testGearBagsData.js'
 import { expect, test } from '@pages/base.js'
 import GearBagsPage from '@pages/gearBagsPage.js'
-let homePage
 test.describe('gearBags.spec', () => {
   test.beforeEach(async ({ homePage }) => {
     await homePage.hoverGearMenuItem()

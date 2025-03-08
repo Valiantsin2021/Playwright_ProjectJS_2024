@@ -1,6 +1,5 @@
 import { expect, test } from '@pages/base'
 import SignInPage from '@pages/signInPage'
-let homePage
 test.describe('menBottomWishList.spec', () => {
   test.beforeEach(async ({ homePage, page }) => {
     await homePage.clickSignInLink()

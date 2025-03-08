@@ -1,8 +1,9 @@
-const fs = require('fs')
-const { createCanvas } = require('canvas')
-const axios = require('axios')
-const FormData = require('form-data')
-const dotenv = require('dotenv')
+import axios from 'axios'
+import { createCanvas } from 'canvas'
+import dotenv from 'dotenv'
+import FormData from 'form-data'
+import fs from 'fs'
+
 dotenv.config()
 function readAllureData() {
   try {

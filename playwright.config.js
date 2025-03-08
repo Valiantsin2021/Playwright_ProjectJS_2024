@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 import 'dotenv/config'
 
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './tests/testsPOM',
   testMatch: '**/*.spec.js',
   fullyParallel: true,
