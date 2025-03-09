@@ -1,0 +1,416 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: salePage.spec >> Check that Shorts link opens the corresponding page
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/salePage.spec.js:21:5
+
+# Error details
+
+```
+Error: page.goto: Test timeout of 60000ms exceeded.
+Call log:
+  - navigating to "https://magento.softwaretestingboard.com/", waiting until "load"
+
+    at HomePage.open (/home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/page_objects/homePage.js:101:21)
+    at Object.homePage (/home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/page_objects/base.js:16:5)
+```
+
+# Page snapshot
+
+```yaml
+- paragraph:
+  - text: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at
+  - link "[email protected]"
+  - text: .
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- main:
+  - heading "Home Page" [level=1]
+  - insertion
+  - link "New Luma Yoga Collection Get fit and look fab in new seasonal styles Shop New Yoga":
+    - text: New Luma Yoga Collection
+    - strong: Get fit and look fab in new seasonal styles
+    - text: Shop New Yoga
+  - insertion
+  - heading "Hot Sellers" [level=2]
+  - paragraph: "Here is what`s trending on Luma right now"
+  - paragraph
+  - list:
+    - listitem:
+      - link "Radiant Tee":
+        - img "Radiant Tee"
+      - strong:
+        - link "Radiant Tee"
+      - text: "Rating:   60%"
+      - link "3 Reviews"
+      - text: As low as $22.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+        - option "Orange"
+        - option "Purple"
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Breathe-Easy Tank":
+        - img "Breathe-Easy Tank"
+      - strong:
+        - link "Breathe-Easy Tank"
+      - text: "Rating:   70%"
+      - link "2 Reviews"
+      - text: As low as $34.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Purple"
+        - option "White"
+        - option "Yellow"
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Argus All-Weather Tank":
+        - img "Argus All-Weather Tank"
+      - strong:
+        - link "Argus All-Weather Tank"
+      - text: As low as $22.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Gray"
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Hero Hoodie":
+        - img "Hero Hoodie"
+      - strong:
+        - link "Hero Hoodie"
+      - text: As low as $54.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Black"
+        - option "Gray"
+        - option "Green"
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Fusion Backpack":
+        - img "Fusion Backpack"
+      - strong:
+        - link "Fusion Backpack"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: $59.00
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Push It Messenger Bag":
+        - img "Push It Messenger Bag"
+      - strong:
+        - link "Push It Messenger Bag"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: $45.00
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+  - paragraph
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import { getRandomNumber } from './../helpers/testUtils.js'
+   2 | import ArgusAllWeatherTankPage from './argusAllWeatherTankPage.js'
+   3 | import BottomsWomenPage from './bottomsWomenPage.js'
+   4 | import BreatheEasyTankPage from './breatheEasyTankPage.js'
+   5 | import CreateAccountPage from './createAccountPage.js'
+   6 | import Footer from './footer.js'
+   7 | import FusionBackpackPage from './fusionbackpackPage.js'
+   8 | import GearBagsPage from './gearBagsPage.js'
+   9 | import GearFitnessPage from './gearFitnessPage.js'
+   10 | import GearPage from './gearPage.js'
+   11 | import GearWatchesPage from './gearWatchesPage.js'
+   12 | import HeroHoodiePage from './heroHoodiePage.js'
+   13 | import JacketsWomenPage from './jacketsWomenPage.js'
+   14 | import MenBottomsPage from './menBottomsPage'
+   15 | import MenPage from './menPage'
+   16 | import MenTopsPage from './menTopsPage.js'
+   17 | import MyAccountPage from './myAccountPage.js'
+   18 | import OrdersAndReturnsPage from './ordersAndReturnsPage.js'
+   19 | import ProductCardPage from './productCardPage.js'
+   20 | import PushItMessengerBagPage from './pushItMessengerBagPage.js'
+   21 | import RadiantTeePage from './radiantTeePage.js'
+   22 | import SalePage from './salePage.js'
+   23 | import SearchTermPopularPage from './searchTermPopularPage.js'
+   24 | import SignInPage from './signInPage.js'
+   25 | import TopsWomenPage from './topsWomenPage.js'
+   26 | import TrainingPage from './trainingPage.js'
+   27 | import WhatsNewPage from './whatsNewPage.js'
+   28 | import WomenPage from './womenPage.js'
+   29 | import WomenTopsPage from './womenTopsPage.js'
+   30 |
+   31 | class HomePage {
+   32 |   /**
+   33 |    * Class constructor for BasePage.
+   34 |    * @constructor
+   35 |    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   36 |    */
+   37 |   constructor(page) {
+   38 |     this.page = page
+   39 |   }
+   40 |
+   41 |   locators = {
+   42 |     getWhatsNewLink: () => this.page.getByRole('menuitem', { name: "What's New" }),
+   43 |     getWomenLink: () => this.page.locator(".nav-sections .navigation li a[href$='/women.html']"),
+   44 |     getWomenItemLink: () => this.page.getByRole('menuitem', { name: 'Women' }),
+   45 |     getMenLink: () => this.page.getByRole('menuitem', { name: 'Men' }).last(),
+   46 |     getMenBottomsLink: () => this.page.getByRole('menuitem', { name: 'Bottoms' }),
+   47 |     getSearchInputField: () => this.page.getByPlaceholder('Search entire store here...'),
+   48 |     getWaitForAutocompleteSearchItems: () => this.page.waitForSelector('#search_autocomplete>ul>li>span:first-child'),
+   49 |     getAutocompleteSearchItems: () => this.page.locator('#search_autocomplete>ul>li>span:first-child'),
+   50 |     getSearchButton: () => this.page.locator('button[title="Search"]'),
+   51 |     getRadiantTee: () => this.page.getByTitle('Radiant Tee'),
+   52 |     getTrainingLink: () => this.page.getByRole('menuitem', { name: 'Training' }),
+   53 |     getCreateAccountLink: () => this.page.getByRole('link', { name: 'Create an Account' }),
+   54 |     getSignInLinck: () => this.page.getByRole('link', { name: 'Sign In' }),
+   55 |     getMenTopsLink: () => this.page.locator('#ui-id-17'),
+   56 |     getBottomsWomenLink: () => this.page.getByRole('menuitem', { name: 'Bottoms' }),
+   57 |     getSearchTermPopularLink: () => this.page.getByRole('link', { name: 'Search Terms' }),
+   58 |     getFirstCardImage: () => this.page.getByAltText('Radiant Tee'),
+   59 |     getDropdownWishList: () => this.page.getByRole('banner').getByText('My Account My Wish List Sign'),
+   60 |     getSaleLink: () => this.page.locator('#ui-id-8'),
+   61 |     getHotSellersXSSizeButton: () => this.page.getByRole('option', { name: 'XS' }),
+   62 |     getHotSellersBlueColor: () => this.page.getByRole('option', { name: 'Blue' }),
+   63 |     getHotSellersAddToCartButton: () => this.page.getByTitle('Add to Cart'),
+   64 |     getWomenCategories: () => this.page.locator('.nav-2 > ul > li > a'),
+   65 |     getGearMenuItem: () => this.page.getByRole('menuitem', { name: 'Gear' }),
+   66 |     getGearBagsSubmenuItem: () => this.page.getByRole('menuitem', { name: 'Bags' }),
+   67 |     getGearWatchesSubmenuItem: () => this.page.getByRole('menuitem', { name: 'Watches' }),
+   68 |     getFirstCardName: () => this.page.locator('a[title="Radiant Tee"]'),
+   69 |     getNavigationMenuItemsList: () => this.page.getByRole('navigation').getByRole('listitem'),
+   70 |     getOrdersAndReturnsLink: () => this.page.locator('.page-wrapper footer li:has-text("Orders and Returns")'),
+   71 |     getGearBagsLink: () => this.page.getByRole('menuitem').filter({ hasText: 'Bags' }),
+   72 |     getFirstCardReviews: () => this.page.locator('a.action.view[href*="radiant-tee"]'),
+   73 |     getSecondCardName: () => this.page.locator('a[title="Breathe-Easy Tank"]'),
+   74 |     getSecondCardImage: () => this.page.getByAltText('Breathe-Easy Tank'),
+   75 |     getWomenTopsLink: () => this.page.getByRole('menuitem', { name: 'Tops' }),
+   76 |     getSecondCardReviews: () => this.page.locator('a[class="action view"][href*="breathe-easy-tank"]'),
+   77 |     getThirdCardImage: () => this.page.getByAltText('Argus All-Weather Tank'),
+   78 |     getThirdCardName: () => this.page.locator('a[title="Argus All-Weather Tank"]'),
+   79 |     getFourthCardName: () => this.page.getByAltText('Hero Hoodie'),
+   80 |     getFourthCardImage: () => this.page.getByAltText('Hero Hoodie'),
+   81 |     getFifthCardImage: () => this.page.getByAltText('Fusion Backpack'),
+   82 |     getFifthCardName: () => this.page.locator('a[title="Fusion Backpack"]'),
+   83 |     getFifthCardReviews: () => this.page.locator('.action.view[href*="fusion-backpack"]'),
+   84 |     getSixthCardImage: () => this.page.getByAltText('Push It Messenger Bag'),
+   85 |     getSixthCardName: () => this.page.locator('a[title="Push It Messenger Bag"]'),
+   86 |     getSixthCardReviews: () => this.page.locator('a[class="action view"][href*="push-it-messenger-bag"]'),
+   87 |     getHotSellersCardLink: () => this.page.locator('.product-item-photo'),
+   88 |     getGreetingName: name => this.page.locator('[class="panel header"]').filter({ hasText: `Welcome, ${name}` }),
+   89 |     getWelcomeDropdown: () => this.page.locator('[class="panel header"] span[role="button"]'),
+   90 |     getMyAccountLink: () => this.page.getByRole('link', { name: 'My Account' }),
+   91 |     getGearFitnessEquipmentSubmenuItem: () => this.page.getByRole('menuitem', { name: 'Fitness Equipment' }),
+   92 |     getMainMenuLinks: () => this.page.locator('.level-top.ui-corner-all'),
+   93 |     getHotSellersSection: () => this.page.getByRole('heading', { name: 'Hot Sellers' }),
+   94 |     getWomenJacketslink: () => this.page.getByRole('menuitem', { name: 'Jackets' })
+   95 |   }
+   96 |
+   97 |   async open() {
+   98 |     await this.page.addLocatorHandler(this.page.getByRole('button', { name: 'AGREE', exact: true }), async () => {
+   99 |       await this.page.getByRole('button', { name: 'AGREE', exact: true }).click()
+  100 |     })
+> 101 |     await this.page.goto('/')
+      |                     ^ Error: page.goto: Test timeout of 60000ms exceeded.
+  102 |   }
+  103 |
+  104 |   async clickWhatsNewLink() {
+  105 |     await this.locators.getWhatsNewLink().click()
+  106 |
+  107 |     return new WhatsNewPage(this.page)
+  108 |   }
+  109 |
+  110 |   async clickWomenLink() {
+  111 |     await this.locators.getWomenLink().click()
+  112 |
+  113 |     return new WomenPage(this.page)
+  114 |   }
+  115 |
+  116 |   async clickMenLink() {
+  117 |     await this.locators.getMenLink().click()
+  118 |
+  119 |     return new MenPage(this.page)
+  120 |   }
+  121 |
+  122 |   async clickTrainingLink() {
+  123 |     await this.locators.getTrainingLink().click()
+  124 |
+  125 |     return new TrainingPage(this.page)
+  126 |   }
+  127 |
+  128 |   async hoverMenLink() {
+  129 |     await this.page.waitForTimeout(3000)
+  130 |     await this.locators.getMenLink().hover()
+  131 |
+  132 |     return this
+  133 |   }
+  134 |
+  135 |   async clickMenBottomsLink() {
+  136 |     await this.locators.getMenBottomsLink().click()
+  137 |
+  138 |     return new MenBottomsPage(this.page)
+  139 |   }
+  140 |
+  141 |   async fillSearchInputField(searchQuerry) {
+  142 |     await this.locators.getSearchInputField().fill(searchQuerry)
+  143 |
+  144 |     return this
+  145 |   }
+  146 |
+  147 |   async executeSearchAutocompleteList() {
+  148 |     await this.locators.getWaitForAutocompleteSearchItems()
+  149 |     const searchAutocompleteList = await this.locators.getAutocompleteSearchItems().allInnerTexts()
+  150 |
+  151 |     return searchAutocompleteList
+  152 |   }
+  153 |
+  154 |   async clearSearchInputField() {
+  155 |     await this.locators.getSearchInputField().clear()
+  156 |
+  157 |     return this
+  158 |   }
+  159 |
+  160 |   async clickRadiantTee() {
+  161 |     await this.locators.getRadiantTee().click()
+  162 |
+  163 |     return new RadiantTeePage(this.page)
+  164 |   }
+  165 |
+  166 |   async clickCreateAccountLink() {
+  167 |     await this.locators.getCreateAccountLink().click()
+  168 |
+  169 |     return new CreateAccountPage(this.page)
+  170 |   }
+  171 |
+  172 |   async clickMenTopsLink() {
+  173 |     await this.locators.getMenTopsLink().click()
+  174 |
+  175 |     return new MenTopsPage(this.page)
+  176 |   }
+  177 |
+  178 |   async clickBottomsWomenLink() {
+  179 |     await this.locators.getBottomsWomenLink().click()
+  180 |
+  181 |     return new BottomsWomenPage(this.page)
+  182 |   }
+  183 |
+  184 |   async hoverWomenMenuitem() {
+  185 |     await this.page.waitForTimeout(3000)
+  186 |     await this.locators.getWomenLink().hover()
+  187 |
+  188 |     return this
+  189 |   }
+  190 |
+  191 |   async clickSearchTermPopularLink() {
+  192 |     await this.locators.getSearchTermPopularLink().click()
+  193 |
+  194 |     return new SearchTermPopularPage(this.page)
+  195 |   }
+  196 |
+  197 |   async clickFirstCardImage() {
+  198 |     await this.locators.getFirstCardImage().click()
+  199 |
+  200 |     return new RadiantTeePage(this.page)
+  201 |   }
+```
+
+# Local changes
+
+```diff
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index b848d9b..a204fd2 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -7,7 +7,8 @@ import fs from 'fs'
+ dotenv.config()
+ function readAllureData() {
+   try {
+-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+```

@@ -1,0 +1,199 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: myOrders >> checkMyOrdersLink
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/myOrders.spec.js:9:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'My Orders' })
+
+    at MyAccountPage.clickMyOrdersLink (/home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/page_objects/myAccountPage.js:31:43)
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/myOrders.spec.js:11:46
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- main:
+  - heading "Create New Customer Account" [level=1]
+  - alert:
+    - text:  There is already an account with this email address. If you are sure that it is your email address,
+    - link "click here"
+    - text: to get your password and access your account.
+  - group "Personal Information":
+    - text: Personal Information First Name*
+    - textbox "First Name*": Angelina-Maria
+    - text: Last Name*
+    - textbox "Last Name*": O'Neel
+  - group "Sign-in Information":
+    - text: Sign-in Information Email*
+    - textbox "Email*": 3259tvk3@gmail.com
+    - text: Password*
+    - textbox "Password*"
+    - text: "Password Strength: No Password Confirm Password*"
+    - textbox "Confirm Password*"
+    - text: "* Required Fields"
+  - button "Create an Account"
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import { THANKS_MESSAGE } from '../helpers/data/testData'
+   2 | import EditAccountInformation from './editAccountInformationPage'
+   3 | import HomePage from './homePage'
+   4 | import MyOrdersPage from './myOrdersPage'
+   5 | import WomenPage from './womenPage'
+   6 |
+   7 | class MyAccountPage {
+   8 |   /**
+   9 |    * Class constructor for BasePage.
+  10 |    * @constructor
+  11 |    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+  12 |    */
+  13 |   constructor(page) {
+  14 |     this.page = page
+  15 |   }
+  16 |
+  17 |   locators = {
+  18 |     getMyAccountHeader: () => this.page.getByRole('heading', { name: 'My Account' }),
+  19 |     getThanksMessage: () => this.page.getByRole('alert').getByText(THANKS_MESSAGE),
+  20 |     getMyOrdersLink: () => this.page.getByRole('link', { name: 'My Orders' }),
+  21 |     getWomenLink: () => this.page.getByText('Women'),
+  22 |     getLogoLink: () => this.page.getByRole('link', { name: 'store logo' }),
+  23 |     getEditLink: () => this.page.getByRole('link', { name: 'Edit', exact: true }),
+  24 |     getNameInContactInformation: () => this.page.locator('[class="column main"] div:nth-child(5) [class="box-content"] p'),
+  25 |     getGreetingName: name => this.page.locator('[class="panel header"]').filter({ hasText: `Welcome, ${name}` }),
+  26 |     getGreetting: () => this.page.locator('[class="panel header"] [class="greet welcome"]'),
+  27 |     getAccountInformationSidebarLink: () => this.page.locator('[class="nav items"] li:nth-child(7)')
+  28 |   }
+  29 |
+  30 |   async clickMyOrdersLink() {
+> 31 |     await this.locators.getMyOrdersLink().click()
+     |                                           ^ Error: locator.click: Test timeout of 60000ms exceeded.
+  32 |
+  33 |     return new MyOrdersPage(this.page)
+  34 |   }
+  35 |
+  36 |   async clickWomenLink() {
+  37 |     await this.locators.getWomenLink().click()
+  38 |
+  39 |     return new WomenPage(this.page)
+  40 |   }
+  41 |
+  42 |   async waitForMyAccountHeader() {
+  43 |     await this.locators.getMyAccountHeader().waitFor()
+  44 |
+  45 |     return this
+  46 |   }
+  47 |
+  48 |   async clickLogoLink() {
+  49 |     await this.locators.getLogoLink().click()
+  50 |
+  51 |     return new HomePage(this.page)
+  52 |   }
+  53 |
+  54 |   async clickEditLink() {
+  55 |     await this.locators.getEditLink().click()
+  56 |
+  57 |     return new EditAccountInformation(this.page)
+  58 |   }
+  59 |
+  60 |   async getGreetingNameText(name) {
+  61 |     return await this.locators.getGreetingName(name).innerText()
+  62 |   }
+  63 |
+  64 |   async getGreetingName() {
+  65 |     return await this.locators.getGreetting().innerText()
+  66 |   }
+  67 |
+  68 |   async clickAccountInformationSidebarLink() {
+  69 |     await this.locators.getAccountInformationSidebarLink().click()
+  70 |
+  71 |     return new EditAccountInformation(this.page)
+  72 |   }
+  73 |
+  74 |   async getEmailFromContactInformation() {
+  75 |     return (await this.locators.getNameInContactInformation().innerText()).split('\n')[1]
+  76 |   }
+  77 | }
+  78 |
+  79 | export default MyAccountPage
+  80 |
+```
+
+# Local changes
+
+```diff
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index b848d9b..a204fd2 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -7,7 +7,8 @@ import fs from 'fs'
+ dotenv.config()
+ function readAllureData() {
+   try {
+-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+```

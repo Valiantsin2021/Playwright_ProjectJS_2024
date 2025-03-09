@@ -1,0 +1,501 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: menTops >> verify the ability to sort products in descending order by price
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menTops.spec.js:141:3
+
+# Error details
+
+```
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 7
++ Received  + 7
+
+  Array [
+-   32,
++   18,
++   18,
++   18,
+    29,
+    29,
++   22,
++   28,
++   24,
++   32,
+    29,
+    29,
+    29,
+-   28,
+-   24,
+-   22,
+-   18,
+-   18,
+-   18,
+  ]
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menTops.spec.js:155:25
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - link "Men"
+    - text: 
+  - listitem:
+    - strong: Tops
+- main:
+  - heading "Tops Items 1-12 of 48" [level=1]: Tops
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List":  List
+  - paragraph: Items 1-12 of 48
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Ascending Direction"
+  - list:
+    - listitem:
+      - link "Cassius Sparring Tank":
+        - img "Cassius Sparring Tank"
+      - strong:
+        - link "Cassius Sparring Tank"
+      - text: As low as $18.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Atlas Fitness Tank":
+        - img "Atlas Fitness Tank"
+      - strong:
+        - link "Atlas Fitness Tank"
+      - text: As low as $18.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Tiberius Gym Tank":
+        - img "Tiberius Gym Tank"
+      - strong:
+        - link "Tiberius Gym Tank"
+      - text: As low as $18.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Sinbad Fitness Tank":
+        - img "Sinbad Fitness Tank"
+      - strong:
+        - link "Sinbad Fitness Tank"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Sparta Gym Tank":
+        - img "Sparta Gym Tank"
+      - strong:
+        - link "Sparta Gym Tank"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Argus All-Weather Tank":
+        - img "Argus All-Weather Tank"
+      - strong:
+        - link "Argus All-Weather Tank"
+      - text: As low as $22.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Gray"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Vulcan Weightlifting Tank":
+        - img "Vulcan Weightlifting Tank"
+      - strong:
+        - link "Vulcan Weightlifting Tank"
+      - text: As low as $28.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Black"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Rocco Gym Tank":
+        - img "Rocco Gym Tank"
+      - strong:
+        - link "Rocco Gym Tank"
+      - text: As low as $24.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Helios Endurance Tank":
+        - img "Helios Endurance Tank"
+      - strong:
+        - link "Helios Endurance Tank"
+      - text: "Rating:   70%"
+      - link "4 Reviews"
+      - text: As low as $32.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Primo Endurance Tank":
+        - img "Primo Endurance Tank"
+      - strong:
+        - link "Primo Endurance Tank"
+      - text: "Rating:   53%"
+      - link "3 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Blue"
+        - option "Red"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Tristan Endurance Tank":
+        - img "Tristan Endurance Tank"
+      - strong:
+        - link "Tristan Endurance Tank"
+      - text: "Rating:   80%"
+      - link "3 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Gray"
+        - option "Red"
+        - option "White"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Erikssen CoolTech™ Fitness Tank":
+        - img "Erikssen CoolTech™ Fitness Tank"
+      - strong:
+        - link "Erikssen CoolTech™ Fitness Tank"
+      - text: "Rating:   55%"
+      - link "4 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "XS"
+        - option "S"
+        - option "M"
+        - option "L"
+        - option "XL"
+      - listbox "Color":
+        - option "Gray"
+        - option "Orange"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link "Page 3"
+    - listitem:
+      - link "Page 4"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option "12" [selected]
+    - option "24"
+    - option "36"
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Style "
+    - tab "Size "
+    - tab "Climate "
+    - tab "Color "
+    - tab "Eco Collection "
+    - tab "Erin Recommends "
+    - tab "Material "
+    - tab "New "
+    - tab "Pattern "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   55 |     expect.soft(await menTopsPage.getMenTopsPriceListProductCountPseudoElementBefore()).toEqual('(')
+   56 |     expect.soft(await menTopsPage.getMenTopsPriceListProductCountPseudoElementAfter()).toEqual(')')
+   57 |   })
+   58 |
+   59 |   MEN_TOPS_PRICE_LIST.forEach((priceRange, index) => {
+   60 |     test(`After applying a ${priceRange} price filter, apropriate products are displayed on the page`, async ({ homePage }) => {
+   61 |       await homePage.hoverMenLink()
+   62 |       const menTopsPage = await homePage.clickMenTopsLink()
+   63 |       await menTopsPage.expandMenTopsPriceFilterDropDown()
+   64 |       await menTopsPage.clickMenTopsPriceRange(index)
+   65 |
+   66 |       expect.soft(await menTopsPage.getShoppingOptionFilterValues()).toEqual([MEN_TOPS_PRICE_LIST[index]])
+   67 |       expect.soft(await menTopsPage.getMinProductItemPrice()).toBeGreaterThanOrEqual(await menTopsPage.getPriceFilterMinThreshold())
+   68 |       expect.soft(await menTopsPage.getMaxProductItemPrice()).toBeLessThanOrEqual(await menTopsPage.getPriceFilterMaxThreshold())
+   69 |     })
+   70 |   })
+   71 |
+   72 |   test('Verify that Men/Tops price filter is eliminated after clicking on the Clear All button', async ({ homePage }) => {
+   73 |     await homePage.hoverMenLink()
+   74 |     const menTopsPage = await homePage.clickMenTopsLink()
+   75 |     await menTopsPage.expandMenTopsPriceFilterDropDown()
+   76 |     await menTopsPage.applyFirstMenTopsPriceFilter()
+   77 |
+   78 |     expect.soft(await menTopsPage.getToolBarAmount()).not.toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
+   79 |
+   80 |     await menTopsPage.clickClearAllButton()
+   81 |
+   82 |     expect.soft((await menTopsPage.getToolBarAmount()).trim()).toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
+   83 |   })
+   84 |
+   85 |   test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async ({ homePage, page }) => {
+   86 |     await homePage.hoverMenLink()
+   87 |     const menTopsPage = await homePage.clickMenTopsLink()
+   88 |
+   89 |     for (let i = 0; i < LIST_LABELS_SUB_CATEGORY.length; i++) {
+   90 |       await menTopsPage.clickMenTopsCategory()
+   91 |       await menTopsPage.clickCategoryOption(i)
+   92 |
+   93 |       const labelLocator = await menTopsPage.locators.getLabelForEachCategory()
+   94 |
+   95 |       await expect.soft(labelLocator).toContain(LIST_LABELS_SUB_CATEGORY[i])
+   96 |       expect.soft(page).toHaveURL(MEN_TOPS_CATEGORY_PAGES_END_POINT[i])
+   97 |       await menTopsPage.clickClearAllButton()
+   98 |       await expect.soft(page).toHaveURL(BASE_URL + MEN_TOPS_PAGE_END_POINT)
+   99 |     }
+  100 |   })
+  101 |
+  102 |   test.skip('Verify the count for each subCategory on Tops page is the same as count of items on each specific page', async ({ homePage }) => {
+  103 |     await homePage.hoverMenLink()
+  104 |     const menTopsPage = await homePage.clickMenTopsLink()
+  105 |
+  106 |     const maxCountOnPage = 12
+  107 |
+  108 |     for (let i = 0; i < LIST_OF_COUNT_SUB_CATEGORY_ON_MEN_TOPS_PAGE.length; i++) {
+  109 |       await menTopsPage.clickMenTopsCategory()
+  110 |       const countItemInTopPage = parseInt(await menTopsPage.locators.getCountForEachCategory(i).innerText(), 10)
+  111 |       await menTopsPage.clickCategoryOption(i)
+  112 |
+  113 |       let totalItemCountPerPage = 0
+  114 |
+  115 |       const countOfItemsInPage = await menTopsPage.countSubcategoryItems()
+  116 |       totalItemCountPerPage += countOfItemsInPage
+  117 |
+  118 |       if (countItemInTopPage > maxCountOnPage) {
+  119 |         await menTopsPage.clickNextPage()
+  120 |         const countOfItemsInNextPage = await menTopsPage.countSubcategoryItems()
+  121 |         totalItemCountPerPage += countOfItemsInNextPage
+  122 |       }
+  123 |
+  124 |       expect.soft(totalItemCountPerPage).toEqual(countItemInTopPage)
+  125 |       await menTopsPage.clickClearAllButton()
+  126 |     }
+  127 |   })
+  128 |   test('verify the ability to sort products in ascending order by price', async ({ homePage, page }) => {
+  129 |     await homePage.hoverMenLink()
+  130 |     const menTopsPage = await homePage.clickMenTopsLink()
+  131 |     await menTopsPage.locators.getSortByLocator().selectOption('Position')
+  132 |     await menTopsPage.locators.getSortByLocator().selectOption('Price')
+  133 |     await expect.soft(menTopsPage.locators.getAscOrderLocator().first()).toBeVisible()
+  134 |     await expect.soft(menTopsPage.locators.getProductsPriceLocator().first()).toBeVisible()
+  135 |
+  136 |     const prices = await page.$$eval('.product-items .price', elements => elements.map(element => parseInt(element.textContent.trim().replace(/[^\d.]/g, ''), 10)))
+  137 |     const sortedPrices = prices.slice().sort((a, b) => a - b)
+  138 |     expect.soft(prices).toEqual(sortedPrices)
+  139 |   })
+  140 |
+  141 |   test('verify the ability to sort products in descending order by price', async ({ homePage, page }) => {
+  142 |     await homePage.hoverMenLink()
+  143 |     const menTopsPage = await homePage.clickMenTopsLink()
+  144 |     await menTopsPage.locators.getSortByLocator().selectOption('Position')
+  145 |     await menTopsPage.locators.getSortByLocator().selectOption('Price')
+  146 |     await menTopsPage.hoverGetDescOrderLink()
+  147 |     await menTopsPage.clickGetDescOrderLink()
+  148 |
+  149 |     await expect.soft(menTopsPage.locators.getDescOrderLocator().first()).toBeVisible()
+  150 |     await expect.soft(menTopsPage.locators.getProductsPriceLocator().first()).toBeVisible()
+  151 |
+  152 |     const prices = await page.$$eval('.product-items .price', elements => elements.map(element => parseInt(element.textContent.trim().replace(/[^\d.]/g, ''), 10)))
+  153 |     const sortedPrices = prices.slice().sort((a, b) => b - a)
+  154 |
+> 155 |     expect.soft(prices).toEqual(sortedPrices)
+      |                         ^ Error: expect(received).toEqual(expected) // deep equality
+  156 |   })
+  157 | })
+  158 |
+```
+
+# Local changes
+
+```diff
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index b848d9b..a204fd2 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -7,7 +7,8 @@ import fs from 'fs'
+ dotenv.config()
+ function readAllureData() {
+   try {
+-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+```

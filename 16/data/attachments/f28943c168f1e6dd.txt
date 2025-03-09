@@ -1,0 +1,480 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: menBottomsPage.spec >> Checking that the list is selected and has 10 positions by defaultBottoms
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menBottomsPage.spec.js:51:3
+
+# Error details
+
+```
+Error: Timed out 15000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('#maincontent').getByRole('paragraph')
+Expected pattern: /\s*?Items 1-10 of 24\s+?/
+Received string:  "
+            Items 1-12 of 24    "
+Call log:
+  - expect.soft.toHaveText with timeout 15000ms
+  - waiting for locator('#maincontent').getByRole('paragraph')
+    18 × locator resolved to <p id="toolbar-amount" class="toolbar-amount">…</p>
+       - unexpected value "
+            Items 1-12 of 24    "
+
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menBottomsPage.spec.js:57:87
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - link "Men"
+    - text: 
+  - listitem:
+    - strong: Bottoms
+- main:
+  - heading "Bottoms Items 1-12 of 24" [level=1]: Bottoms
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List":  List
+  - paragraph: Items 1-12 of 24
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Pierce Gym Short":
+        - img "Pierce Gym Short"
+      - strong:
+        - link "Pierce Gym Short"
+      - text: As low as $27.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Gray"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Arcadio Gym Short":
+        - img "Arcadio Gym Short"
+      - strong:
+        - link "Arcadio Gym Short"
+      - text: As low as $20.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Sol Active Short":
+        - img "Sol Active Short"
+      - strong:
+        - link "Sol Active Short"
+      - text: As low as $32.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Blue"
+        - option "Green"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Troy Yoga Short":
+        - img "Troy Yoga Short"
+      - strong:
+        - link "Troy Yoga Short"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: As low as $24.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Orestes Fitness Short":
+        - img "Orestes Fitness Short"
+      - strong:
+        - link "Orestes Fitness Short"
+      - text: "Rating:   60%"
+      - link "2 Reviews"
+      - text: As low as $35.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Rapha Sports Short":
+        - img "Rapha Sports Short"
+      - strong:
+        - link "Rapha Sports Short"
+      - text: "Rating:   87%"
+      - link "3 Reviews"
+      - text: As low as $35.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Lono Yoga Short":
+        - img "Lono Yoga Short"
+      - strong:
+        - link "Lono Yoga Short"
+      - text: "Rating:   70%"
+      - link "2 Reviews"
+      - text: As low as $32.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Blue"
+        - option "Gray"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Hawkeye Yoga Short":
+        - img "Hawkeye Yoga Short"
+      - strong:
+        - link "Hawkeye Yoga Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Gray"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Torque Power Short":
+        - img "Torque Power Short"
+      - strong:
+        - link "Torque Power Short"
+      - text: "Rating:   60%"
+      - link "3 Reviews"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Gray"
+        - option "Purple"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Meteor Workout Short":
+        - img "Meteor Workout Short"
+      - strong:
+        - link "Meteor Workout Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Apollo Running Short":
+        - img "Apollo Running Short"
+      - strong:
+        - link "Apollo Running Short"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Cobalt CoolTech™ Fitness Short":
+        - img "Cobalt CoolTech™ Fitness Short"
+      - strong:
+        - link "Cobalt CoolTech™ Fitness Short"
+      - text: "Rating:   80%"
+      - link "3 Reviews"
+      - text: As low as $44.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option "12" [selected]
+    - option "24"
+    - option "36"
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Style "
+    - tab "Size "
+    - tab "Climate "
+    - tab "Color "
+    - tab "Eco Collection "
+    - tab "Erin Recommends "
+    - tab "Material "
+    - tab "New "
+    - tab "Pattern "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import { BASE_URL, ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE, LIST_CATEGORY_MEN_BOTTOMS, LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY, MEN_BOTTOMS_PAGE_END_POINT } from '@helpers/data/testData.js'
+   2 | import { expect, test } from '@pages/base.js'
+   3 | test.describe('menBottomsPage.spec', () => {
+   4 |   test("Verify men's bottom tab", async ({ homePage, page }) => {
+   5 |     await homePage.hoverMenLink()
+   6 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+   7 |
+   8 |     await expect.soft(page).toHaveURL(BASE_URL + MEN_BOTTOMS_PAGE_END_POINT)
+   9 |     await expect.soft(menBottomsPage.locators.getBottomsHeading()).toBeVisible()
+  10 |   })
+  11 |
+  12 |   test('verify the sidebar is on the left', async ({ homePage }) => {
+  13 |     await homePage.hoverMenLink()
+  14 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+  15 |
+  16 |     await expect.soft(menBottomsPage.locators.getMenBottomsShopingOptionsSidebarTitle()).toBeVisible()
+  17 |
+  18 |     const positionOfSidebar = await menBottomsPage.getPositionOfSidebar()
+  19 |
+  20 |     expect.soft(positionOfSidebar).toBe('left')
+  21 |   })
+  22 |
+  23 |   LIST_CATEGORY_MEN_BOTTOMS.forEach((name, i) => {
+  24 |     test(`verify the user can select ${name} subcategory from the dropdown`, async ({ homePage, page }) => {
+  25 |       await homePage.hoverMenLink()
+  26 |       const menBottomsPage = await homePage.clickMenBottomsLink()
+  27 |
+  28 |       await expect.soft(page).toHaveURL(BASE_URL + MEN_BOTTOMS_PAGE_END_POINT)
+  29 |
+  30 |       await menBottomsPage.hoverMenBottomsCategory()
+  31 |       await menBottomsPage.clickMenBottomsCategory()
+  32 |       await page.waitForLoadState('load')
+  33 |       await menBottomsPage.hoverMenBottomsSubCategory(i)
+  34 |       await menBottomsPage.clickMenBottomsSubCategory(i)
+  35 |
+  36 |       await expect.soft(menBottomsPage.locators.getMenBottomsCategoryValue(i)).toContainText(LIST_CATEGORY_MEN_BOTTOMS[i])
+  37 |       await expect.soft(page).toHaveURL(BASE_URL + MEN_BOTTOMS_PAGE_END_POINT + ID_PARAMETERS_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE[i])
+  38 |
+  39 |       await menBottomsPage.clickMenBottomsClearCategoryFilter()
+  40 |     })
+  41 |   })
+  42 |
+  43 |   test('Checking that the grid is selected and has 12 positions by defaultBottoms', async ({ homePage }) => {
+  44 |     await homePage.hoverMenLink()
+  45 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+  46 |
+  47 |     await expect.soft(menBottomsPage.locators.getMenBottomsFilterGrid()).toHaveClass(/active/)
+  48 |     await expect.soft(menBottomsPage.locators.getMenBottomsDefault12ItemCard()).toHaveCount(12)
+  49 |     await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterGridText()).toHaveText(/\s*?Items 1-12 of 24\s*?/)
+  50 |   })
+  51 |   test('Checking that the list is selected and has 10 positions by defaultBottoms', async ({ homePage }) => {
+  52 |     await homePage.hoverMenLink()
+  53 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+  54 |     await menBottomsPage.clickMenBottomsFilterList()
+  55 |
+  56 |     await expect.soft(menBottomsPage.locators.getMenBottomsDefault10ItemCardList()).toHaveCount(10)
+> 57 |     await expect.soft(menBottomsPage.locators.getMenBottomsParagraphFilterListText()).toHaveText(/\s*?Items 1-10 of 24\s+?/)
+     |                                                                                       ^ Error: Timed out 15000ms waiting for expect(locator).toHaveText(expected)
+  58 |     await expect.soft(menBottomsPage.locators.getMenBottomsFilterList()).toHaveClass(/active/)
+  59 |   })
+  60 |
+  61 |   test('verify that the quantity of available items is visible', async ({ homePage, page }) => {
+  62 |     await homePage.hoverMenLink()
+  63 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+  64 |
+  65 |     await expect.soft(page).toHaveURL(BASE_URL + MEN_BOTTOMS_PAGE_END_POINT)
+  66 |     await page.waitForLoadState('load')
+  67 |
+  68 |     await menBottomsPage.hoverMenBottomsCategory()
+  69 |     await menBottomsPage.clickMenBottomsCategory()
+  70 |
+  71 |     await expect.soft(menBottomsPage.locators.getMenBottomsCategoryListOfItemsLocator().first()).toBeVisible()
+  72 |
+  73 |     const receivedElements = (await menBottomsPage.locators.getMenBottomsCategoryListOfItemsLocator().allInnerTexts()).map(item => item.replace('\n', ' '))
+  74 |
+  75 |     expect.soft(LIST_CATEGORY_MEN_BOTTOMS_WITH_QUANTITY).toEqual(receivedElements)
+  76 |   })
+  77 |
+  78 |   test('Verify that button Clear All can deselect options', async ({ homePage, page }) => {
+  79 |     await homePage.hoverMenLink()
+  80 |     const menBottomsPage = await homePage.clickMenBottomsLink()
+  81 |     await menBottomsPage.clickMenBottomsCategory()
+  82 |     await menBottomsPage.clickMenBottomsCategoryPants()
+  83 |     const listOfSelectedItems = page.locator('.filter-current')
+  84 |     await menBottomsPage.clickMenBottomsClearAllButton()
+  85 |     await expect.soft(listOfSelectedItems).toBeHidden()
+  86 |   })
+  87 | })
+  88 |
+```
+
+# Local changes
+
+```diff
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index b848d9b..a204fd2 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -7,7 +7,8 @@ import fs from 'fs'
+ dotenv.config()
+ function readAllureData() {
+   try {
+-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+```

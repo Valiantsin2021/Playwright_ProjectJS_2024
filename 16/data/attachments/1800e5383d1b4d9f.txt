@@ -1,0 +1,214 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Sign in flow validation >> Verify login to existing account @smoke
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/testsPOM_advanced/auth/sign-in.spec.js:21:3
+
+# Error details
+
+```
+Error: Timed out 15000ms waiting for expect(locator).toContainText(expected)
+
+Locator: locator('.box.box-information')
+- Expected string  -  1
++ Received string  + 18
+
+- rr1opp1j3@test.com
++
++             
++                 Contact Information
++             
++             
++                 
++                     Alan Mays
++                     [email protected]
++                 
++                             
++             
++                 
++                     Edit
++                 
++                 
++                     Change Password                
++             
++         
+Call log:
+  - expect.soft.toContainText with timeout 15000ms
+  - waiting for locator('.box.box-information')
+    18 × locator resolved to <div class="box box-information">…</div>
+       - unexpected value "
+            
+                Contact Information
+            
+            
+                
+                    Alan Mays
+                    [email protected]
+                
+                            
+            
+                
+                    Edit
+                
+                
+                    Change Password                
+            
+        "
+
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/testsPOM_advanced/auth/sign-in.spec.js:26:52
+```
+
+# Page snapshot
+
+```yaml
+- paragraph:
+  - text: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at
+  - link "[email protected]"
+  - text: .
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem: Welcome, Alan Mays!
+    - listitem:
+      - button "Change ":
+        - button "Change "
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- main:
+  - heading "My Account" [level=1]
+  - strong: Account Information
+  - strong: Contact Information
+  - paragraph:
+    - text: Alan Mays
+    - link "[email protected]"
+  - link "Edit"
+  - link "Change Password"
+  - strong: Address Book
+  - link "Manage Addresses"
+  - strong: Default Billing Address
+  - text: You have not set a default billing address.
+  - link "Edit Address"
+  - strong: Default Shipping Address
+  - text: You have not set a default shipping address.
+  - link "Edit Address"
+  - strong: My Account
+  - list:
+    - listitem:
+      - strong: My Account
+    - listitem:
+      - link "My Orders"
+    - listitem:
+      - link "My Downloadable Products"
+    - listitem:
+      - link "My Wish List"
+    - listitem
+    - listitem:
+      - link "Address Book"
+    - listitem:
+      - link "Account Information"
+    - listitem:
+      - link "Stored Payment Methods"
+    - listitem
+    - listitem:
+      - link "My Product Reviews"
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import { account } from '@helpers/constants/account-const'
+   2 | import { fakeCredentials } from '@helpers/constants/auth-const'
+   3 | import { generateRandomString } from '@helpers/utils'
+   4 | import { expect, test } from '@pages/basePO'
+   5 |
+   6 | test.describe('Sign in flow validation', async () => {
+   7 |   let randomEmail
+   8 |
+   9 |   test.beforeEach(async ({ authPage }) => {
+  10 |     randomEmail = `${generateRandomString()}${fakeCredentials.EMAIL_SUFFIX}`
+  11 |     // Navigate to the form
+  12 |     await authPage.open()
+  13 |     await authPage.createAccountButton.click()
+  14 |     // Add new account
+  15 |     await authPage.addNewAccount(fakeCredentials.FIRST_NAME, fakeCredentials.LAST_NAME, randomEmail, fakeCredentials.PASSWORD)
+  16 |     // Wait for welcome message to appear
+  17 |     await expect.soft(authPage.welcomeMessage).toContainText(`Welcome, ${fakeCredentials.FIRST_NAME} ${fakeCredentials.LAST_NAME}`)
+  18 |     await authPage.signOut()
+  19 |   })
+  20 |
+  21 |   test('Verify login to existing account @smoke', async ({ authPage, accountPage }) => {
+  22 |     // Sign in to existing account
+  23 |     await authPage.signIn(randomEmail, fakeCredentials.PASSWORD)
+  24 |     // Verify new user info is visible
+  25 |     await expect.soft(authPage.pageTitle).toHaveText(account.NEW_TITLE)
+> 26 |     await expect.soft(accountPage.userInformation).toContainText(randomEmail)
+     |                                                    ^ Error: Timed out 15000ms waiting for expect(locator).toContainText(expected)
+  27 |   })
+  28 |
+  29 |   test.afterAll(async () => {
+  30 |     // ! TODO: discuss with team UX for account deletion
+  31 |   })
+  32 | })
+  33 |
+```
+
+# Local changes
+
+```diff
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index b848d9b..a204fd2 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -7,7 +7,8 @@ import fs from 'fs'
+ dotenv.config()
+ function readAllureData() {
+   try {
+-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+```
