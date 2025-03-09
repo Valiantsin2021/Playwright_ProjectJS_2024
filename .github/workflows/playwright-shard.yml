@@ -151,4 +151,4 @@ jobs:
         if: always()
         run: |
           npm ci
-          find . -type f -name "summary.json" | xargs -I {} node ./helpers/reporter.js {}
+          node ./helpers/reporter.js ./allure-report/widgets/summary.json
