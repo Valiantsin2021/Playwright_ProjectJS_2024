@@ -1,8 +1,8 @@
-const prettier = require('eslint-config-prettier')
-const playwright = require('eslint-plugin-playwright')
-const globals = require('globals')
+import prettier from 'eslint-config-prettier'
+import playwright from 'eslint-plugin-playwright'
+import globals from 'globals'
 
-module.exports = [
+export default [
   {
     plugins: { prettier, playwright },
     files: ['page_objects/**/*.js', 'tests/**/*.js', 'helpers/**/*.js'],
@@ -12,8 +12,7 @@ module.exports = [
       sourceType: 'module',
       globals: {
         ...globals.node,
-        ...globals.browser,
-        __ENV: 'readonly'
+        ...globals.browser
       }
     },
     rules: {

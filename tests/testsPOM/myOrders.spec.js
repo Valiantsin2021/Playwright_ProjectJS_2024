@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '@helpers/testData.js'
+import { BASE_URL, MY_ORDERS_HEADER, MY_ORDERS_PAGE_END_POINT } from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import CheckoutOnepageSuccessPage from '@pages/checkoutOnepageSuccessPage.js'
 import MyAccountPage from '@pages/myAccountPage.js'

@@ -6,8 +6,8 @@ import {
   LIST_STYLE_MEN_TOPS,
   MEN_TOPS_CATEGORY_PAGES_END_POINT,
   MEN_TOPS_PAGE_END_POINT
-} from '@helpers/testData.js'
-import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '@helpers/testMenData.js'
+} from '@helpers/data/testData.js'
+import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '@helpers/data/testMenData.js'
 import { expect, test } from '@pages/base.js'
 test.describe('menTops', () => {
   test("Check the name of 14 shopping styles in the Men's/Tops section.", async ({ homePage, page }) => {

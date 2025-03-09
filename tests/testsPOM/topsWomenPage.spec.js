@@ -1,8 +1,8 @@
 import { expect, test } from '@pages/base.js'
 
-import { BASE_URL, CUSTOMER_USER_DATA, CUSTOMER_WISH_LIST_END_POINT, JACKET_ITEMS, MY_WISH_LIST_EMPTY_MESSAGE, SIGN_IN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT } from '@helpers/testData.js'
+import { BASE_URL, CUSTOMER_USER_DATA, CUSTOMER_WISH_LIST_END_POINT, JACKET_ITEMS, MY_WISH_LIST_EMPTY_MESSAGE, SIGN_IN_PAGE_END_POINT, TOPS_WOMEN_PAGE_END_POINT } from '@helpers/data/testData.js'
+import { MODE_GRID_ACTIVE_ATTR_CLASS, MODE_LIST_ACTIVE_ATTR_CLASS } from '@helpers/data/testWomenData.js'
 import { getRandomNumber, urlToRegexPattern } from '@helpers/testUtils.js'
-import { MODE_GRID_ACTIVE_ATTR_CLASS, MODE_LIST_ACTIVE_ATTR_CLASS } from '@helpers/testWomenData.js'
 test.describe('topWomenPage.spec', () => {
   test('verify message displayed in Wish List Section for Empty Wish List', async ({ homePage, page }) => {
     const womenPage = await homePage.hoverWomenMenuitem()

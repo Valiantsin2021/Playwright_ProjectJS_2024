@@ -9,7 +9,7 @@ import {
   SHOPING_CART_COUNTER_NUMBER,
   shoppingItem1,
   shoppingItem2
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import Header from '@pages/header.js'
 import ShippingPage from '@pages/shippingPage.js'

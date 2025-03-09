@@ -1,7 +1,7 @@
 name: Playwright Tests
 on:
-  pull_request:
-    branches: [main]
+  # pull_request:
+  #   branches: [main]
 
   workflow_dispatch:
 
@@ -38,7 +38,7 @@ jobs:
         with:
           path: |
             node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -48,7 +48,7 @@ jobs:
         with:
           path: |
             ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-playwright-
 

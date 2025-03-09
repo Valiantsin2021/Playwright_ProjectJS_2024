@@ -1,4 +1,4 @@
-import { MessageComparisonList } from '@helpers/testData'
+import { MessageComparisonList } from '@helpers/data/testData'
 import { expect, test } from '@pages/base'
 import JacketsWomenPage from '@pages/jacketsWomenPage'
 

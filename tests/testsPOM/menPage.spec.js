@@ -1,7 +1,6 @@
-import * as TEST_DATA from '@helpers/testData.js'
-import * as TEST_MEN_DATA from '@helpers/testMenData.js'
+import * as TEST_DATA from '@helpers/data/testData.js'
+import * as TEST_MEN_DATA from '@helpers/data/testMenData.js'
 import { expect, test } from '@pages/base.js'
-let homePage
 test.describe('menPage.spec', () => {
   test('Menu/Men available to click, see clothes only for men', async ({ homePage, page }) => {
     const menPage = await homePage.clickMenLink()

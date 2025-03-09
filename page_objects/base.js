@@ -1,5 +1,5 @@
 import * as base from '@playwright/test'
-import { ADRESS_DATA, USER_DATA } from '../helpers/testData'
+import { ADRESS_DATA, USER_DATA } from '../helpers/data/testData'
 import HomePage from './homePage'
 import MyAccountPage from './myAccountPage'
 /**

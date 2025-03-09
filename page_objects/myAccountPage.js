@@ -1,4 +1,4 @@
-import { THANKS_MESSAGE } from '../helpers/testData'
+import { THANKS_MESSAGE } from '../helpers/data/testData'
 import EditAccountInformation from './editAccountInformationPage'
 import HomePage from './homePage'
 import MyOrdersPage from './myOrdersPage'

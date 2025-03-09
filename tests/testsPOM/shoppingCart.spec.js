@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-import { BASE_URL, EMPTY_CARD_MESSAGE, SHOPPING_CART_END_POINT, WOMEN_JACKETS_NAME } from '@helpers/testData.js'
+import { BASE_URL, EMPTY_CARD_MESSAGE, SHOPPING_CART_END_POINT, WOMEN_JACKETS_NAME } from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import MyAccountPage from '@pages/myAccountPage.js'
 

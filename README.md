@@ -18,6 +18,18 @@
 
 This project is a Playwright-based testing framework for the Magento software testing board.
 
+## Tech Stack
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/RUNS%20WITH%20GITHUB%20ACTIONS-BLUE?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RUNS%20ON%20DOCKER%20CONTAINER-BLUE?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Allure-EB5A5A?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</p>
+
 ## Prerequisites
 
 - Node.js (version 22 or higher)

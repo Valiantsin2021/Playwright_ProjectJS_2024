@@ -1,5 +1,5 @@
-import { LIST_OF_COUNT_SUB_CATEGORY_ON_MEN_TOPS_PAGE, LIST_OF_SUB_CATEGORY_ON_MEN_TOPS_PAGE_LOCATORS, SHOPPING_OPTIONS_FILTER_VALUE } from '../helpers/testData.js'
-import { MEN_TOPS_PRICE_LIST_LOCATORS } from '../helpers/testMenData.js'
+import { LIST_OF_COUNT_SUB_CATEGORY_ON_MEN_TOPS_PAGE, LIST_OF_SUB_CATEGORY_ON_MEN_TOPS_PAGE_LOCATORS, SHOPPING_OPTIONS_FILTER_VALUE } from '../helpers/data/testData.js'
+import { MEN_TOPS_PRICE_LIST_LOCATORS } from '../helpers/data/testMenData.js'
 import ProductCardPage from '../page_objects/productCardPage.js'
 
 class MenTopsPage {

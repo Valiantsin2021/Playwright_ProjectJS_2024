@@ -5,8 +5,8 @@ import {
   EXPECTED_NUMBER_PRODUCTS_STYLEs_BOTTOMS_WOMEN,
   PRODUCT_LIST,
   WOMEN_BOTTOMS_CATEGORIES_STYLEs_END_POINT
-} from '@helpers/testData.js'
-import { WOMEN_BOTTOMS_CATEGORIES, WOMEN_BOTTOMS_SIZE } from '@helpers/testWomenData.js'
+} from '@helpers/data/testData.js'
+import { WOMEN_BOTTOMS_CATEGORIES, WOMEN_BOTTOMS_SIZE } from '@helpers/data/testWomenData.js'
 import { expect, test } from '@pages/base.js'
 test.describe('bottomsWomenPage >', () => {
   test('Verify the availability of a list of 9 category in the "Style" option drop-down list', async ({ homePage }) => {

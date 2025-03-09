@@ -26,7 +26,7 @@ jobs:
       - uses: act10ns/slack@v2
         with:
           status: starting
-          message: "Starting Playwright tests...${{ matrix.shardIndex }}"
+          message: 'Starting Playwright tests...${{ matrix.shardIndex }}'
           matrix: ${{ toJson(matrix) }}
         if: always()
 
@@ -57,7 +57,7 @@ jobs:
         with:
           path: |
             node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -67,7 +67,7 @@ jobs:
         with:
           path: |
             ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-playwright-
 
@@ -78,7 +78,7 @@ jobs:
 
       - name: Install Playwright Browser Chrome
         if: steps.cache-playwright.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
       - name: Run Static analysis
         run: npm run check
@@ -150,4 +150,5 @@ jobs:
       - name: Notify Slack
         if: always()
         run: |
+          npm ci
           node ./helpers/reporter.js

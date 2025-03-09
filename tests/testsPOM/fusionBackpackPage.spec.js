@@ -1,5 +1,5 @@
+import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '@helpers/data/testFusionbackpackData.js'
 import { expect, test } from '@pages/base.js'
-import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '@helpers/testFusionbackpackData.js'
 import FusionBackpackPage from '@pages/fusionbackpackPage.js'
 
 test.describe('fusionBackpackPage.spec', () => {

@@ -2,14 +2,13 @@ import {
   BASE_URL,
   FOOTER_LINK_NAME,
   FOOTER_LINKs_URLs_END_POINTS,
-  FOOTER_ORDERS_AND_RETURNS_PAGE_END_POINT,
   NOTES_PAGE_URL,
   ORDERS_AND_RETURNS_PAGE_FIELDS,
   SEARCH_ADVANCED_PAGE_END_POINT,
   SEARCH_ADVANCED_PAGE_HEADER,
   SEARCH_TERMS_POPULAR_PAGE_END_POINT,
   SEARCH_TERMS_POPULAR_PAGE_HEADER
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import Footer from '@pages/footer.js'
 import SearchTermPopularPage from '@pages/searchTermPopularPage.js'
@@ -89,17 +88,5 @@ test.describe('footer.spec', () => {
     await homePage.getFooter().clickNotesLink()
     const notesPage = await pagePromise
     await expect.soft(notesPage).toHaveURL(NOTES_PAGE_URL)
-  })
-
-  test.fixme('"Order and Returns” link redirects to the page, and displays particular fields', async ({ homePage, page }) => {
-    const footerPage = new Footer(page)
-    await expect.soft(page).toHaveURL(BASE_URL + FOOTER_ORDERS_AND_RETURNS_PAGE_END_POINT)
-
-    const fields = await footerPage.locators.getOrdersAndReturnsPageFields()
-
-    for (let i = 0; i < ORDERS_AND_RETURNS_PAGE_FIELDS.length; i++) {
-      const field = fields[i]
-      await expect.soft(field).toHaveText(ORDERS_AND_RETURNS_PAGE_FIELDS[i])
-    }
   })
 })

@@ -1,8 +1,9 @@
-const fs = require('fs')
-const { createCanvas } = require('canvas')
-const axios = require('axios')
-const FormData = require('form-data')
-const dotenv = require('dotenv')
+import axios from 'axios'
+import { createCanvas } from 'canvas'
+import dotenv from 'dotenv'
+import FormData from 'form-data'
+import fs from 'fs'
+
 dotenv.config()
 function readAllureData() {
   try {
@@ -133,14 +134,14 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
     formData.append(
       'initial_comment',
       `*Test Results for Last run results Allure report on ${environment} environment*\n\n
-        • *Duration:* ${data.durationFormatted} ⏳\n
-        • *Passed:* ✅ ${data.passed}\n
-        • *Failed:* ❌ ${data.failed}\n
-        • *Broken:* 🔨 ${data.broken}\n
-        • *Skipped:* 🚩 ${data.skipped}\n
-        • *Unknown:* ❓ ${data.unknown}\n
+         ⏳ *Duration:* ${data.durationFormatted}\n
+         ✅ *Passed:* ${data.passed}\n
+         ❌ *Failed:* ${data.failed}\n
+         🔨 *Broken:* ${data.broken}\n
+         🚩 *Skipped:* ${data.skipped}\n
+         ❓ *Unknown:* ${data.unknown}\n
 
-        Report available at: https://valiantsin2021.github.io/Playwright_ProjectJS_2024`
+        *Report available at:* <https://valiantsin2021.github.io/Playwright_ProjectJS_2024|Report>`
     )
 
     const response = await axios.post('https://slack.com/api/files.upload', formData, {

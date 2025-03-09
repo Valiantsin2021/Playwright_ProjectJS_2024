@@ -24,7 +24,7 @@ import {
   WHATS_NEW_PAGE_HEADER,
   WOMEN_BOTTOMS_HEADER,
   WOMEN_CATEGORIES
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import SearchNoResultsPage from '@pages/searchNoResultsPage.js'
 import SearchResultsJacketPage from '@pages/searchResultsJacketPage.js'

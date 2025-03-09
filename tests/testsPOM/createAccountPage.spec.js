@@ -18,7 +18,7 @@ import {
   PASSWORD_CONFIRM,
   SIGN_IN_END_POINT,
   THANKS_MESSAGE
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base.js'
 import CreateAccountPage from '@pages/createAccountPage.js'
 import MyAccountPage from '@pages/myAccountPage.js'

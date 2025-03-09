@@ -1,6 +1,6 @@
 import MenPage from './menPage'
 
-import { LIST_CATEGORY_MEN_BOTTOMS, LIST_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE_LOCATORS } from '../helpers/testData'
+import { LIST_CATEGORY_MEN_BOTTOMS, LIST_OF_SUB_CATEGORY_ON_MEN_BOTTOMS_PAGE_LOCATORS } from '../helpers/data/testData'
 import PierceGymShortPage from './pierceGymShortPage'
 
 class MenBottomsPage {

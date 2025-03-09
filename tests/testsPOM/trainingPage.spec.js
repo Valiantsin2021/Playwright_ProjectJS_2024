@@ -12,7 +12,7 @@ import {
   TRAINING_PAGE_VIDEODOWNLOAD_URL,
   TRAINING_URL,
   VIDEODOWNLOAD_PAGE_HEADER
-} from '@helpers/testData.js'
+} from '@helpers/data/testData.js'
 import { expect, test } from '@pages/base'
 
 test.describe('trainingPage.spec', () => {
