@@ -67,7 +67,7 @@ jobs:
         with:
           path: |
             ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-playwright-
 
@@ -78,7 +78,7 @@ jobs:
 
       - name: Install Playwright Browser Chrome
         if: steps.cache-playwright.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
       - name: Run Static analysis
         run: npm run check
