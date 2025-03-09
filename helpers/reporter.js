@@ -7,7 +7,8 @@ import fs from 'fs'
 dotenv.config()
 function readAllureData() {
   try {
-    const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
+    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
+    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
     return {
       passed: summaryData.statistic.passed || 0,
       failed: summaryData.statistic.failed || 0,
