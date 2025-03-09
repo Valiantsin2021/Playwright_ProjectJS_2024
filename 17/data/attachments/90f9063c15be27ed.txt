@@ -1,0 +1,585 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: menTops >> Check the name of 14 shopping styles in the Men's/Tops section.
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menTops.spec.js:13:3
+
+# Error details
+
+```
+Error: expect(locator).toContainText(expected)
+
+Locator: locator('a[href*= "men/tops-men.html?style_general"]').nth(3)
+Expected string: "Hooded"
+Received: <element(s) not found>
+Call log:
+  - expect.soft.toContainText with timeout 15000ms
+  - waiting for locator('a[href*= "men/tops-men.html?style_general"]').nth(3)
+
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/menTops.spec.js:18:80
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - link "Men"
+    - text: 
+  - listitem:
+    - strong: Bottoms
+- main:
+  - heading "Bottoms Items 1-12 of 24" [level=1]: Bottoms
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List":  List
+  - paragraph: Items 1-12 of 24
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Pierce Gym Short":
+        - img "Pierce Gym Short"
+      - strong:
+        - link "Pierce Gym Short"
+      - text: As low as $27.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Gray"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Arcadio Gym Short":
+        - img "Arcadio Gym Short"
+      - strong:
+        - link "Arcadio Gym Short"
+      - text: As low as $20.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Sol Active Short":
+        - img "Sol Active Short"
+      - strong:
+        - link "Sol Active Short"
+      - text: As low as $32.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Blue"
+        - option "Green"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Troy Yoga Short":
+        - img "Troy Yoga Short"
+      - strong:
+        - link "Troy Yoga Short"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: As low as $24.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Orestes Fitness Short":
+        - img "Orestes Fitness Short"
+      - strong:
+        - link "Orestes Fitness Short"
+      - text: "Rating:   60%"
+      - link "2 Reviews"
+      - text: As low as $35.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Rapha Sports Short":
+        - img "Rapha Sports Short"
+      - strong:
+        - link "Rapha Sports Short"
+      - text: "Rating:   87%"
+      - link "3 Reviews"
+      - text: As low as $35.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Lono Yoga Short":
+        - img "Lono Yoga Short"
+      - strong:
+        - link "Lono Yoga Short"
+      - text: "Rating:   70%"
+      - link "2 Reviews"
+      - text: As low as $32.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Blue"
+        - option "Gray"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Hawkeye Yoga Short":
+        - img "Hawkeye Yoga Short"
+      - strong:
+        - link "Hawkeye Yoga Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Gray"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Torque Power Short":
+        - img "Torque Power Short"
+      - strong:
+        - link "Torque Power Short"
+      - text: "Rating:   60%"
+      - link "3 Reviews"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Gray"
+        - option "Purple"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Meteor Workout Short":
+        - img "Meteor Workout Short"
+      - strong:
+        - link "Meteor Workout Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Green"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Apollo Running Short":
+        - img "Apollo Running Short"
+      - strong:
+        - link "Apollo Running Short"
+      - text: As low as $32.50
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Cobalt CoolTech™ Fitness Short":
+        - img "Cobalt CoolTech™ Fitness Short"
+      - strong:
+        - link "Cobalt CoolTech™ Fitness Short"
+      - text: "Rating:   80%"
+      - link "3 Reviews"
+      - text: As low as $44.00
+      - listbox "Size":
+        - option "32"
+        - option "33"
+        - option "34"
+        - option "36"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option "12" [selected]
+    - option "24"
+    - option "36"
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Style " [expanded] [selected]
+    - tabpanel:
+      - list:
+        - listitem:
+          - link "Base Layer (15 item )"
+        - listitem:
+          - link "Compression (5 item )"
+        - listitem:
+          - link "Leggings (4 item )"
+        - listitem:
+          - link "Sweatpants (8 item )"
+        - listitem:
+          - link "Tights (1 item )"
+        - listitem:
+          - link "Track Pants (10 item )"
+        - listitem:
+          - link "Workout Pants (23 item )"
+    - tab "Size "
+    - tab "Climate "
+    - tab "Color "
+    - tab "Eco Collection "
+    - tab "Erin Recommends "
+    - tab "Material "
+    - tab "New "
+    - tab "Pattern "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import {
+   2 |   BASE_URL,
+   3 |   LIST_CATEGORY_MEN_TOPS,
+   4 |   LIST_LABELS_SUB_CATEGORY,
+   5 |   LIST_OF_COUNT_SUB_CATEGORY_ON_MEN_TOPS_PAGE,
+   6 |   LIST_STYLE_MEN_TOPS,
+   7 |   MEN_TOPS_CATEGORY_PAGES_END_POINT,
+   8 |   MEN_TOPS_PAGE_END_POINT
+   9 | } from '@helpers/data/testData.js'
+   10 | import { MEN_TOPS_PRICE_LIST, MEN_TOPS_PRICE_LIST_PRODUCT_COUNT, MEN_TOPS_TOTAL_TOOLBAR_AMOUNT } from '@helpers/data/testMenData.js'
+   11 | import { expect, test } from '@pages/base.js'
+   12 | test.describe('menTops', () => {
+   13 |   test("Check the name of 14 shopping styles in the Men's/Tops section.", async ({ homePage, page }) => {
+   14 |     await homePage.hoverMenLink()
+   15 |     const menTopsPage = await homePage.clickMenTopsLink()
+   16 |     await menTopsPage.clickMenTopsStyle()
+   17 |     for (let index = 0; index < LIST_STYLE_MEN_TOPS.length; index++) {
+>  18 |       await expect.soft(menTopsPage.locators.getMenTopsListStyle().nth(index)).toContainText(LIST_STYLE_MEN_TOPS[index])
+      |                                                                                ^ Error: expect(locator).toContainText(expected)
+   19 |     }
+   20 |     await expect.soft(page).toHaveURL(BASE_URL + MEN_TOPS_PAGE_END_POINT)
+   21 |   })
+   22 |
+   23 |   test('check quantity of items is displayed', async ({ homePage }) => {
+   24 |     await homePage.hoverMenLink()
+   25 |     const menTopsPage = await homePage.clickMenTopsLink()
+   26 |     await menTopsPage.clickMenTopsCategory()
+   27 |     LIST_CATEGORY_MEN_TOPS.forEach(item => {
+   28 |       expect.soft(/\d+/.test(item)).toBe(true)
+   29 |     })
+   30 |     await expect.soft(menTopsPage.locators.getMenTopsListCategory()).toBeVisible()
+   31 |   })
+   32 |
+   33 |   test('displays the number of available products in the Insulated(5) category', async ({ homePage }) => {
+   34 |     await homePage.hoverMenLink()
+   35 |     const menTopsPage = await homePage.clickMenTopsLink()
+   36 |     await menTopsPage.clickMenTopsStyle()
+   37 |
+   38 |     await expect.soft(menTopsPage.locators.getMenTopsStyleInsulated()).toBeVisible()
+   39 |   })
+   40 |
+   41 |   test('check Men/Tops price filter drop-down has 8 options', async ({ homePage }) => {
+   42 |     await homePage.hoverMenLink()
+   43 |     const menTopsPage = await homePage.clickMenTopsLink()
+   44 |     await menTopsPage.expandMenTopsPriceFilterDropDown()
+   45 |
+   46 |     expect.soft(await menTopsPage.getMenTopsPriceList()).toEqual(MEN_TOPS_PRICE_LIST)
+   47 |   })
+   48 |
+   49 |   test('check Men/Tops price drop-down has quantity of available items in each price category', async ({ homePage }) => {
+   50 |     await homePage.hoverMenLink()
+   51 |     const menTopsPage = await homePage.clickMenTopsLink()
+   52 |     await menTopsPage.expandMenTopsPriceFilterDropDown()
+   53 |
+   54 |     expect.soft(await menTopsPage.getMenTopsPriceListProductCount()).toEqual(MEN_TOPS_PRICE_LIST_PRODUCT_COUNT)
+   55 |     expect.soft(await menTopsPage.getMenTopsPriceListProductCountPseudoElementBefore()).toEqual('(')
+   56 |     expect.soft(await menTopsPage.getMenTopsPriceListProductCountPseudoElementAfter()).toEqual(')')
+   57 |   })
+   58 |
+   59 |   MEN_TOPS_PRICE_LIST.forEach((priceRange, index) => {
+   60 |     test(`After applying a ${priceRange} price filter, apropriate products are displayed on the page`, async ({ homePage }) => {
+   61 |       await homePage.hoverMenLink()
+   62 |       const menTopsPage = await homePage.clickMenTopsLink()
+   63 |       await menTopsPage.expandMenTopsPriceFilterDropDown()
+   64 |       await menTopsPage.clickMenTopsPriceRange(index)
+   65 |
+   66 |       expect.soft(await menTopsPage.getShoppingOptionFilterValues()).toEqual([MEN_TOPS_PRICE_LIST[index]])
+   67 |       expect.soft(await menTopsPage.getMinProductItemPrice()).toBeGreaterThanOrEqual(await menTopsPage.getPriceFilterMinThreshold())
+   68 |       expect.soft(await menTopsPage.getMaxProductItemPrice()).toBeLessThanOrEqual(await menTopsPage.getPriceFilterMaxThreshold())
+   69 |     })
+   70 |   })
+   71 |
+   72 |   test('Verify that Men/Tops price filter is eliminated after clicking on the Clear All button', async ({ homePage }) => {
+   73 |     await homePage.hoverMenLink()
+   74 |     const menTopsPage = await homePage.clickMenTopsLink()
+   75 |     await menTopsPage.expandMenTopsPriceFilterDropDown()
+   76 |     await menTopsPage.applyFirstMenTopsPriceFilter()
+   77 |
+   78 |     expect.soft(await menTopsPage.getToolBarAmount()).not.toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
+   79 |
+   80 |     await menTopsPage.clickClearAllButton()
+   81 |
+   82 |     expect.soft((await menTopsPage.getToolBarAmount()).trim()).toBe(MEN_TOPS_TOTAL_TOOLBAR_AMOUNT)
+   83 |   })
+   84 |
+   85 |   test.skip('Verify that user can apply the filter for categories within the Category dd list and reset the filter', async ({ homePage, page }) => {
+   86 |     await homePage.hoverMenLink()
+   87 |     const menTopsPage = await homePage.clickMenTopsLink()
+   88 |
+   89 |     for (let i = 0; i < LIST_LABELS_SUB_CATEGORY.length; i++) {
+   90 |       await menTopsPage.clickMenTopsCategory()
+   91 |       await menTopsPage.clickCategoryOption(i)
+   92 |
+   93 |       const labelLocator = await menTopsPage.locators.getLabelForEachCategory()
+   94 |
+   95 |       await expect.soft(labelLocator).toContain(LIST_LABELS_SUB_CATEGORY[i])
+   96 |       expect.soft(page).toHaveURL(MEN_TOPS_CATEGORY_PAGES_END_POINT[i])
+   97 |       await menTopsPage.clickClearAllButton()
+   98 |       await expect.soft(page).toHaveURL(BASE_URL + MEN_TOPS_PAGE_END_POINT)
+   99 |     }
+  100 |   })
+  101 |
+  102 |   test.skip('Verify the count for each subCategory on Tops page is the same as count of items on each specific page', async ({ homePage }) => {
+  103 |     await homePage.hoverMenLink()
+  104 |     const menTopsPage = await homePage.clickMenTopsLink()
+  105 |
+  106 |     const maxCountOnPage = 12
+  107 |
+  108 |     for (let i = 0; i < LIST_OF_COUNT_SUB_CATEGORY_ON_MEN_TOPS_PAGE.length; i++) {
+  109 |       await menTopsPage.clickMenTopsCategory()
+  110 |       const countItemInTopPage = parseInt(await menTopsPage.locators.getCountForEachCategory(i).innerText(), 10)
+  111 |       await menTopsPage.clickCategoryOption(i)
+  112 |
+  113 |       let totalItemCountPerPage = 0
+  114 |
+  115 |       const countOfItemsInPage = await menTopsPage.countSubcategoryItems()
+  116 |       totalItemCountPerPage += countOfItemsInPage
+  117 |
+  118 |       if (countItemInTopPage > maxCountOnPage) {
+```
+
+# Local changes
+
+```diff
+diff --git a/.github/workflows/merge-gatekeeper.yml b/.github/workflows/merge-gatekeeper.yml
+deleted file mode 100644
+index 9249be9..0000000
+--- a/.github/workflows/merge-gatekeeper.yml
++++ /dev/null
+@@ -1,18 +0,0 @@
+-name: Merge Gatekeeper
+-
+-on:
+-  pull_request:
+-    branches:
+-      - main
+-
+-jobs:
+-  merge-gatekeeper:
+-    runs-on: ubuntu-latest
+-    permissions:
+-      checks: read
+-      statuses: read
+-    steps:
+-      - name: Run Merge Gatekeeper
+-        uses: upsidr/merge-gatekeeper@v1
+-        with:
+-          token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
+diff --git a/.github/workflows/playwright-shard.yml b/.github/workflows/playwright-shard.yml
+index 2e31bdd..fdf8f5b 100644
+--- a/.github/workflows/playwright-shard.yml
++++ b/.github/workflows/playwright-shard.yml
+@@ -151,4 +151,4 @@ jobs:
+         if: always()
+         run: |
+           npm ci
+-          node ./helpers/reporter.js
++          find . -type f -name "summary.json" | xargs -I {} node ./helpers/reporter.js {}
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index a204fd2..08b4f0b 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -5,10 +5,10 @@ import FormData from 'form-data'
+ import fs from 'fs'
+ 
+ dotenv.config()
+-function readAllureData() {
++function readAllureData(path = './allure-report/widgets/summary.json') {
+   try {
+-    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
+-    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync(path, 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+@@ -164,8 +164,8 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
+   }
+ }
+ 
+-async function generateReportAndNotify(environment = 'test') {
+-  const data = readAllureData()
++async function generateReportAndNotify(path, environment = 'test') {
++  const data = readAllureData(path)
+   const durationFormatted = formatDuration(data.duration)
+   console.log(`PASSED=${data.passed}`)
+   console.log(`FAILED=${data.failed}`)
+@@ -188,10 +188,10 @@ async function generateReportAndNotify(environment = 'test') {
+     chartPath
+   }
+ }
+-
++const path = process.argv[2]
+ const environment = process.argv[3] || process.env.platform
+ 
+-generateReportAndNotify(environment).catch(err => {
++generateReportAndNotify(path, environment).catch(err => {
+   console.error('Error generating report and sending notification:', err)
+   process.exit(1)
+ })
+```

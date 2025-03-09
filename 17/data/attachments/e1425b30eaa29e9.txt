@@ -1,0 +1,590 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: bottomsWomenPage > >> Verify a User can deselect all options at once
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/bottomsWomenPage.spec.js:117:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for getByText('Organic Cotton ')
+    - locator resolved to <a href="https://magento.softwaretestingboard.com/women/bottoms-women.html?material=153">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    108 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+    at BottomsWomenPage.clickShoppingOptionsMaterialOrganicCotton (/home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/page_objects/bottomsWomenPage.js:80:67)
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/bottomsWomenPage.spec.js:122:28
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - link "Women"
+    - text: 
+  - listitem:
+    - strong: Bottoms
+- main:
+  - heading "Bottoms Items 1-12 of 25" [level=1]: Bottoms
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List":  List
+  - paragraph: Items 1-12 of 25
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Erika Running Short":
+        - img "Erika Running Short"
+      - strong:
+        - link "Erika Running Short"
+      - text: "Rating:   60%"
+      - link "3 Reviews"
+      - text: As low as $45.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Green"
+        - option "Purple"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Ina Compression Short":
+        - img "Ina Compression Short"
+      - strong:
+        - link "Ina Compression Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $49.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+      - listbox "Color":
+        - option "Blue"
+        - option "Orange"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Ana Running Short":
+        - img "Ana Running Short"
+      - strong:
+        - link "Ana Running Short"
+      - text: "Rating:   80%"
+      - link "3 Reviews"
+      - text: As low as $40.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+      - listbox "Color":
+        - option "Black"
+        - option "Orange"
+        - option "White"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Mimi All-Purpose Short":
+        - img "Mimi All-Purpose Short"
+      - strong:
+        - link "Mimi All-Purpose Short"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: As low as $44.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+      - listbox "Color":
+        - option "Gray"
+        - option "Green"
+        - option "White"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Sybil Running Short":
+        - img "Sybil Running Short"
+      - strong:
+        - link "Sybil Running Short"
+      - text: "Rating:   93%"
+      - link "3 Reviews"
+      - text: As low as $44.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Echo Fit Compression Short":
+        - img "Echo Fit Compression Short"
+      - strong:
+        - link "Echo Fit Compression Short"
+      - text: "Rating:   67%"
+      - link "3 Reviews"
+      - text: As low as $24.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Angel Light Running Short":
+        - img "Angel Light Running Short"
+      - strong:
+        - link "Angel Light Running Short"
+      - text: "Rating:   70%"
+      - link "2 Reviews"
+      - text: As low as $42.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+      - listbox "Color":
+        - option "Gray"
+        - option "Orange"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Bess Yoga Short":
+        - img "Bess Yoga Short"
+      - strong:
+        - link "Bess Yoga Short"
+      - text: "Rating:   73%"
+      - link "3 Reviews"
+      - text: As low as $28.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Blue"
+        - option "Purple"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Artemis Running Short":
+        - img "Artemis Running Short"
+      - strong:
+        - link "Artemis Running Short"
+      - text: "Rating:   80%"
+      - link "2 Reviews"
+      - text: As low as $45.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Black"
+        - option "Green"
+        - option "Orange"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Gwen Drawstring Bike Short":
+        - img "Gwen Drawstring Bike Short"
+      - strong:
+        - link "Gwen Drawstring Bike Short"
+      - text: "Rating:   90%"
+      - link "2 Reviews"
+      - text: As low as $50.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Blue"
+        - option "Gray"
+        - option "Orange"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Maxima Drawstring Short":
+        - img "Maxima Drawstring Short"
+      - strong:
+        - link "Maxima Drawstring Short"
+      - text: "Rating:   80%"
+      - link "3 Reviews"
+      - text: As low as $28.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Gray"
+        - option "Orange"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+    - listitem:
+      - link "Fiona Fitness Short":
+        - img "Fiona Fitness Short"
+      - strong:
+        - link "Fiona Fitness Short"
+      - text: "Rating:   60%"
+      - link "3 Reviews"
+      - text: As low as $29.00
+      - listbox "Size":
+        - option "28"
+        - option "29"
+        - option "30"
+        - option "31"
+        - option "32"
+      - listbox "Color":
+        - option "Black"
+        - option "Green"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List":  Add to Wish List
+      - button "Add to Compare":  Add to Compare
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link "Page 3"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option "12" [selected]
+    - option "24"
+    - option "36"
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Style "
+    - tab "Size "
+    - tab "Climate "
+    - tab "Color "
+    - tab "Eco Collection "
+    - tab "Erin Recommends "
+    - tab "Material "
+    - tab "New "
+    - tab "Pattern "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | class BottomsWomenPage {
+   2 |   /**
+   3 |    * Class constructor for BasePage.
+   4 |    * @constructor
+   5 |    * @param {import('@playwright/test').Page} page - Page passed in the constructor of the Page Object Model.
+   6 |    */
+   7 |   constructor(page) {
+   8 |     this.page = page
+   9 |   }
+   10 |
+   11 |   locators = {
+   12 |     getWomenBottomsPageHeader: () => this.page.getByRole('heading', { name: 'Bottoms' }),
+   13 |     getWomenBottomsOptionStyle: () => this.page.getByRole('tab', { name: 'Style' }),
+   14 |     getAriaSelectedWomenBottoms: () => this.page.locator('[aria-selected]'),
+   15 |     getCategoryInStyle: () => this.page.locator('[aria-hidden="false"] .items>.item'),
+   16 |     getBottomsCategory: () => this.page.getByRole('tab', { name: 'Category' }),
+   17 |     getBottomsCategoryPants: () => this.page.locator(".filter-options li a[href$='bottoms-women.html?cat=27']"), //getByRole('link', {name: 'Pants'})
+   18 |     getPantsCategoryLocator: () => this.page.locator('li .filter-value'),
+   19 |     getBottomsCategoryShorts: () => this.page.locator(".filter-options li a[href$='bottoms-women.html?cat=28']"),
+   20 |     getShortsCategoryLocator: () => this.page.locator('li .filter-value'),
+   21 |     getOptionPrice: () => this.page.getByRole('tab', { name: 'Price' }),
+   22 |     getOptionPriceFilter: () => this.page.locator('.filter-options-content').nth(3),
+   23 |     getCategoriesStyle: () => this.page.$$("a[href*='style']"),
+   24 |     getCountItemsInCategoryStyle: category => category.$('span.count'),
+   25 |     getShoppingOptionsMaterial: () => this.page.locator('.filter-options-title').nth(7),
+   26 |     getShoppingOptionsMaterialOrganicCotton: () => this.page.getByText('Organic Cotton '),
+   27 |     getShoppingOptionsPrice: () => this.page.getByRole('tab', { name: 'Price' }),
+   28 |     getShoppingOptionsPriceSecondSubCategory: () => this.page.locator("a[href$='price=30-40']"),
+   29 |     getClearAllButton: () => this.page.getByRole('link', { name: 'Clear All' }),
+   30 |     getWomenBottomsOptionSize: () => this.page.getByRole('tab', { name: 'Size' }),
+   31 |     getWomenBottomsLocatorsSize: () => this.page.locator('a[href*="women/bottoms-women.html?size"]>div'),
+   32 |     getSelectCategory: () => this.page.locator('.filter-value'),
+   33 |     getListViewLink: () => this.page.getByTitle('List').first(),
+   34 |     getProductsListWrapper: () => this.page.locator('div.products.wrapper'),
+   35 |     getProductCards: () => this.page.locator('.item.product.product-item')
+   36 |   }
+   37 |
+   38 |   async getLocatorInnerText(locator) {
+   39 |     return await locator.innerText()
+   40 |   }
+   41 |
+   42 |   async clickWomenBottomsOptionStyle() {
+   43 |     await this.locators.getWomenBottomsOptionStyle().click()
+   44 |   }
+   45 |
+   46 |   async extractAndCompareItems(receivedResult, expectedItems) {
+   47 |     const extractedItems = receivedResult.map(item =>
+   48 |       item
+   49 |         .replace(/\nitem$/, '')
+   50 |         .split(' ')
+   51 |         .slice(0, -1)
+   52 |         .join(' ')
+   53 |     )
+   54 |     const areEqual = JSON.stringify(extractedItems) === JSON.stringify(expectedItems)
+   55 |
+   56 |     return { extractedItems, areEqual }
+   57 |   }
+   58 |
+   59 |   async clickWomenBottomsCategory() {
+   60 |     await this.locators.getBottomsCategory().click()
+   61 |   }
+   62 |
+   63 |   async clickBottomsCategoryPants() {
+   64 |     await this.locators.getBottomsCategoryPants().click()
+   65 |   }
+   66 |
+   67 |   async clickBottomsCategoryShorts() {
+   68 |     await this.locators.getBottomsCategoryShorts().click()
+   69 |   }
+   70 |
+   71 |   async clickOptionPrice() {
+   72 |     await this.locators.getOptionPrice().click()
+   73 |   }
+   74 |
+   75 |   async clickShoppingOptionsMaterial() {
+   76 |     await this.locators.getShoppingOptionsMaterial().click()
+   77 |   }
+   78 |
+   79 |   async clickShoppingOptionsMaterialOrganicCotton() {
+>  80 |     await this.locators.getShoppingOptionsMaterialOrganicCotton().click()
+      |                                                                   ^ Error: locator.click: Test timeout of 60000ms exceeded.
+   81 |   }
+   82 |
+   83 |   async clickShoppingOptionsPrice() {
+   84 |     await this.locators.getShoppingOptionsPrice().click()
+   85 |   }
+   86 |
+   87 |   async clickShoppingOptionsPriceSecondSubCategory() {
+   88 |     await this.locators.getShoppingOptionsPriceSecondSubCategory().click()
+   89 |   }
+   90 |
+   91 |   async clickClearAllButton() {
+   92 |     await this.locators.getClearAllButton().click()
+   93 |   }
+   94 |
+   95 |   async clickCategoryStyle(i) {
+   96 |     const categories = await this.locators.getCategoriesStyle()
+   97 |     await categories[i].click()
+   98 |   }
+   99 |
+  100 |   async clickWomenBottomsOptionSize() {
+  101 |     await this.locators.getWomenBottomsOptionSize().click()
+  102 |   }
+  103 |
+  104 |   async getObjectCategoryStyleByIndex(index) {
+  105 |     const categories = await this.locators.getCategoriesStyle()
+  106 |     const category = categories[index]
+  107 |     const name = await category.textContent()
+  108 |     const count = await this.locators.getCountItemsInCategoryStyle(category)
+  109 |
+  110 |     return {
+  111 |       name: name.replace(/\bitem\b|\d+/g, '').trim(),
+  112 |       count: parseInt(await count.textContent())
+  113 |     }
+  114 |   }
+  115 |
+  116 |   async clickListViewLink() {
+  117 |     await this.locators.getListViewLink().click()
+  118 |   }
+  119 | }
+  120 |
+  121 | export default BottomsWomenPage
+  122 |
+```
+
+# Local changes
+
+```diff
+diff --git a/.github/workflows/merge-gatekeeper.yml b/.github/workflows/merge-gatekeeper.yml
+deleted file mode 100644
+index 9249be9..0000000
+--- a/.github/workflows/merge-gatekeeper.yml
++++ /dev/null
+@@ -1,18 +0,0 @@
+-name: Merge Gatekeeper
+-
+-on:
+-  pull_request:
+-    branches:
+-      - main
+-
+-jobs:
+-  merge-gatekeeper:
+-    runs-on: ubuntu-latest
+-    permissions:
+-      checks: read
+-      statuses: read
+-    steps:
+-      - name: Run Merge Gatekeeper
+-        uses: upsidr/merge-gatekeeper@v1
+-        with:
+-          token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
+diff --git a/.github/workflows/playwright-shard.yml b/.github/workflows/playwright-shard.yml
+index 2e31bdd..fdf8f5b 100644
+--- a/.github/workflows/playwright-shard.yml
++++ b/.github/workflows/playwright-shard.yml
+@@ -151,4 +151,4 @@ jobs:
+         if: always()
+         run: |
+           npm ci
+-          node ./helpers/reporter.js
++          find . -type f -name "summary.json" | xargs -I {} node ./helpers/reporter.js {}
+diff --git a/helpers/reporter.js b/helpers/reporter.js
+index a204fd2..08b4f0b 100644
+--- a/helpers/reporter.js
++++ b/helpers/reporter.js
+@@ -5,10 +5,10 @@ import FormData from 'form-data'
+ import fs from 'fs'
+ 
+ dotenv.config()
+-function readAllureData() {
++function readAllureData(path = './allure-report/widgets/summary.json') {
+   try {
+-    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
+-    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
++    const summaryData = JSON.parse(fs.readFileSync(path, 'utf8'))
++    // const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+     return {
+       passed: summaryData.statistic.passed || 0,
+       failed: summaryData.statistic.failed || 0,
+@@ -164,8 +164,8 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
+   }
+ }
+ 
+-async function generateReportAndNotify(environment = 'test') {
+-  const data = readAllureData()
++async function generateReportAndNotify(path, environment = 'test') {
++  const data = readAllureData(path)
+   const durationFormatted = formatDuration(data.duration)
+   console.log(`PASSED=${data.passed}`)
+   console.log(`FAILED=${data.failed}`)
+@@ -188,10 +188,10 @@ async function generateReportAndNotify(environment = 'test') {
+     chartPath
+   }
+ }
+-
++const path = process.argv[2]
+ const environment = process.argv[3] || process.env.platform
+ 
+-generateReportAndNotify(environment).catch(err => {
++generateReportAndNotify(path, environment).catch(err => {
+   console.error('Error generating report and sending notification:', err)
+   process.exit(1)
+ })
+```
