@@ -5,10 +5,10 @@ import FormData from 'form-data'
 import fs from 'fs'
 
 dotenv.config()
-function readAllureData() {
+function readAllureData(path = './allure-report/widgets/summary.json') {
   try {
-    // const summaryData = JSON.parse(fs.readFileSync('./report/allure-report/widgets/summary.json', 'utf8'))
-    const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
+    const summaryData = JSON.parse(fs.readFileSync(path, 'utf8'))
+    // const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
     return {
       passed: summaryData.statistic.passed || 0,
       failed: summaryData.statistic.failed || 0,
@@ -164,8 +164,8 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
   }
 }
 
-async function generateReportAndNotify(environment = 'test') {
-  const data = readAllureData()
+async function generateReportAndNotify(path, environment = 'test') {
+  const data = readAllureData(path)
   const durationFormatted = formatDuration(data.duration)
   console.log(`PASSED=${data.passed}`)
   console.log(`FAILED=${data.failed}`)
@@ -188,10 +188,10 @@ async function generateReportAndNotify(environment = 'test') {
     chartPath
   }
 }
-
+const path = process.argv[2]
 const environment = process.argv[3] || process.env.platform
 
-generateReportAndNotify(environment).catch(err => {
+generateReportAndNotify(path, environment).catch(err => {
   console.error('Error generating report and sending notification:', err)
   process.exit(1)
 })
