@@ -1,14 +1,17 @@
+ 
+ 
+ 
+ 
 import axios from 'axios'
 import { createCanvas } from 'canvas'
 import dotenv from 'dotenv'
-import FormData from 'form-data'
 import fs from 'fs'
 
 dotenv.config()
+
 function readAllureData(path = './allure-report/widgets/summary.json') {
   try {
     const summaryData = JSON.parse(fs.readFileSync(path, 'utf8'))
-    // const summaryData = JSON.parse(fs.readFileSync('./allure-report/widgets/summary.json', 'utf8'))
     return {
       passed: summaryData.statistic.passed || 0,
       failed: summaryData.statistic.failed || 0,
@@ -19,14 +22,7 @@ function readAllureData(path = './allure-report/widgets/summary.json') {
     }
   } catch (error) {
     console.error('Error reading Allure report data:', error.message)
-    return {
-      passed: 0,
-      failed: 0,
-      broken: 0,
-      skipped: 0,
-      unknown: 0,
-      duration: 0
-    }
+    process.exit(1)
   }
 }
 
@@ -128,11 +124,13 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
   try {
     const slackToken = process.env.SLACK_TOKEN
     const slackChannel = process.env.SLACK_CHANNEL
-    const formData = new FormData()
-    formData.append('channels', slackChannel)
-    formData.append('file', imageBuffer, { filename: 'test-results-chart.png', contentType: 'image/png' })
-    formData.append('filename', 'test-results-chart.png')
-    formData.append(
+
+    const formData = new Blob([imageBuffer], { type: 'image/png' })
+    const form = new FormData()
+    form.append('channels', slackChannel)
+    form.append('file', formData, 'test-results-chart.png')
+    form.append('filename', 'test-results-chart.png')
+    form.append(
       'initial_comment',
       `*Test Results for Last run results Allure report on ${environment} environment*\n\n
          ⏳ *Duration:* ${data.durationFormatted}\n
@@ -141,13 +139,11 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
          🔨 *Broken:* ${data.broken}\n
          🚩 *Skipped:* ${data.skipped}\n
          ❓ *Unknown:* ${data.unknown}\n
-
         *Report available at:* <https://valiantsin2021.github.io/Playwright_ProjectJS_2024|Report>`
     )
 
-    const response = await axios.post('https://slack.com/api/files.upload', formData, {
+    const response = await axios.post('https://slack.com/api/files.upload', form, {
       headers: {
-        ...formData.getHeaders(),
         Authorization: `Bearer ${slackToken}`
       }
     })
@@ -167,13 +163,6 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
 async function generateReportAndNotify(path, environment = 'test') {
   const data = readAllureData(path)
   const durationFormatted = formatDuration(data.duration)
-  console.log(`PASSED=${data.passed}`)
-  console.log(`FAILED=${data.failed}`)
-  console.log(`BROKEN=${data.broken}`)
-  console.log(`SKIPPED=${data.skipped}`)
-  console.log(`UNKNOWN=${data.unknown}`)
-  console.log(`DURATION_FINAL=${durationFormatted}`)
-
   const chartPath = createPieChart(data)
 
   const reportData = {
@@ -182,13 +171,10 @@ async function generateReportAndNotify(path, environment = 'test') {
   }
 
   await sendSlackNotification(reportData, chartPath, environment)
-
-  return {
-    data: reportData,
-    chartPath
-  }
+  return { data: reportData, chartPath }
 }
-const path = process.argv[2]
+
+const path = process.argv[2] || process.env.ALLURE_REPORT_PATH
 const environment = process.argv[3] || process.env.platform
 
 generateReportAndNotify(path, environment).catch(err => {
