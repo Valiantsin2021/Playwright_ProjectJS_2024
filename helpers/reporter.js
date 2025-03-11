@@ -5,7 +5,7 @@ import fs from 'fs'
 
 dotenv.config()
 
-function readAllureData(path = './report/allure-report/widgets/summary.json') {
+function readAllureData(path = './allure-report/widgets/summary.json') {
   try {
     const summaryData = JSON.parse(fs.readFileSync(path, 'utf8'))
     return {
