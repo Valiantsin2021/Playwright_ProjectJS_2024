@@ -114,3 +114,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           results-pattern: 'allure-results-*'
           report-title: 'Allure report for Playwright tests'
+          process-results: 'node ./helpers/reporter.js'
+
