@@ -95,6 +95,7 @@ jobs:
           retention-days: 1
 
   generate-report:
+    permissions: write-all
     name: Generate Allure Report
     needs: test
     runs-on: ubuntu-latest
