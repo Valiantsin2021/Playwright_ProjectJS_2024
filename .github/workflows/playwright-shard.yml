@@ -95,6 +95,7 @@ jobs:
           retention-days: 1
 
   generate-report:
+    permissions: write-all
     name: Generate Allure Report
     needs: test
     runs-on: ubuntu-latest
@@ -103,15 +104,26 @@ jobs:
       SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
       SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     steps:
+      - uses: actions/checkout@v4
       - name: Generate and Publish Allure Report
-        uses: Valiantsin2021/allure-shard-results-publish@1.0.1
+        uses: Valiantsin2021/allure-shard-results-publish@1.0.2
+        if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           results-pattern: 'allure-results-*'
           report-title: 'Allure report for Playwright tests'
 
-      - name: Notify Slack
+      - name: Install dependencies and send Slack notification
         if: always()
         run: |
           npm ci
-          node ./helpers/reporter.js ./allure-report/widgets/summary.json
+          node ./helpers/reporter.js
+
+      - name: Add the test summary status back to PR comment
+        uses: mshick/add-pr-comment@v2
+        if: (contains(fromJSON('["pull_request"]'), github.event_name))
+        with:
+          message-path: |
+                  ./test-results.txt
+          message-failure: |
+                  Workflow failed
