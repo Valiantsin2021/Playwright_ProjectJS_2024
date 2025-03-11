@@ -122,7 +122,7 @@ async function sendSlackNotification(data, imageBuffer, environment = 'test') {
     const slackChannel = process.env.SLACK_CHANNEL
 
     const message = `
-    *Test Results for Last run results Allure report on ${environment} environment*\n\n
+    *Allure report results for Last run on ${environment} environment*\n\n
       ⏳ *Duration:* ${data.durationFormatted}\n
       ✅ *Passed:* ${data.passed}\n
       ❌ *Failed:* ${data.failed}\n
