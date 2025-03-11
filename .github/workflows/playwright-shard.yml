@@ -117,3 +117,12 @@ jobs:
         run: |
           npm ci
           node ./helpers/reporter.js
+
+      - name: Add the test summary status back to PR comment
+        uses: mshick/add-pr-comment@v2
+        if: (contains(fromJSON('["pull_request"]'), github.event_name))
+        with:
+          message-path: |
+                  ./test-results.txt
+          message-failure: |
+                  Workflow failed
