@@ -13,6 +13,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    name: 'Run tests ${{ github.actor }} ${{ github.event_name }} - ${{ github.sha }}'
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     strategy:
