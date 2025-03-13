@@ -133,4 +133,9 @@ test.describe('gearWatchesPage', () => {
       expect.soft(ListText).toEqual(LIST_OF_CATEGORY_WATCHES[idx])
     })
   })
+  test(`Verify gearWatchesPage match aria snapshot`, { tag: '@aria' }, async ({ homePage, page }) => {
+    const gearWatchesPage = new GearWatchesPage(page)
+    await homePage.clickGearMenuItem()
+    await expect.soft(gearWatchesPage.page.getByRole('main')).toMatchAriaSnapshot({ name: 'gearWatchesPage.yml' })
+  })
 })

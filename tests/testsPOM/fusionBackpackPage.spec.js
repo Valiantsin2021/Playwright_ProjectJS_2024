@@ -66,4 +66,8 @@ test.describe('fusionBackpackPage.spec', () => {
     await page.keyboard.press('Escape')
     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toBeVisible()
   })
+  test(`Verify fusionBackpackPage match aria snapshot`, { tag: '@aria' }, async ({ page }) => {
+    const fusionBackpackPage = new FusionBackpackPage(page)
+    await expect.soft(fusionBackpackPage.page.getByRole('main')).toMatchAriaSnapshot({ name: 'fusionBackpackPage.yml' })
+  })
 })

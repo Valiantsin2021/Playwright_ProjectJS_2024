@@ -67,4 +67,8 @@ test.describe('gearBags.spec', () => {
 
     expect.soft(gearBagsPage.locators.getListMode()).toBeTruthy()
   })
+  test(`Verify gearBagsPage match aria snapshot`, { tag: '@aria' }, async ({ page }) => {
+    const gearBagsPage = new GearBagsPage(page)
+    await expect.soft(gearBagsPage.page.getByRole('main')).toMatchAriaSnapshot({ name: 'gearBagsPage.yml' })
+  })
 })

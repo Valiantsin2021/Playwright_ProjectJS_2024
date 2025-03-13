@@ -1,0 +1,283 @@
+- main:
+  - heading /Bottoms Items 1-\d+ of \d+/ [level=1]
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List"
+  - paragraph: /Items 1-\d+ of \d+/
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Erika Running Short":
+        - img "Erika Running Short"
+      - strong:
+        - link "Erika Running Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Green"
+        - option "Purple"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Ina Compression Short":
+        - img "Ina Compression Short"
+      - strong:
+        - link "Ina Compression Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Blue"
+        - option "Orange"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Ana Running Short":
+        - img "Ana Running Short"
+      - strong:
+        - link "Ana Running Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Black"
+        - option "Orange"
+        - option "White"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Mimi All-Purpose Short":
+        - img "Mimi All-Purpose Short"
+      - strong:
+        - link "Mimi All-Purpose Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Gray"
+        - option "Green"
+        - option "White"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Sybil Running Short":
+        - img "Sybil Running Short"
+      - strong:
+        - link "Sybil Running Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Echo Fit Compression Short":
+        - img "Echo Fit Compression Short"
+      - strong:
+        - link "Echo Fit Compression Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Black"
+        - option "Blue"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Angel Light Running Short":
+        - img "Angel Light Running Short"
+      - strong:
+        - link "Angel Light Running Short"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Gray"
+        - option "Orange"
+        - option "Purple"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Bess Yoga Short":
+        - img "Bess Yoga Short"
+      - strong:
+        - link "Bess Yoga Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Blue"
+        - option "Purple"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Artemis Running Short":
+        - img "Artemis Running Short"
+      - strong:
+        - link "Artemis Running Short"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Black"
+        - option "Green"
+        - option "Orange"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Gwen Drawstring Bike Short":
+        - img "Gwen Drawstring Bike Short"
+      - strong:
+        - link "Gwen Drawstring Bike Short"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Blue"
+        - option "Gray"
+        - option "Orange"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Maxima Drawstring Short":
+        - img "Maxima Drawstring Short"
+      - strong:
+        - link "Maxima Drawstring Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Gray"
+        - option "Orange"
+        - option "Yellow"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Fiona Fitness Short":
+        - img "Fiona Fitness Short"
+      - strong:
+        - link "Fiona Fitness Short"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /As low as \$\d+\.\d+/
+      - listbox "Size":
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+        - option /\d+/
+      - listbox "Color":
+        - option "Black"
+        - option "Green"
+        - option "Red"
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link "Page 3"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option /\d+/ [selected]
+    - option /\d+/
+    - option /\d+/
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Style "
+    - tab "Size "
+    - tab "Climate "
+    - tab "Color "
+    - tab "Eco Collection "
+    - tab "Erin Recommends "
+    - tab "Material "
+    - tab "New "
+    - tab "Pattern "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.

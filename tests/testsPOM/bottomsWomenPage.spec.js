@@ -25,7 +25,6 @@ test.describe('bottomsWomenPage >', () => {
 
     expect.soft(result.extractedItems).toEqual(expectedItems)
   })
-
   test('Verify that each category displays the number of products', async ({ homePage }) => {
     await homePage.hoverWomenMenuitem()
     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
@@ -45,7 +44,11 @@ test.describe('bottomsWomenPage >', () => {
       expect.soft(await countItems.textContent()).toMatch(/\d+/)
     }
   })
-
+  test(`Verify bottomsWomenPage match aria snapshot`, { tag: '@aria' }, async ({ homePage }) => {
+    await homePage.hoverWomenMenuitem()
+    const bottomsWomenPage = await homePage.clickBottomsWomenLink()
+    await expect.soft(bottomsWomenPage.page.getByRole('main')).toMatchAriaSnapshot({ name: 'bottomsWomenPage.yml' })
+  })
   EXPECTED_ITEM_STYLE_WOMEN_BOTTOMS.forEach(async (categoryName, index) => {
     test(`Verify navigating to "${categoryName}" page from "Style" option`, async ({ homePage }) => {
       await homePage.hoverWomenMenuitem()

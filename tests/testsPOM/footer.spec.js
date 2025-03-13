@@ -27,7 +27,10 @@ test.describe('footer.spec', () => {
     await expect.soft(homePage.page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
     await expect.soft(searchTermPopularPage.locators.getSearchTermPopularHeader()).toContainText(SEARCH_TERMS_POPULAR_PAGE_HEADER)
   })
-
+  test(`Verify footer match aria snapshot`, { tag: '@aria' }, async ({ homePage }) => {
+    const footer = new Footer(homePage.page)
+    await expect.soft(footer.locators.getFooter()).toMatchAriaSnapshot({ name: 'footer.yml' })
+  })
   test('Verify that "Search terms" link redirects to the "Popular Search Terms" page', async ({ homePage, page }) => {
     const searchTermPopularPage = await homePage.getFooter().clickSearchTerms()
     await expect.soft(page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)

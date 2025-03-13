@@ -1,0 +1,175 @@
+- main:
+  - heading /Bags Items 1-\d+ of \d+/ [level=1]
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List"
+  - paragraph: /Items 1-\d+ of \d+/
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Push It Messenger Bag":
+        - img "Push It Messenger Bag"
+      - strong:
+        - link "Push It Messenger Bag"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Overnight Duffle":
+        - img "Overnight Duffle"
+      - strong:
+        - link "Overnight Duffle"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Driven Backpack":
+        - img "Driven Backpack"
+      - strong:
+        - link "Driven Backpack"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Endeavor Daytrip Backpack":
+        - img "Endeavor Daytrip Backpack"
+      - strong:
+        - link "Endeavor Daytrip Backpack"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Savvy Shoulder Tote":
+        - img "Savvy Shoulder Tote"
+      - strong:
+        - link "Savvy Shoulder Tote"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /Special Price \$\d+\.\d+ Regular Price \$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Compete Track Tote":
+        - img "Compete Track Tote"
+      - strong:
+        - link "Compete Track Tote"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Voyage Yoga Bag":
+        - img "Voyage Yoga Bag"
+      - strong:
+        - link "Voyage Yoga Bag"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Impulse Duffle":
+        - img "Impulse Duffle"
+      - strong:
+        - link "Impulse Duffle"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Fusion Backpack":
+        - img "Fusion Backpack"
+      - strong:
+        - link "Fusion Backpack"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Rival Field Messenger":
+        - img "Rival Field Messenger"
+      - strong:
+        - link "Rival Field Messenger"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Wayfarer Messenger Bag":
+        - img "Wayfarer Messenger Bag"
+      - strong:
+        - link "Wayfarer Messenger Bag"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Crown Summit Backpack":
+        - img "Crown Summit Backpack"
+      - strong:
+        - link "Crown Summit Backpack"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+  - strong: Page
+  - list "Page":
+    - listitem:
+      - strong: You're currently reading page 1
+    - listitem:
+      - link "Page 2"
+    - listitem:
+      - link " Page Next"
+  - text: Show
+  - combobox:
+    - option /\d+/ [selected]
+    - option /\d+/
+    - option /\d+/
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Style "
+    - tab "Activity "
+    - tab "Erin Recommends "
+    - tab "Features "
+    - tab "Material "
+    - tab "New "
+    - tab "Performance Fabric "
+    - tab "Price "
+    - tab "Sale "
+    - tab "Strap/Handle "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.

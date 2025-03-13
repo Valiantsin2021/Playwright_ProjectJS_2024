@@ -109,4 +109,8 @@ test.describe('createAccuntPage.spec', () => {
       await expect.soft(createAccountPage.locators.getPageAlertBlock()).toHaveText(CREATE_ACCOUNT_PAGE_PASSWORD_WITH_SPACES_MESSAGE)
     })
   })
+  test(`Verify createAccountPage match aria snapshot`, { tag: '@aria' }, async ({ homePage }) => {
+    const createAccountPage = await homePage.clickCreateAccountLink()
+    await expect.soft(createAccountPage.page.getByRole('tablist')).toMatchAriaSnapshot({ name: 'createAccountPage.yml' })
+  })
 })

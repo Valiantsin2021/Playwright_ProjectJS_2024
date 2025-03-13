@@ -37,7 +37,7 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@playwright/test": "1.50.1",
+    "@playwright/test": "1.51.0",
     "@types/node": "^22.13.9",
     "allure-commandline": "2.33.0",
     "allure-playwright": "3.2.0",

@@ -1,0 +1,10 @@
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"

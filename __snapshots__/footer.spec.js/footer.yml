@@ -1,0 +1,19 @@
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"

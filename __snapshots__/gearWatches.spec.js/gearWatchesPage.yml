@@ -1,0 +1,85 @@
+- main:
+  - heading "Gear" [level=1]
+  - link /Sprite Yoga Companion Kit Save up to \d+% on a bundle! Shop Yoga Kit/:
+    - strong: Sprite Yoga Companion Kit
+  - link "Loosen Up Extend your training with yoga straps, tone bands, and jump ropes Shop Fitness":
+    - strong: Loosen Up
+  - link /Here’s to you! \$4 Luma water bottle \(save \d+%\) Enter promo code H2O at check out/:
+    - strong: Here’s to you!
+  - link "Tote, cart or carry Luma bags go the distance Shop Bags":
+    - strong: Tote, cart or carry
+  - link "Let’s get after it! Luma gym equipment fits your goals and style Shop Equipment":
+    - strong: Let’s get after it!
+  - link "Luma watches Keeping pace has never been more stylish Shop Watches":
+    - strong: Luma watches
+  - heading "Hot Sellers" [level=2]
+  - paragraph: Favorites from Luma shoppers
+  - list:
+    - listitem:
+      - link "Fusion Backpack":
+        - img "Fusion Backpack"
+      - strong:
+        - link "Fusion Backpack"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Push It Messenger Bag":
+        - img "Push It Messenger Bag"
+      - strong:
+        - link "Push It Messenger Bag"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Affirm Water Bottle":
+        - img "Affirm Water Bottle"
+      - strong:
+        - link "Affirm Water Bottle"
+      - text: "/Rating:   \\d+%/"
+      - link "1 Review"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+    - listitem:
+      - link "Sprite Yoga Companion Kit":
+        - img "Sprite Yoga Companion Kit"
+      - strong:
+        - link "Sprite Yoga Companion Kit"
+      - paragraph: /From \$\d+\.\d+/
+      - paragraph: /To \$\d+\.\d+/
+      - button "Add to Cart"
+      - link " Add to Wish List"
+      - link " Add to Compare"
+  - strong: Shop By
+  - term: Category
+  - definition:
+    - list:
+      - listitem:
+        - link "Bags"
+        - text: /\d+/
+      - listitem:
+        - link "Fitness Equipment"
+        - text: /\d+/
+      - listitem:
+        - link "Watches"
+        - text: "9"
+  - strong
+  - list:
+    - listitem:
+      - link "Bags"
+    - listitem:
+      - link "Fitness Equipment"
+    - listitem:
+      - link "Watches"
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
