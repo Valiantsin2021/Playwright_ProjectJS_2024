@@ -39,9 +39,9 @@ test.describe('gearPage.spec', () => {
 
     await expect.soft(gearWatchesText).toBeVisible()
   })
-  test(`Verify gearPage match aria snapshot`, async ({ homePage, page }) => {
+  test(`Verify gearPage match aria snapshot`, { tag: '@aria' }, async ({ homePage, page }) => {
     const gearPage = new GearPage(page)
     await homePage.clickGearMenuItem()
-    await expect.soft(gearPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearPage.yml' })
+    await expect.soft(gearPage.page.getByRole('main')).toMatchAriaSnapshot({ name: 'gearPage.yml' })
   })
 })

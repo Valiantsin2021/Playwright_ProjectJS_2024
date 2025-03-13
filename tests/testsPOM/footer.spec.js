@@ -27,7 +27,7 @@ test.describe('footer.spec', () => {
     await expect.soft(homePage.page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
     await expect.soft(searchTermPopularPage.locators.getSearchTermPopularHeader()).toContainText(SEARCH_TERMS_POPULAR_PAGE_HEADER)
   })
-  test(`Verify footer match aria snapshot`, async ({ homePage }) => {
+  test(`Verify footer match aria snapshot`, { tag: '@aria' }, async ({ homePage }) => {
     const footer = new Footer(homePage.page)
     await expect.soft(footer.locators.getFooter()).toMatchAriaSnapshot({ name: 'footer.yml' })
   })
