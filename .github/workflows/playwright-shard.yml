@@ -123,6 +123,7 @@ jobs:
 
       - name: Add the test summary status back to PR comment
         uses: mshick/add-pr-comment@v2
+        continue-on-error: true
         if: (contains(fromJSON('["pull_request"]'), github.event_name))
         with:
           message-path: |
