@@ -109,7 +109,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Generate and Publish Allure Report
-        uses: Valiantsin2021/allure-shard-results-publish@1.0.4
+        uses: Valiantsin2021/allure-shard-results-publish@1.0.5
         if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

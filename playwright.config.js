@@ -22,7 +22,6 @@ export default defineConfig({
         environmentInfo: {
           Environment: process.env.ENV,
           User: process.env.USER,
-          NodeJS_version: process.version,
           OS: process.platform
         }
       }
