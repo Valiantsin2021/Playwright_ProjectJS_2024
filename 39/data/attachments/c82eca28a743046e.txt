@@ -1,0 +1,2282 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: fusionBackpackPage.spec >> Verify fusionBackpackPage match aria snapshot
+- Location: /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/fusionBackpackPage.spec.js:69:3
+
+# Error details
+
+```
+Error: Timed out 15000ms waiting for expect(locator).toMatchAriaSnapshot(expected)
+
+Locator: locator('body')
+- Expected  - 98
++ Received  + 96
+
+- - link "Privacy Privacy":
+-     - img "Privacy"
+  - paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+  - banner:
+-     - link "Skip to Content"
++   - link "Skip to Content"
+-     - list:
++   - list:
+-         - listitem:
++     - listitem:
+-             - link
++       - link
+-         - listitem:
++     - listitem:
+-             - link "Sign In"
++       - link "Sign In"
+-             - text: or
++       - text: or
+-         - listitem:
++     - listitem:
+-             - link "Create an Account"
++       - link "Create an Account"
+-     - link "store logo"
++   - link "store logo"
+-     - link " My Cart"
++   - link " My Cart"
+-     - text:  Search
++   - text:  Search
+-     - combobox " Search"
++   - combobox " Search"
+-     - button "Search" [disabled]:  Search
++   - button "Search" [disabled]:  Search
+-     - list:
++   - list:
+-         - listitem
++     - listitem
+  - tablist:
+-     - tabpanel:
++   - tabpanel:
+-         - navigation:
++     - navigation:
+-             - menu:
++       - menu:
+-                 - menuitem "What's New"
++         - menuitem "What's New"
+-                 - menuitem " Women"
++         - menuitem " Women"
+-                 - menuitem " Men"
++         - menuitem " Men"
+-                 - menuitem " Gear"
++         - menuitem " Gear"
+-                 - menuitem " Training"
++         - menuitem " Training"
+-                 - menuitem "Sale"
++         - menuitem "Sale"
+  - list:
+-     - listitem:
++   - listitem:
+-         - link "Home"
++     - link "Home"
+-         - text: 
++     - text: 
+-     - listitem:
++   - listitem:
+-         - strong: Fusion Backpack
++     - strong: Fusion Backpack
+  - main:
+-     - heading "Fusion Backpack" [level=1]
++   - heading "Fusion Backpack" [level=1]
+-     - text: "/Rating:   \\d+ % of \\d+/"
++   - text: "Rating:   67 % of 100"
+-     - link "3 Reviews"
++   - link "3 Reviews"
+-     - link "Add Your Review"
++   - link "Add Your Review"
+-     - text: /\$\d+\.\d+ In stock/
++   - text: $59.00 In stock
+-     - strong: 'SKU#:'
+-     - text: /\d+-MB02 Qty/
+-     - spinbutton "Qty"
+-     - button "Add to Cart"
++   - strong: "SKU#:"
++   - text: 24-MB02 Qty
++   - spinbutton "Qty": "1"
++   - button "Add to Cart"
+-     - link " Add to Wish List"
++   - link " Add to Wish List"
+-     - link " Add to Compare"
++   - link " Add to Compare"
+-     - link "Skip to the end of the images gallery"
++   - link "Skip to the end of the images gallery"
+-     - button "Previous"
++   - button "Previous"
+-     - img "Image"
++   - img "Image"
+-     - button "Next"
++   - button "Next"
+-     - button "Previous"
++   - button "Previous"
+-     - button "Image":
++   - button "Image":
+-         - img "Image"
++     - img "Image"
+-     - button "Image":
++   - button "Image":
+-         - img "Image"
++     - img "Image"
+-     - button "Next"
++   - button "Next"
+-     - link "Skip to the beginning of the images gallery"
++   - link "Skip to the beginning of the images gallery"
+-     - tablist:
++   - tablist:
+-         - tab "Details" [expanded]:
++     - tab "Details" [expanded]:
+-             - link "Details"
++       - link "Details"
+-         - tabpanel "Details":
++     - tabpanel "Details":
+-             - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
++       - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+-             - list:
++       - list:
+-                 - listitem: Durable nylon construction.
++         - listitem: Durable nylon construction.
+-                 - listitem: 2 main zippered compartments.
++         - listitem: 2 main zippered compartments.
+-                 - listitem: 1 exterior zippered pocket.
++         - listitem: 1 exterior zippered pocket.
+-                 - listitem: Mesh side pouches.
++         - listitem: Mesh side pouches.
+-                 - listitem: Padded, adjustable straps.
++         - listitem: Padded, adjustable straps.
+-                 - listitem: Top carry handle.
++         - listitem: Top carry handle.
+-                 - listitem: "/Dimensions: \\d+\" x \\d+\" x 6\"\\./"
+-         - tab "More Information":
++         - listitem: "Dimensions: 18\" x 10\" x 6\"."
++     - tab "More Information":
+-             - link "More Information"
++       - link "More Information"
+-         - tab "Reviews (3)":
++     - tab "Reviews (3)":
+-             - link "Reviews (3)"
++       - link "Reviews (3)"
+-     - heading "We found other products you might like!" [level=2]
++   - heading "We found other products you might like!" [level=2]
+-     - list:
++   - list:
+-         - listitem:
++     - listitem:
+-             - link "Impulse Duffle":
++       - link "Impulse Duffle":
+-                 - img "Impulse Duffle"
++         - img "Impulse Duffle"
+-             - strong:
++       - strong:
+-                 - link "Impulse Duffle"
++         - link "Impulse Duffle"
+-             - text: /\$\d+\.\d+/
++       - text: $74.00
+  - contentinfo:
+-     - list:
++   - list:
+-         - listitem:
++     - listitem:
+-             - link "Notes"
++       - link "Notes"
+-         - listitem:
++     - listitem:
+-             - link "Practice API Testing using Magento 2"
++       - link "Practice API Testing using Magento 2"
+-         - listitem:
++     - listitem:
+-             - link "Write for us"
++       - link "Write for us"
+-         - listitem:
++     - listitem:
+-             - link "Subscribe"
++       - link "Subscribe"
+-     - list:
++   - list:
+-         - listitem:
++     - listitem:
+-             - link "Search Terms"
++       - link "Search Terms"
+-         - listitem:
++     - listitem:
+-             - link "Privacy and Cookie Policy"
++       - link "Privacy and Cookie Policy"
+-         - listitem:
++     - listitem:
+-             - link "Advanced Search"
++       - link "Advanced Search"
+-         - listitem:
++     - listitem:
+-             - link "Orders and Returns"
++       - link "Orders and Returns"
+- - text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
++ - text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+Call log:
+  - expect.soft.toMatchAriaSnapshot with timeout 15000ms
+  - waiting for locator('body')
+    - locator resolved to <body data-container="body" itemscope="itemscope" itemtype="http://schema.org/Product" class="catalog-product-view product-fusion-backpack page-layout-1column" data-mage-init="{"loaderAjax": {}, "loader": { "icon": "https://magento.softwaretestingboard.com/pub/static/version1695896754/frontend/Magento/luma/en_US/images/loader-2.gif"}}">…</body>
+    2 × unexpected value "- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search":  Search
+  - list:
+    - listitem
+- navigation:
+  - list:
+    - listitem:
+      - link "What's New"
+    - listitem:
+      - link "Women"
+    - listitem:
+      - link "Men"
+    - listitem:
+      - link "Gear"
+    - listitem:
+      - link "Training"
+    - listitem:
+      - link "Sale"
+- main:
+  - alert
+  - alert
+  - heading "Fusion Backpack" [level=1]
+  - text: "Rating:   67 % of 100"
+  - link "3 Reviews"
+  - link "Add Your Review"
+  - text: $59.00 In stock
+  - strong: "SKU#:"
+  - text: 24-MB02 Qty
+  - spinbutton "Qty": "1"
+  - button "Add to Cart" [disabled]
+  - link " Add to Wish List"
+  - link " Add to Compare"
+  - link "Skip to the end of the images gallery"
+  - img "main product photo"
+  - link "Skip to the beginning of the images gallery"
+  - link "Details"
+  - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+  - list:
+    - listitem: Durable nylon construction.
+    - listitem: 2 main zippered compartments.
+    - listitem: 1 exterior zippered pocket.
+    - listitem: Mesh side pouches.
+    - listitem: Padded, adjustable straps.
+    - listitem: Top carry handle.
+    - listitem: "Dimensions: 18\" x 10\" x 6\"."
+  - link "More Information"
+  - table "More Information":
+    - caption: More Information
+    - rowgroup:
+      - row "Activity Yoga, Hiking, School":
+        - rowheader "Activity"
+        - cell "Yoga, Hiking, School"
+      - row "Style Backpack, Laptop":
+        - rowheader "Style"
+        - cell "Backpack, Laptop"
+      - row "Material Burlap, Nylon, Polyester":
+        - rowheader "Material"
+        - cell "Burlap, Nylon, Polyester"
+      - row "Strap/Handle Adjustable, Double, Padded":
+        - rowheader "Strap/Handle"
+        - cell "Adjustable, Double, Padded"
+      - row "Features Hydration Pocket, Audio Pocket, Waterproof, Lightweight":
+        - rowheader "Features"
+        - cell "Hydration Pocket, Audio Pocket, Waterproof, Lightweight"
+  - link "Reviews (3)"
+  - 'group "You''re reviewing: Fusion Backpack"':
+    - text: "You're reviewing:"
+    - strong: Fusion Backpack
+    - group "Your Rating*":
+      - text: Your Rating* Rating 
+      - radio "Rating  1 star"
+      - text:  1 star
+      - radio "Rating  2 stars"
+      - text:  2 stars
+      - radio "Rating  3 stars"
+      - text:  3 stars
+      - radio "Rating  4 stars"
+      - text:  4 stars
+      - radio "Rating  5 stars"
+      - text:  5 stars
+    - text: Nickname*
+    - textbox "Nickname*"
+    - text: Summary*
+    - textbox "Summary*"
+    - text: Review*
+    - textbox "Review*"
+  - button "Submit Review"
+  - heading "We found other products you might like!" [level=2]
+  - list
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved."
+      - locator resolved to <body data-container="body" itemscope="itemscope" itemtype="http://schema.org/Product" class="catalog-product-view product-fusion-backpack page-layout-1column">…</body>
+    - unexpected value "- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- main:
+  - heading "Fusion Backpack" [level=1]
+  - text: "Rating:   67 % of 100"
+  - link "3 Reviews"
+  - link "Add Your Review"
+  - text: $59.00 In stock
+  - strong: "SKU#:"
+  - text: 24-MB02 Qty
+  - spinbutton "Qty": "1"
+  - button "Add to Cart" [disabled]
+  - link " Add to Wish List"
+  - link " Add to Compare"
+  - link "Skip to the end of the images gallery"
+  - img "main product photo"
+  - link "Skip to the beginning of the images gallery"
+  - tablist:
+    - tab "Details" [expanded]:
+      - link "Details"
+    - tabpanel "Details":
+      - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+      - list:
+        - listitem: Durable nylon construction.
+        - listitem: 2 main zippered compartments.
+        - listitem: 1 exterior zippered pocket.
+        - listitem: Mesh side pouches.
+        - listitem: Padded, adjustable straps.
+        - listitem: Top carry handle.
+        - listitem: "Dimensions: 18\" x 10\" x 6\"."
+    - tab "More Information":
+      - link "More Information"
+    - tab "Reviews (3)":
+      - link "Reviews (3)"
+  - heading "We found other products you might like!" [level=2]
+  - list:
+    - listitem:
+      - link "Impulse Duffle":
+        - img "Impulse Duffle"
+      - strong:
+        - link "Impulse Duffle"
+      - text: $74.00
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved."
+    15 × locator resolved to <body data-container="body" itemscope="itemscope" itemtype="http://schema.org/Product" class="catalog-product-view product-fusion-backpack page-layout-1column">…</body>
+       - unexpected value "- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - strong: Fusion Backpack
+- main:
+  - heading "Fusion Backpack" [level=1]
+  - text: "Rating:   67 % of 100"
+  - link "3 Reviews"
+  - link "Add Your Review"
+  - text: $59.00 In stock
+  - strong: "SKU#:"
+  - text: 24-MB02 Qty
+  - spinbutton "Qty": "1"
+  - button "Add to Cart"
+  - link " Add to Wish List"
+  - link " Add to Compare"
+  - link "Skip to the end of the images gallery"
+  - button "Previous"
+  - img "Image"
+  - button "Next"
+  - button "Previous"
+  - button "Image":
+    - img "Image"
+  - button "Image":
+    - img "Image"
+  - button "Next"
+  - link "Skip to the beginning of the images gallery"
+  - tablist:
+    - tab "Details" [expanded]:
+      - link "Details"
+    - tabpanel "Details":
+      - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+      - list:
+        - listitem: Durable nylon construction.
+        - listitem: 2 main zippered compartments.
+        - listitem: 1 exterior zippered pocket.
+        - listitem: Mesh side pouches.
+        - listitem: Padded, adjustable straps.
+        - listitem: Top carry handle.
+        - listitem: "Dimensions: 18\" x 10\" x 6\"."
+    - tab "More Information":
+      - link "More Information"
+    - tab "Reviews (3)":
+      - link "Reviews (3)"
+  - heading "We found other products you might like!" [level=2]
+  - list:
+    - listitem:
+      - link "Impulse Duffle":
+        - img "Impulse Duffle"
+      - strong:
+        - link "Impulse Duffle"
+      - text: $74.00
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved."
+
+    at /home/runner/work/Playwright_ProjectJS_2024/Playwright_ProjectJS_2024/tests/testsPOM/fusionBackpackPage.spec.js:71:64
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - strong: Fusion Backpack
+- main:
+  - heading "Fusion Backpack" [level=1]
+  - text: "Rating:   67 % of 100"
+  - link "3 Reviews"
+  - link "Add Your Review"
+  - text: $59.00 In stock
+  - strong: "SKU#:"
+  - text: 24-MB02 Qty
+  - spinbutton "Qty": "1"
+  - button "Add to Cart"
+  - link " Add to Wish List"
+  - link " Add to Compare"
+  - link "Skip to the end of the images gallery"
+  - button "Previous"
+  - img "Image"
+  - button "Next"
+  - button "Previous"
+  - button "Image":
+    - img "Image"
+  - button "Image":
+    - img "Image"
+  - button "Next"
+  - link "Skip to the beginning of the images gallery"
+  - tablist:
+    - tab "Details" [expanded]:
+      - link "Details"
+    - tabpanel "Details":
+      - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+      - list:
+        - listitem: Durable nylon construction.
+        - listitem: 2 main zippered compartments.
+        - listitem: 1 exterior zippered pocket.
+        - listitem: Mesh side pouches.
+        - listitem: Padded, adjustable straps.
+        - listitem: Top carry handle.
+        - listitem: "Dimensions: 18\" x 10\" x 6\"."
+    - tab "More Information":
+      - link "More Information"
+    - tab "Reviews (3)":
+      - link "Reviews (3)"
+  - heading "We found other products you might like!" [level=2]
+  - list:
+    - listitem:
+      - link "Impulse Duffle":
+        - img "Impulse Duffle"
+      - strong:
+        - link "Impulse Duffle"
+      - text: $74.00
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: We know you have an assignment to complete. If this site is not functioning as expected, drop us an email. Copyright © 2013-present Magento, Inc. All rights reserved.
+```
+
+# Test source
+
+```ts
+   1 | import { IMAGE_BLUE_URL_REGEX, IMAGE_GRAY_URL_REGEX, ZOOM_COUNT } from '@helpers/data/testFusionbackpackData.js'
+   2 | import { expect, test } from '@pages/base.js'
+   3 | import FusionBackpackPage from '@pages/fusionbackpackPage.js'
+   4 |
+   5 | test.describe('fusionBackpackPage.spec', () => {
+   6 |   test.beforeEach(async ({ homePage }) => {
+   7 |     await homePage.clickFifthCardImage()
+   8 |   })
+   9 |
+  10 |   test('photo Product in full screen', async ({ page }) => {
+  11 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  12 |     await fusionBackpackPage.clickProductMainImage()
+  13 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toBeVisible()
+  14 |   })
+  15 |
+  16 |   test('slide photo in home mode', async ({ page }) => {
+  17 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  18 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toHaveAttribute('src', /gray/)
+  19 |     await fusionBackpackPage.clickSlideNextButton()
+  20 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toHaveAttribute('src', /blue/)
+  21 |   })
+  22 |
+  23 |   test('slide photo in full screen mode', async ({ page }) => {
+  24 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  25 |     await fusionBackpackPage.clickActiveImage()
+  26 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toBeVisible()
+  27 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toHaveAttribute('src', IMAGE_GRAY_URL_REGEX)
+  28 |     await fusionBackpackPage.clickSlideNextButton()
+  29 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toHaveAttribute('src', IMAGE_BLUE_URL_REGEX)
+  30 |   })
+  31 |
+  32 |   test('zoomPhoto in full screen', async ({ page }) => {
+  33 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  34 |     await fusionBackpackPage.clickActiveImage()
+  35 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toBeVisible()
+  36 |     for (let i = 1; i <= ZOOM_COUNT; i++) {
+  37 |       const activeImg = fusionBackpackPage.locators.getFusionBackpackFullScreen()
+  38 |       const originalHeight = (await activeImg.boundingBox()).height
+  39 |       await fusionBackpackPage.clickZoomInButton()
+  40 |       await activeImg.screenshot({ animations: 'disabled' })
+  41 |       const zoomInHeigth = (await activeImg.boundingBox()).height
+  42 |       expect.soft(zoomInHeigth).toBeGreaterThan(originalHeight)
+  43 |     }
+  44 |     for (let i = 1; i <= ZOOM_COUNT; i++) {
+  45 |       const activeImg = fusionBackpackPage.locators.getFusionBackpackFullScreen()
+  46 |       const originalHeight = (await activeImg.boundingBox()).height
+  47 |       await fusionBackpackPage.clickZoomOutButton()
+  48 |       await activeImg.screenshot({ animations: 'disabled' })
+  49 |       const zoomOutHeigth = (await activeImg.boundingBox()).height
+  50 |       expect.soft(zoomOutHeigth).toBeLessThanOrEqual(originalHeight)
+  51 |     }
+  52 |   })
+  53 |
+  54 |   test('exiting full screen mode clicking on the close button', async ({ page }) => {
+  55 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  56 |     await fusionBackpackPage.clickActiveImage()
+  57 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toBeVisible()
+  58 |     await fusionBackpackPage.clickCloseButton()
+  59 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toBeVisible()
+  60 |   })
+  61 |
+  62 |   test('exiting full screen mode pressing Escape', async ({ page }) => {
+  63 |     const fusionBackpackPage = new FusionBackpackPage(page)
+  64 |     await fusionBackpackPage.clickActiveImage()
+  65 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackFullScreen()).toBeVisible()
+  66 |     await page.keyboard.press('Escape')
+  67 |     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toBeVisible()
+  68 |   })
+  69 |   test(`Verify fusionBackpackPage match aria snapshot`, async ({ page }) => {
+  70 |     const fusionBackpackPage = new FusionBackpackPage(page)
+> 71 |     await expect.soft(fusionBackpackPage.page.locator('body')).toMatchAriaSnapshot({ name: 'fusionBackpackPage.yml' })
+     |                                                                ^ Error: Timed out 15000ms waiting for expect(locator).toMatchAriaSnapshot(expected)
+  72 |   })
+  73 | })
+  74 |
+```
+
+# Local changes
+
+```diff
+diff --git a/.github/workflows/playwright-shard.yml b/.github/workflows/playwright-shard.yml
+index 14d1ea2..8dfeb66 100644
+--- a/.github/workflows/playwright-shard.yml
++++ b/.github/workflows/playwright-shard.yml
+@@ -109,11 +109,12 @@ jobs:
+     steps:
+       - uses: actions/checkout@v4
+       - name: Generate and Publish Allure Report
+-        uses: Valiantsin2021/allure-shard-results-publish@1.0.5
++        uses: Valiantsin2021/allure-shard-results-publish@1.0.6
+         if: always()
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           results-pattern: 'allure-results-*'
++          add-env: true
+ 
+       - name: Install dependencies and send Slack notification
+         if: always()
+diff --git a/__snapshots__/bottomsWomenPage.spec.js/bottomsWomenPage.yml b/__snapshots__/bottomsWomenPage.spec.js/bottomsWomenPage.yml
+new file mode 100644
+index 0000000..49b5631
+--- /dev/null
++++ b/__snapshots__/bottomsWomenPage.spec.js/bottomsWomenPage.yml
+@@ -0,0 +1,342 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - link "Women"
++    - text: 
++  - listitem:
++    - strong: Bottoms
++- main:
++  - heading /Bottoms Items 1-\d+ of \d+/ [level=1]
++  - strong: View as
++  - strong:  Grid
++  - link "View as  List"
++  - paragraph: /Items 1-\d+ of \d+/
++  - text: Sort By
++  - combobox "Sort By Sort By":
++    - option "Position" [selected]
++    - option "Product Name"
++    - option "Price"
++  - link " Set Descending Direction"
++  - list:
++    - listitem:
++      - link "Erika Running Short":
++        - img "Erika Running Short"
++      - strong:
++        - link "Erika Running Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Green"
++        - option "Purple"
++        - option "Red"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Ina Compression Short":
++        - img "Ina Compression Short"
++      - strong:
++        - link "Ina Compression Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Blue"
++        - option "Orange"
++        - option "Red"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Ana Running Short":
++        - img "Ana Running Short"
++      - strong:
++        - link "Ana Running Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Black"
++        - option "Orange"
++        - option "White"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Mimi All-Purpose Short":
++        - img "Mimi All-Purpose Short"
++      - strong:
++        - link "Mimi All-Purpose Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Gray"
++        - option "Green"
++        - option "White"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Sybil Running Short":
++        - img "Sybil Running Short"
++      - strong:
++        - link "Sybil Running Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Purple"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Echo Fit Compression Short":
++        - img "Echo Fit Compression Short"
++      - strong:
++        - link "Echo Fit Compression Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Black"
++        - option "Blue"
++        - option "Purple"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Angel Light Running Short":
++        - img "Angel Light Running Short"
++      - strong:
++        - link "Angel Light Running Short"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Gray"
++        - option "Orange"
++        - option "Purple"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Bess Yoga Short":
++        - img "Bess Yoga Short"
++      - strong:
++        - link "Bess Yoga Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Blue"
++        - option "Purple"
++        - option "Yellow"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Artemis Running Short":
++        - img "Artemis Running Short"
++      - strong:
++        - link "Artemis Running Short"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Black"
++        - option "Green"
++        - option "Orange"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Gwen Drawstring Bike Short":
++        - img "Gwen Drawstring Bike Short"
++      - strong:
++        - link "Gwen Drawstring Bike Short"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Blue"
++        - option "Gray"
++        - option "Orange"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Maxima Drawstring Short":
++        - img "Maxima Drawstring Short"
++      - strong:
++        - link "Maxima Drawstring Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Gray"
++        - option "Orange"
++        - option "Yellow"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Fiona Fitness Short":
++        - img "Fiona Fitness Short"
++      - strong:
++        - link "Fiona Fitness Short"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /As low as \$\d+\.\d+/
++      - listbox "Size":
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++        - option /\d+/
++      - listbox "Color":
++        - option "Black"
++        - option "Green"
++        - option "Red"
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++  - strong: Page
++  - list "Page":
++    - listitem:
++      - strong: You're currently reading page 1
++    - listitem:
++      - link "Page 2"
++    - listitem:
++      - link "Page 3"
++    - listitem:
++      - link " Page Next"
++  - text: Show
++  - combobox:
++    - option /\d+/ [selected]
++    - option /\d+/
++    - option /\d+/
++  - text: per page
++  - heading "Shopping Options" [level=2]
++  - tablist:
++    - tab "Category "
++    - tab "Style "
++    - tab "Size "
++    - tab "Climate "
++    - tab "Color "
++    - tab "Eco Collection "
++    - tab "Erin Recommends "
++    - tab "Material "
++    - tab "New "
++    - tab "Pattern "
++    - tab "Performance Fabric "
++    - tab "Price "
++    - tab "Sale "
++  - heading "Compare Products" [level=2]
++  - text: You have no items to compare.
++  - heading "My Wish List" [level=2]
++  - text: You have no items in your wish list.
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/createAccountPage.spec.js/createAccountPage.yml b/__snapshots__/createAccountPage.spec.js/createAccountPage.yml
+new file mode 100644
+index 0000000..56c6296
+--- /dev/null
++++ b/__snapshots__/createAccountPage.spec.js/createAccountPage.yml
+@@ -0,0 +1,63 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- main:
++  - heading "Create New Customer Account" [level=1]
++  - group "Personal Information":
++    - text: Personal Information First Name*
++    - textbox "First Name*"
++    - textbox "Last Name*"
++  - group "Sign-in Information":
++    - text: Sign-in Information Email*
++    - textbox "Email*"
++    - textbox "Password*"
++    - text: "Password Strength: No Password Confirm Password*"
++    - textbox "Confirm Password*"
++  - button "Create an Account"
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/footer.spec.js/footer.yml b/__snapshots__/footer.spec.js/footer.yml
+new file mode 100644
+index 0000000..a5afbaa
+--- /dev/null
++++ b/__snapshots__/footer.spec.js/footer.yml
+@@ -0,0 +1,19 @@
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
+\ No newline at end of file
+diff --git a/__snapshots__/fusionBackpackPage.spec.js/fusionBackpackPage.yml b/__snapshots__/fusionBackpackPage.spec.js/fusionBackpackPage.yml
+new file mode 100644
+index 0000000..6a0a0a9
+--- /dev/null
++++ b/__snapshots__/fusionBackpackPage.spec.js/fusionBackpackPage.yml
+@@ -0,0 +1,104 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - strong: Fusion Backpack
++- main:
++  - heading "Fusion Backpack" [level=1]
++  - text: "/Rating:   \\d+ % of \\d+/"
++  - link "3 Reviews"
++  - link "Add Your Review"
++  - text: /\$\d+\.\d+ In stock/
++  - strong: "SKU#:"
++  - text: /\d+-MB02 Qty/
++  - spinbutton "Qty"
++  - button "Add to Cart"
++  - link " Add to Wish List"
++  - link " Add to Compare"
++  - link "Skip to the end of the images gallery"
++  - button "Previous"
++  - img "Image"
++  - button "Next"
++  - button "Previous"
++  - button "Image":
++    - img "Image"
++  - button "Image":
++    - img "Image"
++  - button "Next"
++  - link "Skip to the beginning of the images gallery"
++  - tablist:
++    - tab "Details" [expanded]:
++      - link "Details"
++    - tabpanel "Details":
++      - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
++      - list:
++        - listitem: Durable nylon construction.
++        - listitem: 2 main zippered compartments.
++        - listitem: 1 exterior zippered pocket.
++        - listitem: Mesh side pouches.
++        - listitem: Padded, adjustable straps.
++        - listitem: Top carry handle.
++        - listitem: "/Dimensions: \\d+\" x \\d+\" x 6\"\\./"
++    - tab "More Information":
++      - link "More Information"
++    - tab "Reviews (3)":
++      - link "Reviews (3)"
++  - heading "We found other products you might like!" [level=2]
++  - list:
++    - listitem:
++      - link "Impulse Duffle":
++        - img "Impulse Duffle"
++      - strong:
++        - link "Impulse Duffle"
++      - text: /\$\d+\.\d+/
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/gearBags.spec.js/gearBagsPage.yml b/__snapshots__/gearBags.spec.js/gearBagsPage.yml
+new file mode 100644
+index 0000000..5e351a3
+--- /dev/null
++++ b/__snapshots__/gearBags.spec.js/gearBagsPage.yml
+@@ -0,0 +1,234 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - link "Gear"
++    - text: 
++  - listitem:
++    - strong: Bags
++- main:
++  - heading /Bags Items 1-\d+ of \d+/ [level=1]
++  - strong: View as
++  - strong:  Grid
++  - link "View as  List"
++  - paragraph: /Items 1-\d+ of \d+/
++  - text: Sort By
++  - combobox "Sort By Sort By":
++    - option "Position" [selected]
++    - option "Product Name"
++    - option "Price"
++  - link " Set Descending Direction"
++  - list:
++    - listitem:
++      - link "Push It Messenger Bag":
++        - img "Push It Messenger Bag"
++      - strong:
++        - link "Push It Messenger Bag"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Overnight Duffle":
++        - img "Overnight Duffle"
++      - strong:
++        - link "Overnight Duffle"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Driven Backpack":
++        - img "Driven Backpack"
++      - strong:
++        - link "Driven Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Endeavor Daytrip Backpack":
++        - img "Endeavor Daytrip Backpack"
++      - strong:
++        - link "Endeavor Daytrip Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Savvy Shoulder Tote":
++        - img "Savvy Shoulder Tote"
++      - strong:
++        - link "Savvy Shoulder Tote"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /Special Price \$\d+\.\d+ Regular Price \$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Compete Track Tote":
++        - img "Compete Track Tote"
++      - strong:
++        - link "Compete Track Tote"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Voyage Yoga Bag":
++        - img "Voyage Yoga Bag"
++      - strong:
++        - link "Voyage Yoga Bag"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Impulse Duffle":
++        - img "Impulse Duffle"
++      - strong:
++        - link "Impulse Duffle"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Fusion Backpack":
++        - img "Fusion Backpack"
++      - strong:
++        - link "Fusion Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Rival Field Messenger":
++        - img "Rival Field Messenger"
++      - strong:
++        - link "Rival Field Messenger"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Wayfarer Messenger Bag":
++        - img "Wayfarer Messenger Bag"
++      - strong:
++        - link "Wayfarer Messenger Bag"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Crown Summit Backpack":
++        - img "Crown Summit Backpack"
++      - strong:
++        - link "Crown Summit Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++  - strong: Page
++  - list "Page":
++    - listitem:
++      - strong: You're currently reading page 1
++    - listitem:
++      - link "Page 2"
++    - listitem:
++      - link " Page Next"
++  - text: Show
++  - combobox:
++    - option /\d+/ [selected]
++    - option /\d+/
++    - option /\d+/
++  - text: per page
++  - heading "Shopping Options" [level=2]
++  - tablist:
++    - tab "Style "
++    - tab "Activity "
++    - tab "Erin Recommends "
++    - tab "Features "
++    - tab "Material "
++    - tab "New "
++    - tab "Performance Fabric "
++    - tab "Price "
++    - tab "Sale "
++    - tab "Strap/Handle "
++  - heading "Compare Products" [level=2]
++  - text: You have no items to compare.
++  - heading "My Wish List" [level=2]
++  - text: You have no items in your wish list.
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/gearFitnessPage.spec.js/gearFitnessPage.yml b/__snapshots__/gearFitnessPage.spec.js/gearFitnessPage.yml
+new file mode 100644
+index 0000000..9c5ebfe
+--- /dev/null
++++ b/__snapshots__/gearFitnessPage.spec.js/gearFitnessPage.yml
+@@ -0,0 +1,208 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - link "Gear"
++    - text: 
++  - listitem:
++    - strong: Fitness Equipment
++- main:
++  - heading /Fitness Equipment \d+ Items/ [level=1]
++  - strong: View as
++  - strong:  Grid
++  - link "View as  List"
++  - paragraph: /\d+ Items/
++  - text: Sort By
++  - combobox "Sort By Sort By":
++    - option "Position" [selected]
++    - option "Product Name"
++    - option "Price"
++  - link " Set Descending Direction"
++  - list:
++    - listitem:
++      - link "Sprite Yoga Companion Kit":
++        - img "Sprite Yoga Companion Kit"
++      - strong:
++        - link "Sprite Yoga Companion Kit"
++      - paragraph: /From \$\d+\.\d+/
++      - paragraph: /To \$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Set of Sprite Yoga Straps":
++        - img "Set of Sprite Yoga Straps"
++      - strong:
++        - link "Set of Sprite Yoga Straps"
++      - paragraph: /Starting at \$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Harmony Lumaflex™ Strength Band Kit":
++        - img "Harmony Lumaflex™ Strength Band Kit"
++      - strong:
++        - link "Harmony Lumaflex™ Strength Band Kit"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Sprite Foam Roller":
++        - img "Sprite Foam Roller"
++      - strong:
++        - link "Sprite Foam Roller"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Sprite Foam Yoga Brick":
++        - img "Sprite Foam Yoga Brick"
++      - strong:
++        - link "Sprite Foam Yoga Brick"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Quest Lumaflex™ Band":
++        - img "Quest Lumaflex™ Band"
++      - strong:
++        - link "Quest Lumaflex™ Band"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Go-Get'r Pushup Grips":
++        - img "Go-Get'r Pushup Grips"
++      - strong:
++        - link "Go-Get'r Pushup Grips"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Pursuit Lumaflex™ Tone Band":
++        - img "Pursuit Lumaflex™ Tone Band"
++      - strong:
++        - link "Pursuit Lumaflex™ Tone Band"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Zing Jump Rope":
++        - img "Zing Jump Rope"
++      - strong:
++        - link "Zing Jump Rope"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Dual Handle Cardio Ball":
++        - img "Dual Handle Cardio Ball"
++      - strong:
++        - link "Dual Handle Cardio Ball"
++      - text: "/Rating:   \\d+%/"
++      - link "2 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++    - listitem:
++      - link "Affirm Water Bottle":
++        - img "Affirm Water Bottle"
++      - strong:
++        - link "Affirm Water Bottle"
++      - text: "/Rating:   \\d+%/"
++      - link "1 Review"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - button "Add to Wish List"
++      - button "Add to Compare"
++  - text: Show
++  - combobox:
++    - option /\d+/ [selected]
++    - option /\d+/
++    - option /\d+/
++  - text: per page
++  - heading "Shopping Options" [level=2]
++  - tablist:
++    - tab "Category "
++    - tab "Size "
++    - tab "Activity "
++    - tab "Color "
++    - tab "Erin Recommends "
++    - tab "Gender "
++    - tab "Material "
++    - tab "New "
++    - tab "Price "
++    - tab "Sale "
++  - heading "Compare Products" [level=2]
++  - text: You have no items to compare.
++  - heading "My Wish List" [level=2]
++  - text: You have no items in your wish list.
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/gearPage.spec.js/gearPage.yml b/__snapshots__/gearPage.spec.js/gearPage.yml
+new file mode 100644
+index 0000000..86cad3d
+--- /dev/null
++++ b/__snapshots__/gearPage.spec.js/gearPage.yml
+@@ -0,0 +1,141 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - strong: Gear
++- main:
++  - heading "Gear" [level=1]
++  - link /Sprite Yoga Companion Kit Save up to \d+% on a bundle! Shop Yoga Kit/:
++    - strong: Sprite Yoga Companion Kit
++  - link "Loosen Up Extend your training with yoga straps, tone bands, and jump ropes Shop Fitness":
++    - strong: Loosen Up
++  - link /Here’s to you! \$4 Luma water bottle \(save \d+%\) Enter promo code H2O at check out/:
++    - strong: Here’s to you!
++  - link "Tote, cart or carry Luma bags go the distance Shop Bags":
++    - strong: Tote, cart or carry
++  - link "Let’s get after it! Luma gym equipment fits your goals and style Shop Equipment":
++    - strong: Let’s get after it!
++  - link "Luma watches Keeping pace has never been more stylish Shop Watches":
++    - strong: Luma watches
++  - heading "Hot Sellers" [level=2]
++  - paragraph: Favorites from Luma shoppers
++  - list:
++    - listitem:
++      - link "Fusion Backpack":
++        - img "Fusion Backpack"
++      - strong:
++        - link "Fusion Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Push It Messenger Bag":
++        - img "Push It Messenger Bag"
++      - strong:
++        - link "Push It Messenger Bag"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Affirm Water Bottle":
++        - img "Affirm Water Bottle"
++      - strong:
++        - link "Affirm Water Bottle"
++      - text: "/Rating:   \\d+%/"
++      - link "1 Review"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Sprite Yoga Companion Kit":
++        - img "Sprite Yoga Companion Kit"
++      - strong:
++        - link "Sprite Yoga Companion Kit"
++      - paragraph: /From \$\d+\.\d+/
++      - paragraph: /To \$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++  - strong: Shop By
++  - term: Category
++  - definition:
++    - list:
++      - listitem:
++        - link "Bags"
++        - text: /\d+/
++      - listitem:
++        - link "Fitness Equipment"
++        - text: /\d+/
++      - listitem:
++        - link "Watches"
++        - text: "9"
++  - strong
++  - list:
++    - listitem:
++      - link "Bags"
++    - listitem:
++      - link "Fitness Equipment"
++    - listitem:
++      - link "Watches"
++  - heading "Compare Products" [level=2]
++  - text: You have no items to compare.
++  - heading "My Wish List" [level=2]
++  - text: You have no items in your wish list.
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/__snapshots__/gearWatches.spec.js/gearWatchesPage.yml b/__snapshots__/gearWatches.spec.js/gearWatchesPage.yml
+new file mode 100644
+index 0000000..86cad3d
+--- /dev/null
++++ b/__snapshots__/gearWatches.spec.js/gearWatchesPage.yml
+@@ -0,0 +1,141 @@
++- link "Privacy Privacy":
++  - img "Privacy"
++- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
++- banner:
++  - link "Skip to Content"
++  - list:
++    - listitem:
++      - link
++    - listitem:
++      - link "Sign In"
++      - text: or
++    - listitem:
++      - link "Create an Account"
++  - link "store logo"
++  - link " My Cart"
++  - text:  Search
++  - combobox " Search"
++  - button "Search" [disabled]:  Search
++  - list:
++    - listitem
++- tablist:
++  - tabpanel:
++    - navigation:
++      - menu:
++        - menuitem "What's New"
++        - menuitem " Women"
++        - menuitem " Men"
++        - menuitem " Gear"
++        - menuitem " Training"
++        - menuitem "Sale"
++- list:
++  - listitem:
++    - link "Home"
++    - text: 
++  - listitem:
++    - strong: Gear
++- main:
++  - heading "Gear" [level=1]
++  - link /Sprite Yoga Companion Kit Save up to \d+% on a bundle! Shop Yoga Kit/:
++    - strong: Sprite Yoga Companion Kit
++  - link "Loosen Up Extend your training with yoga straps, tone bands, and jump ropes Shop Fitness":
++    - strong: Loosen Up
++  - link /Here’s to you! \$4 Luma water bottle \(save \d+%\) Enter promo code H2O at check out/:
++    - strong: Here’s to you!
++  - link "Tote, cart or carry Luma bags go the distance Shop Bags":
++    - strong: Tote, cart or carry
++  - link "Let’s get after it! Luma gym equipment fits your goals and style Shop Equipment":
++    - strong: Let’s get after it!
++  - link "Luma watches Keeping pace has never been more stylish Shop Watches":
++    - strong: Luma watches
++  - heading "Hot Sellers" [level=2]
++  - paragraph: Favorites from Luma shoppers
++  - list:
++    - listitem:
++      - link "Fusion Backpack":
++        - img "Fusion Backpack"
++      - strong:
++        - link "Fusion Backpack"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Push It Messenger Bag":
++        - img "Push It Messenger Bag"
++      - strong:
++        - link "Push It Messenger Bag"
++      - text: "/Rating:   \\d+%/"
++      - link "3 Reviews"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Affirm Water Bottle":
++        - img "Affirm Water Bottle"
++      - strong:
++        - link "Affirm Water Bottle"
++      - text: "/Rating:   \\d+%/"
++      - link "1 Review"
++      - text: /\$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++    - listitem:
++      - link "Sprite Yoga Companion Kit":
++        - img "Sprite Yoga Companion Kit"
++      - strong:
++        - link "Sprite Yoga Companion Kit"
++      - paragraph: /From \$\d+\.\d+/
++      - paragraph: /To \$\d+\.\d+/
++      - button "Add to Cart"
++      - link " Add to Wish List"
++      - link " Add to Compare"
++  - strong: Shop By
++  - term: Category
++  - definition:
++    - list:
++      - listitem:
++        - link "Bags"
++        - text: /\d+/
++      - listitem:
++        - link "Fitness Equipment"
++        - text: /\d+/
++      - listitem:
++        - link "Watches"
++        - text: "9"
++  - strong
++  - list:
++    - listitem:
++      - link "Bags"
++    - listitem:
++      - link "Fitness Equipment"
++    - listitem:
++      - link "Watches"
++  - heading "Compare Products" [level=2]
++  - text: You have no items to compare.
++  - heading "My Wish List" [level=2]
++  - text: You have no items in your wish list.
++- contentinfo:
++  - list:
++    - listitem:
++      - link "Notes"
++    - listitem:
++      - link "Practice API Testing using Magento 2"
++    - listitem:
++      - link "Write for us"
++    - listitem:
++      - link "Subscribe"
++  - list:
++    - listitem:
++      - link "Search Terms"
++    - listitem:
++      - link "Privacy and Cookie Policy"
++    - listitem:
++      - link "Advanced Search"
++    - listitem:
++      - link "Orders and Returns"
++- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./
+\ No newline at end of file
+diff --git a/helpers/Dockerfile b/helpers/Dockerfile
+index d240574..3e38022 100644
+--- a/helpers/Dockerfile
++++ b/helpers/Dockerfile
+@@ -4,5 +4,5 @@ RUN apt-get update && \
+     apt-get -y install default-jre-headless && \
+     apt-get clean && \
+     rm -rf /var/lib/apt/lists/*
+-RUN npx -y playwright@1.50.1 install --with-deps chromium
++RUN npx -y playwright@1.51.0 install --with-deps chromium
+ CMD ["npx", "playwright", "test"]
+\ No newline at end of file
+diff --git a/package-lock.json b/package-lock.json
+index 01e8773..d176f08 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -12,7 +12,7 @@
+       "devDependencies": {
+         "@commitlint/cli": "latest",
+         "@commitlint/config-conventional": "latest",
+-        "@playwright/test": "1.50.1",
++        "@playwright/test": "1.51.0",
+         "@types/node": "^22.13.9",
+         "allure-commandline": "2.33.0",
+         "allure-playwright": "3.2.0",
+@@ -508,12 +508,12 @@
+       }
+     },
+     "node_modules/@playwright/test": {
+-      "version": "1.50.1",
+-      "resolved": "https://registry.npmjs.org/@playwright/test/-/test-1.50.1.tgz",
+-      "integrity": "sha512-Jii3aBg+CEDpgnuDxEp/h7BimHcUTDlpEtce89xEumlJ5ef2hqepZ+PWp1DDpYC/VO9fmWVI1IlEaoI5fK9FXQ==",
++      "version": "1.51.0",
++      "resolved": "https://registry.npmjs.org/@playwright/test/-/test-1.51.0.tgz",
++      "integrity": "sha512-dJ0dMbZeHhI+wb77+ljx/FeC8VBP6j/rj9OAojO08JI80wTZy6vRk9KvHKiDCUh4iMpEiseMgqRBIeW+eKX6RA==",
+       "dev": true,
+       "dependencies": {
+-        "playwright": "1.50.1"
++        "playwright": "1.51.0"
+       },
+       "bin": {
+         "playwright": "cli.js"
+@@ -2479,12 +2479,12 @@
+       "dev": true
+     },
+     "node_modules/playwright": {
+-      "version": "1.50.1",
+-      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.50.1.tgz",
+-      "integrity": "sha512-G8rwsOQJ63XG6BbKj2w5rHeavFjy5zynBA9zsJMMtBoe/Uf757oG12NXz6e6OirF7RCrTVAKFXbLmn1RbL7Qaw==",
++      "version": "1.51.0",
++      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.51.0.tgz",
++      "integrity": "sha512-442pTfGM0xxfCYxuBa/Pu6B2OqxqqaYq39JS8QDMGThUvIOCd6s0ANDog3uwA0cHavVlnTQzGCN7Id2YekDSXA==",
+       "dev": true,
+       "dependencies": {
+-        "playwright-core": "1.50.1"
++        "playwright-core": "1.51.0"
+       },
+       "bin": {
+         "playwright": "cli.js"
+@@ -2497,9 +2497,9 @@
+       }
+     },
+     "node_modules/playwright-core": {
+-      "version": "1.50.1",
+-      "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.50.1.tgz",
+-      "integrity": "sha512-ra9fsNWayuYumt+NiM069M6OkcRb1FZSK8bgi66AtpFoWkg2+y0bJSNmkFrWhMbEBbVKC/EruAHH3g0zmtwGmQ==",
++      "version": "1.51.0",
++      "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.51.0.tgz",
++      "integrity": "sha512-x47yPE3Zwhlil7wlNU/iktF7t2r/URR3VLbH6EknJd/04Qc/PSJ0EY3CMXipmglLG+zyRxW6HNo2EGbKLHPWMg==",
+       "dev": true,
+       "bin": {
+         "playwright-core": "cli.js"
+diff --git a/package.json b/package.json
+index be51304..d674086 100644
+--- a/package.json
++++ b/package.json
+@@ -37,7 +37,7 @@
+   "devDependencies": {
+     "@commitlint/cli": "latest",
+     "@commitlint/config-conventional": "latest",
+-    "@playwright/test": "1.50.1",
++    "@playwright/test": "1.51.0",
+     "@types/node": "^22.13.9",
+     "allure-commandline": "2.33.0",
+     "allure-playwright": "3.2.0",
+diff --git a/playwright.config.js b/playwright.config.js
+index 7995d09..bc460e1 100644
+--- a/playwright.config.js
++++ b/playwright.config.js
+@@ -9,7 +9,10 @@ export default defineConfig({
+   retries: process.env.CI ? 2 : 0,
+   workers: process.env.CI ? 2 : undefined,
+   expect: {
+-    timeout: 15000
++    timeout: 15000,
++    toMatchAriaSnapshot: {
++      pathTemplate: '__snapshots__/{testFilePath}/{arg}{ext}'
++    }
+   },
+   reporter: [
+     ['list'],
+diff --git a/tests/testsPOM/bottomsWomenPage.spec.js b/tests/testsPOM/bottomsWomenPage.spec.js
+index 9637f76..0436be1 100644
+--- a/tests/testsPOM/bottomsWomenPage.spec.js
++++ b/tests/testsPOM/bottomsWomenPage.spec.js
+@@ -25,7 +25,6 @@ test.describe('bottomsWomenPage >', () => {
+ 
+     expect.soft(result.extractedItems).toEqual(expectedItems)
+   })
+-
+   test('Verify that each category displays the number of products', async ({ homePage }) => {
+     await homePage.hoverWomenMenuitem()
+     const bottomsWomenPage = await homePage.clickBottomsWomenLink()
+@@ -45,7 +44,11 @@ test.describe('bottomsWomenPage >', () => {
+       expect.soft(await countItems.textContent()).toMatch(/\d+/)
+     }
+   })
+-
++  test(`Verify bottomsWomenPage match aria snapshot`, async ({ homePage }) => {
++    await homePage.hoverWomenMenuitem()
++    const bottomsWomenPage = await homePage.clickBottomsWomenLink()
++    await expect.soft(bottomsWomenPage.page.locator('body')).toMatchAriaSnapshot({ name: 'bottomsWomenPage.yml' })
++  })
+   EXPECTED_ITEM_STYLE_WOMEN_BOTTOMS.forEach(async (categoryName, index) => {
+     test(`Verify navigating to "${categoryName}" page from "Style" option`, async ({ homePage }) => {
+       await homePage.hoverWomenMenuitem()
+diff --git a/tests/testsPOM/createAccountPage.spec.js b/tests/testsPOM/createAccountPage.spec.js
+index 42ef8be..c281bc7 100644
+--- a/tests/testsPOM/createAccountPage.spec.js
++++ b/tests/testsPOM/createAccountPage.spec.js
+@@ -109,4 +109,8 @@ test.describe('createAccuntPage.spec', () => {
+       await expect.soft(createAccountPage.locators.getPageAlertBlock()).toHaveText(CREATE_ACCOUNT_PAGE_PASSWORD_WITH_SPACES_MESSAGE)
+     })
+   })
++  test(`Verify createAccountPage match aria snapshot`, async ({ homePage }) => {
++    const createAccountPage = await homePage.clickCreateAccountLink()
++    await expect.soft(createAccountPage.page.locator('body')).toMatchAriaSnapshot({ name: 'createAccountPage.yml' })
++  })
+ })
+diff --git a/tests/testsPOM/footer.spec.js b/tests/testsPOM/footer.spec.js
+index d45b05a..0f63b03 100644
+--- a/tests/testsPOM/footer.spec.js
++++ b/tests/testsPOM/footer.spec.js
+@@ -27,7 +27,10 @@ test.describe('footer.spec', () => {
+     await expect.soft(homePage.page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
+     await expect.soft(searchTermPopularPage.locators.getSearchTermPopularHeader()).toContainText(SEARCH_TERMS_POPULAR_PAGE_HEADER)
+   })
+-
++  test(`Verify footer match aria snapshot`, async ({ homePage }) => {
++    const footer = new Footer(homePage.page)
++    await expect.soft(footer.locators.getFooter()).toMatchAriaSnapshot({ name: 'footer.yml' })
++  })
+   test('Verify that "Search terms" link redirects to the "Popular Search Terms" page', async ({ homePage, page }) => {
+     const searchTermPopularPage = await homePage.getFooter().clickSearchTerms()
+     await expect.soft(page).toHaveURL(BASE_URL + SEARCH_TERMS_POPULAR_PAGE_END_POINT)
+diff --git a/tests/testsPOM/fusionBackpackPage.spec.js b/tests/testsPOM/fusionBackpackPage.spec.js
+index 869c1a5..5188854 100644
+--- a/tests/testsPOM/fusionBackpackPage.spec.js
++++ b/tests/testsPOM/fusionBackpackPage.spec.js
+@@ -66,4 +66,8 @@ test.describe('fusionBackpackPage.spec', () => {
+     await page.keyboard.press('Escape')
+     await expect.soft(fusionBackpackPage.locators.getFusionBackpackActiveImage()).toBeVisible()
+   })
++  test(`Verify fusionBackpackPage match aria snapshot`, async ({ page }) => {
++    const fusionBackpackPage = new FusionBackpackPage(page)
++    await expect.soft(fusionBackpackPage.page.locator('body')).toMatchAriaSnapshot({ name: 'fusionBackpackPage.yml' })
++  })
+ })
+diff --git a/tests/testsPOM/gearBags.spec.js b/tests/testsPOM/gearBags.spec.js
+index b0dbe57..93b74bb 100644
+--- a/tests/testsPOM/gearBags.spec.js
++++ b/tests/testsPOM/gearBags.spec.js
+@@ -67,4 +67,8 @@ test.describe('gearBags.spec', () => {
+ 
+     expect.soft(gearBagsPage.locators.getListMode()).toBeTruthy()
+   })
++  test(`Verify gearBagsPage match aria snapshot`, async ({ page }) => {
++    const gearBagsPage = new GearBagsPage(page)
++    await expect.soft(gearBagsPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearBagsPage.yml' })
++  })
+ })
+diff --git a/tests/testsPOM/gearFitnessPage.spec.js b/tests/testsPOM/gearFitnessPage.spec.js
+index 1e42ba5..e7c3039 100644
+--- a/tests/testsPOM/gearFitnessPage.spec.js
++++ b/tests/testsPOM/gearFitnessPage.spec.js
+@@ -32,4 +32,9 @@ test.describe('gearFitnessPage.spec', () => {
+     await expect.soft(gearFitnessPage.locators.getGearFitnessGridModeLocator()).toBeVisible()
+     await expect.soft(gearFitnessPage.locators.getGearFitnessAmountOfItemsLocator()).toHaveText(GEAR_FITNESS_NUMBER_ITEMS_IN_LIST_MODE)
+   })
++  test(`Verify gearFitnessPage match aria snapshot`, async ({ homePage }) => {
++    await homePage.hoverGearMenuItem()
++    const gearFitnessPage = await homePage.clickGearFitnessEquipmentSubmenuItem()
++    await expect.soft(gearFitnessPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearFitnessPage.yml' })
++  })
+ })
+diff --git a/tests/testsPOM/gearPage.spec.js b/tests/testsPOM/gearPage.spec.js
+index 0b3cb94..d19faac 100644
+--- a/tests/testsPOM/gearPage.spec.js
++++ b/tests/testsPOM/gearPage.spec.js
+@@ -39,4 +39,9 @@ test.describe('gearPage.spec', () => {
+ 
+     await expect.soft(gearWatchesText).toBeVisible()
+   })
++  test(`Verify gearPage match aria snapshot`, async ({ homePage, page }) => {
++    const gearPage = new GearPage(page)
++    await homePage.clickGearMenuItem()
++    await expect.soft(gearPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearPage.yml' })
++  })
+ })
+diff --git a/tests/testsPOM/gearWatches.spec.js b/tests/testsPOM/gearWatches.spec.js
+index 48daef6..ce253d7 100644
+--- a/tests/testsPOM/gearWatches.spec.js
++++ b/tests/testsPOM/gearWatches.spec.js
+@@ -133,4 +133,9 @@ test.describe('gearWatchesPage', () => {
+       expect.soft(ListText).toEqual(LIST_OF_CATEGORY_WATCHES[idx])
+     })
+   })
++  test(`Verify gearWatchesPage match aria snapshot`, async ({ homePage, page }) => {
++    const gearWatchesPage = new GearWatchesPage(page)
++    await homePage.clickGearMenuItem()
++    await expect.soft(gearWatchesPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearWatchesPage.yml' })
++  })
+ })
+```
