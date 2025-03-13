@@ -9,7 +9,10 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
   expect: {
-    timeout: 15000
+    timeout: 15000,
+    toMatchAriaSnapshot: {
+      pathTemplate: '__snapshots__/{testFilePath}/{arg}{ext}'
+    }
   },
   reporter: [
     ['list'],

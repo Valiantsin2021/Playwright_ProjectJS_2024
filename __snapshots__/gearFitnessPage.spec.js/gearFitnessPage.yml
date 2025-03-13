@@ -1,0 +1,208 @@
+- link "Privacy Privacy":
+  - img "Privacy"
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - link "Gear"
+    - text: 
+  - listitem:
+    - strong: Fitness Equipment
+- main:
+  - heading /Fitness Equipment \d+ Items/ [level=1]
+  - strong: View as
+  - strong:  Grid
+  - link "View as  List"
+  - paragraph: /\d+ Items/
+  - text: Sort By
+  - combobox "Sort By Sort By":
+    - option "Position" [selected]
+    - option "Product Name"
+    - option "Price"
+  - link " Set Descending Direction"
+  - list:
+    - listitem:
+      - link "Sprite Yoga Companion Kit":
+        - img "Sprite Yoga Companion Kit"
+      - strong:
+        - link "Sprite Yoga Companion Kit"
+      - paragraph: /From \$\d+\.\d+/
+      - paragraph: /To \$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Set of Sprite Yoga Straps":
+        - img "Set of Sprite Yoga Straps"
+      - strong:
+        - link "Set of Sprite Yoga Straps"
+      - paragraph: /Starting at \$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Harmony Lumaflex™ Strength Band Kit":
+        - img "Harmony Lumaflex™ Strength Band Kit"
+      - strong:
+        - link "Harmony Lumaflex™ Strength Band Kit"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Sprite Foam Roller":
+        - img "Sprite Foam Roller"
+      - strong:
+        - link "Sprite Foam Roller"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Sprite Foam Yoga Brick":
+        - img "Sprite Foam Yoga Brick"
+      - strong:
+        - link "Sprite Foam Yoga Brick"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Quest Lumaflex™ Band":
+        - img "Quest Lumaflex™ Band"
+      - strong:
+        - link "Quest Lumaflex™ Band"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Go-Get'r Pushup Grips":
+        - img "Go-Get'r Pushup Grips"
+      - strong:
+        - link "Go-Get'r Pushup Grips"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Pursuit Lumaflex™ Tone Band":
+        - img "Pursuit Lumaflex™ Tone Band"
+      - strong:
+        - link "Pursuit Lumaflex™ Tone Band"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Zing Jump Rope":
+        - img "Zing Jump Rope"
+      - strong:
+        - link "Zing Jump Rope"
+      - text: "/Rating:   \\d+%/"
+      - link "3 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Dual Handle Cardio Ball":
+        - img "Dual Handle Cardio Ball"
+      - strong:
+        - link "Dual Handle Cardio Ball"
+      - text: "/Rating:   \\d+%/"
+      - link "2 Reviews"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+    - listitem:
+      - link "Affirm Water Bottle":
+        - img "Affirm Water Bottle"
+      - strong:
+        - link "Affirm Water Bottle"
+      - text: "/Rating:   \\d+%/"
+      - link "1 Review"
+      - text: /\$\d+\.\d+/
+      - button "Add to Cart"
+      - button "Add to Wish List"
+      - button "Add to Compare"
+  - text: Show
+  - combobox:
+    - option /\d+/ [selected]
+    - option /\d+/
+    - option /\d+/
+  - text: per page
+  - heading "Shopping Options" [level=2]
+  - tablist:
+    - tab "Category "
+    - tab "Size "
+    - tab "Activity "
+    - tab "Color "
+    - tab "Erin Recommends "
+    - tab "Gender "
+    - tab "Material "
+    - tab "New "
+    - tab "Price "
+    - tab "Sale "
+  - heading "Compare Products" [level=2]
+  - text: You have no items to compare.
+  - heading "My Wish List" [level=2]
+  - text: You have no items in your wish list.
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./

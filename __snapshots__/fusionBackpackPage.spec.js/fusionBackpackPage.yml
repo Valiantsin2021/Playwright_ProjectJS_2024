@@ -1,0 +1,104 @@
+- link "Privacy Privacy":
+  - img "Privacy"
+- paragraph: This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.
+- banner:
+  - link "Skip to Content"
+  - list:
+    - listitem:
+      - link
+    - listitem:
+      - link "Sign In"
+      - text: or
+    - listitem:
+      - link "Create an Account"
+  - link "store logo"
+  - link " My Cart"
+  - text:  Search
+  - combobox " Search"
+  - button "Search" [disabled]:  Search
+  - list:
+    - listitem
+- tablist:
+  - tabpanel:
+    - navigation:
+      - menu:
+        - menuitem "What's New"
+        - menuitem " Women"
+        - menuitem " Men"
+        - menuitem " Gear"
+        - menuitem " Training"
+        - menuitem "Sale"
+- list:
+  - listitem:
+    - link "Home"
+    - text: 
+  - listitem:
+    - strong: Fusion Backpack
+- main:
+  - heading "Fusion Backpack" [level=1]
+  - text: "/Rating:   \\d+ % of \\d+/"
+  - link "3 Reviews"
+  - link "Add Your Review"
+  - text: /\$\d+\.\d+ In stock/
+  - strong: "SKU#:"
+  - text: /\d+-MB02 Qty/
+  - spinbutton "Qty"
+  - button "Add to Cart"
+  - link " Add to Wish List"
+  - link " Add to Compare"
+  - link "Skip to the end of the images gallery"
+  - button "Previous"
+  - img "Image"
+  - button "Next"
+  - button "Previous"
+  - button "Image":
+    - img "Image"
+  - button "Image":
+    - img "Image"
+  - button "Next"
+  - link "Skip to the beginning of the images gallery"
+  - tablist:
+    - tab "Details" [expanded]:
+      - link "Details"
+    - tabpanel "Details":
+      - paragraph: With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.
+      - list:
+        - listitem: Durable nylon construction.
+        - listitem: 2 main zippered compartments.
+        - listitem: 1 exterior zippered pocket.
+        - listitem: Mesh side pouches.
+        - listitem: Padded, adjustable straps.
+        - listitem: Top carry handle.
+        - listitem: "/Dimensions: \\d+\" x \\d+\" x 6\"\\./"
+    - tab "More Information":
+      - link "More Information"
+    - tab "Reviews (3)":
+      - link "Reviews (3)"
+  - heading "We found other products you might like!" [level=2]
+  - list:
+    - listitem:
+      - link "Impulse Duffle":
+        - img "Impulse Duffle"
+      - strong:
+        - link "Impulse Duffle"
+      - text: /\$\d+\.\d+/
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Notes"
+    - listitem:
+      - link "Practice API Testing using Magento 2"
+    - listitem:
+      - link "Write for us"
+    - listitem:
+      - link "Subscribe"
+  - list:
+    - listitem:
+      - link "Search Terms"
+    - listitem:
+      - link "Privacy and Cookie Policy"
+    - listitem:
+      - link "Advanced Search"
+    - listitem:
+      - link "Orders and Returns"
+- text: /We know you have an assignment to complete\. If this site is not functioning as expected, drop us an email\. Copyright © \d+-present Magento, Inc\. All rights reserved\./

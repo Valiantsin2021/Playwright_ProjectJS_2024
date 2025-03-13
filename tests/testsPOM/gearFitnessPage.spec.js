@@ -32,4 +32,9 @@ test.describe('gearFitnessPage.spec', () => {
     await expect.soft(gearFitnessPage.locators.getGearFitnessGridModeLocator()).toBeVisible()
     await expect.soft(gearFitnessPage.locators.getGearFitnessAmountOfItemsLocator()).toHaveText(GEAR_FITNESS_NUMBER_ITEMS_IN_LIST_MODE)
   })
+  test(`Verify gearFitnessPage match aria snapshot`, async ({ homePage }) => {
+    await homePage.hoverGearMenuItem()
+    const gearFitnessPage = await homePage.clickGearFitnessEquipmentSubmenuItem()
+    await expect.soft(gearFitnessPage.page.locator('body')).toMatchAriaSnapshot({ name: 'gearFitnessPage.yml' })
+  })
 })
