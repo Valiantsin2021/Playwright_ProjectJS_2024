@@ -10,25 +10,26 @@ permissions:
   pages: write
   id-token: write
 jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - uses: act10ns/slack@v2
+        with:
+          status: starting
+          message: 'Starting Playwright tests.. ${{github.event_name}} - ${{ github.actor }} - ${{ github.sha}}'
+        if: always()
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: 'Run tests ${{ github.actor }} ${{ github.event_name }} - ${{ github.sha }}'
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     strategy:
       fail-fast: false
       matrix:
         shardIndex: [1, 2, 3, 4, 5, 6]
         shardTotal: [6]
     steps:
-      - uses: act10ns/slack@v2
-        with:
-          status: starting
-          message: 'Starting Playwright tests...${{ matrix.shardIndex }}'
-          matrix: ${{ toJson(matrix) }}
-        if: always()
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -99,6 +100,7 @@ jobs:
     permissions: write-all
     name: Generate Allure Report
     needs: test
+    continue-on-error: true
     runs-on: ubuntu-latest
     if: always()
     env:
@@ -107,7 +109,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Generate and Publish Allure Report
-        uses: Valiantsin2021/allure-shard-results-publish@1.0.3
+        uses: Valiantsin2021/allure-shard-results-publish@1.0.4
         if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
