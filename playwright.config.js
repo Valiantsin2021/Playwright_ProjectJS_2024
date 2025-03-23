@@ -25,7 +25,8 @@ export default defineConfig({
         environmentInfo: {
           Environment: process.env.ENV,
           User: process.env.USER,
-          OS: process.platform
+          OS: process.platform,
+          BROWSER: devices['Desktop Chrome'].defaultBrowserType
         }
       }
     ]
