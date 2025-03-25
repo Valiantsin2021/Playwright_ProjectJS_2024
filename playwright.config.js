@@ -44,7 +44,7 @@ export default defineConfig({
   projects: [
     {
       name: 'UI_tests',
-      use: { ...devices['Desktop Chrome'] }
+      use: { channel: 'chrome' }
     }
   ]
 })
