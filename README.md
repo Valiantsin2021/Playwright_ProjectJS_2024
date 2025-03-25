@@ -121,8 +121,8 @@ The project comes with a set of scripts that can be used to run tests, generate 
 
 1. **Build and run Docker container:**
    ```sh
-   docker build -t playwright .
-   docker run -it --rm -v ${PWD}:/tests playwright
+   docker build -t playwright-java:1.51.1.8 ./helpers
+   docker run -it --rm -v "${PWD}:/app" playwright-java:1.51.1.8
    ```
 
 ## Additional Commands
