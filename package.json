@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "engines": {
-    "node": "22"
+    "node": ">22"
   },
   "scripts": {
     "prepare": "git config core.hooksPath .hooks",
@@ -36,12 +36,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@playwright/test": "1.51.1",
     "@types/node": "^22.13.14",
     "allure-commandline": "2.33.0",
     "allure-playwright": "3.2.1",
+    "axe-html-reporter": "^2.2.11",
     "axios": "^1.8.4",
     "canvas": "^3.1.0",
     "dotenv": "^16.4.7",
