@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "engines": {
-    "node": "22"
+    "node": ">22"
   },
   "scripts": {
     "prepare": "git config core.hooksPath .hooks",
+    "update": "npx npm-check-updates -u",
     "postinstall": "echo \"All dependencies were installed sucessfully ✅ You can now run tests by typing: npm test\"",
     "clean": "echo \"❌ Cleaning the reports and downloads folders\" && rimraf ./allure-report/* && rimraf ./allure-results/* && rimraf test-results/* && rimraf report/* && rimraf playwright-report/* && echo \"✅ All reports folders cleaned!\"",
     "test": "npx playwright test",
@@ -35,19 +36,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@playwright/test": "1.51.0",
-    "@types/node": "^22.13.9",
+    "@playwright/test": "1.51.1",
+    "@types/node": "^22.13.14",
     "allure-commandline": "2.33.0",
-    "allure-playwright": "3.2.0",
-    "axios": "^1.8.2",
+    "allure-playwright": "3.2.1",
+    "axe-html-reporter": "^2.2.11",
+    "axios": "^1.8.4",
     "canvas": "^3.1.0",
     "dotenv": "^16.4.7",
-    "eslint": "9.21.0",
-    "eslint-config-prettier": "10.0.2",
+    "eslint": "9.23.0",
+    "eslint-config-prettier": "10.1.1",
     "eslint-plugin-playwright": "2.2.0",
-    "eslint-plugin-prettier": "5.2.3",
+    "eslint-plugin-prettier": "5.2.5",
     "prettier": "3.5.3",
     "rimraf": "3.0.0"
   }
